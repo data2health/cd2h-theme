@@ -1,51 +1,53 @@
 <?
 
 //Redirect rules for old site
-$type  = $_GET['type'];
-$date  = $_GET['date'];
-$title  = $_GET['title'];
-
-if ($type){
-	if($date && $title){
-		if ($type == 'newsletters' || $type == 'pi-calls' || $type == 'sc-calls'){
-			header("HTTP/1.1 301 Moved Permanently");
-			header('Location: '.get_home_url().'/'.$type.'/'.$title.'/');
-			exit;
-		}
-		if ($type == 'governance' || $type == 'guidelines' || $type == 'policies'){
-			header("HTTP/1.1 301 Moved Permanently");
-			header('Location: '.get_home_url().'/governance-guildelines/'.$type.'/'.$title.'/');
-			exit;
-		}
-	} else {
-		if ($type == 'newsletters' || $type == 'pi-calls' || $type == 'sc-calls'){
-			header("HTTP/1.1 301 Moved Permanently");
-			header('Location: '.get_home_url().'/'.$type.'/');
-			exit;
-		}
-		if ($type == 'governance' || $type == 'guidelines' || $type == 'policies'){
-			header("HTTP/1.1 301 Moved Permanently");
-			header('Location: '.get_home_url().'/governance-guildelines/');
-			exit;
-		}
-	}
-}
+// $type  = $_GET['type'];
+// $date  = $_GET['date'];
+// $title  = $_GET['title'];
+//
+// if ($type){
+// 	if($date && $title){
+// 		if ($type == 'newsletters' || $type == 'pi-calls' || $type == 'sc-calls'){
+// 			header("HTTP/1.1 301 Moved Permanently");
+// 			header('Location: '.get_home_url().'/'.$type.'/'.$title.'/');
+// 			exit;
+// 		}
+// 		if ($type == 'governance' || $type == 'guidelines' || $type == 'policies'){
+// 			header("HTTP/1.1 301 Moved Permanently");
+// 			header('Location: '.get_home_url().'/governance-guildelines/'.$type.'/'.$title.'/');
+// 			exit;
+// 		}
+// 	} else {
+// 		if ($type == 'newsletters' || $type == 'pi-calls' || $type == 'sc-calls'){
+// 			header("HTTP/1.1 301 Moved Permanently");
+// 			header('Location: '.get_home_url().'/'.$type.'/');
+// 			exit;
+// 		}
+// 		if ($type == 'governance' || $type == 'guidelines' || $type == 'policies'){
+// 			header("HTTP/1.1 301 Moved Permanently");
+// 			header('Location: '.get_home_url().'/governance-guildelines/');
+// 			exit;
+// 		}
+// 	}
+// }
 
 
 //Enqueue CSS
 function theme_styles() {
-	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/bootstrap-4.1.0-dist/css/bootstrap.min.css' );
-	wp_enqueue_style( 'slick_js_css', get_template_directory_uri() . '/css/slick.min.css');
-	wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
+	//wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/bootstrap-4.1.0-dist/css/bootstrap.min.css' );
+	//wp_enqueue_style( 'slick_js_css', get_template_directory_uri() . '/css/slick.min.css');
+	//wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style('main_css', get_template_directory_uri() . '/dist/css/site.min.css', array(), '5', 'screen');
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
 //Enqueue JS
 function theme_js() {
-	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js',array('jquery'),'4.1.0',true);
-	wp_enqueue_script( 'fontawesome_js', get_template_directory_uri() . '/scripts/all.js',array(),'5.0.6',true);
-	wp_enqueue_script( 'slick_js', get_template_directory_uri() . '/scripts/slick.min.js',array('jquery'),'1.8.0',true);
-	wp_enqueue_script( 'scroll_sneak_js', get_template_directory_uri() . '/scripts/scroll-sneak.js',array('jquery'),'',true);
+	//wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/bootstrap-4.1.0-dist/js/bootstrap.bundle.min.js',array('jquery'),'4.1.0',true);
+	//wp_enqueue_script( 'fontawesome_js', get_template_directory_uri() . '/scripts/all.js',array(),'5.0.6',true);
+	//wp_enqueue_script( 'slick_js', get_template_directory_uri() . '/scripts/slick.min.js',array('jquery'),'1.8.0',true);
+	//wp_enqueue_script( 'scroll_sneak_js', get_template_directory_uri() . '/scripts/scroll-sneak.js',array('jquery'),'',true);
+	wp_enqueue_script('main_js', get_template_directory_uri() . '/dist/js/site.min.js', array('jquery'), '1', true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_js');
 
@@ -224,4 +226,79 @@ function my_body_classes( $classes ) {
 
     return $classes;
 
+}
+
+// Helper Functions
+require get_template_directory() . '/inc/util.php';
+
+// Custom template tags for this theme.
+require get_template_directory() . '/inc/template-tags.php';
+
+// Functions which enhance the theme by hooking into WordPress.
+require get_template_directory() . '/inc/template-functions.php';
+
+// Theme settings
+require get_template_directory() . '/inc/theme-settings.php';
+
+
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'cd2h_register_required_plugins' );
+
+function cd2h_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name'                  => esc_html__('WPBakery Visual Composer', 'focuson'),
+			'slug'                  => 'js_composer',
+			'source'                => get_template_directory() . '/plugins/js_composer.zip',
+			'required'              => true,
+			'force_activation'      => false,
+			'force_deactivation'    => false,
+			'external_url'          => ''
+		)
+
+	);
+}
+
+/**
+* Load Visual Composer Compatibility.
+*/
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'js_composer/js_composer.php' ) ) {
+	// Load Visual composer components
+	require_once get_template_directory() . '/inc/vc_remove.php';
+	require_once get_template_directory() . '/inc/vc_custom_param_types.php';
+	require_once get_template_directory() . '/inc/vc_components.php';
+	add_filter('vc_shortcodes_css_class', function ($class_string, $tag) {
+		$tags_to_clean = [
+			'vc_row',
+			'vc_column',
+			'vc_row_inner',
+			'vc_column_inner',
+			'vc_col-sm-6',
+		];
+		if (in_array($tag, $tags_to_clean)) {
+			$class_string = str_replace(' wpb_row', '', $class_string);
+			$class_string = str_replace(' vc_row-fluid', '', $class_string);
+			$class_string = str_replace(' vc_column_container', '', $class_string);
+			$class_string = str_replace('wpb_column', '', $class_string);
+			// replace vc_, but exclude any custom css
+			// attached via vc_custom_XXX (negative lookahead)
+			$class_string = preg_replace('/vc_(?!custom)/i', '', $class_string);
+			// replace all vc_
+			$class_string = preg_replace('/vc_/i', '', $class_string);
+		}
+		if ( $tag == 'vc_column' || $tag == 'vc_column_inner' ) {
+			$class_string = preg_replace( '/vc_col-sm-(\d{1,2})/', 'vc_span$1', $class_string ); // This will replace "vc_col-sm-%" with "vc_span%"
+		}
+		$class_string = preg_replace('|col-sm|', 'col-md', $class_string);
+		return $class_string;
+	}, 10, 2);
+
+	// REMOVE UPDATE NOTICE FOR VISUAL COMPOSER
+	add_filter('site_transient_update_plugins', 'remove_update_notifications');
+	function remove_update_notifications($value) {
+		if ( isset( $value ) && is_object( $value ) ) {
+			unset($value->response[ 'js_composer/js_composer.php' ]);
+		}
+	}
 }

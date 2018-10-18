@@ -1,57 +1,53 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package CD2H_Website
+ */
 
-  <?php get_sidebar(); ?>
+get_header();
+?>
 
-  <div class="col-sm-9 mt-3 pb-3">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-      <?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
-        <h2><?php single_cat_title(); ?></h2>
-        <div>
-          <?php echo category_description(); ?>
-        </div>
+			<header class="page-header">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
 
-        <div class="row p-1 font-weight-bold text-muted">
-          <div class="col-9">
-            Name
-          </div>
-          <div class="col-3">
-            Download
-          </div>
-        </div>
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
 
-      <?php while ( have_posts() ): the_post(); ?>
+			endwhile;
 
-        <div class="row p-1">
-          <div class="col-9">
-            <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
-          </div>
-          <div class="col-3">
-            <?php if (get_field('attachment')) :?>
-            <?php $fileExt = pathinfo(get_field('attachment'))['extension'] ?>
-            <a href="#" download="<?php the_field('attachment'); ?>"><img class="file-icon <?php echo $fileExt  ?>-icon" alt="<?php echo $fileExt  ?> file icon" src="<?php echo get_template_directory_uri().'/img/icons/'.$fileExt ?>.png" /></a>
-            <?php else : ?>
-            <img class="file-icon other-icon" src="<?php echo get_template_directory_uri() ?>/img/icons/other.png" />
-            <?php endif; ?>
-          </div>
-        </div>
+			the_posts_navigation();
 
-      <?php  endwhile; ?>
+		else :
 
-    <?php  else : ?>
+			get_template_part( 'template-parts/content', 'none' );
 
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <h4 class="alert-heading">Nothing found</h4>
-        <p>Please adjust your filters and/or search terms and try again.</p>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <a href="<?php echo home_url(); ?>" class="btn btn-warning">Clear Filters</a>
-      </div>
+		endif;
+		?>
 
-    <?php endif; ?>
-  </div>
-</div>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();
