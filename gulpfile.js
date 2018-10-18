@@ -84,7 +84,8 @@ gulp.task('concat-js', function() {
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         'node_modules/owl.carousel/dist/owl.carousel.js',
         'node_modules/pace-js/pace.js',
-        'inc/js/menu.js',
+        'inc/js/scroll-sneak.js',
+        'inc/js/slick.min.js',
         'inc/js/functions.js',
     ])
     .pipe(sourcemaps.init())

@@ -1,0 +1,17 @@
+.fsr-holder {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+.innovate {
+  background-color: $primary;
+  .innovate-inner {
+    margin-top: -50px;
+    margin-bottom: -50px;
+    padding: 50px;
+    background-color: $iceBlue;
+  }
+}

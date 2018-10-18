@@ -1,0 +1,27 @@
+// Colors
+$azureBlue: #296DB2;
+$articBlue: #94B6D8;
+$skyBlue: #D4E2F0;
+$iceBlue: #F2F7FB;
+$pineGreen: #4A7D8F;
+$marineGreen: #A4BEC7;
+$fogGreen: #DBE5E9;
+$snowGreen: #F1F5F6;
+
+
+//WP_Bootstrap
+$font-family-sans-serif:  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$body-color:                #494949 !default;
+
+$primary:       $azureBlue;
+$secondary:     $pineGreen;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+// Font awesome
+$fa-font-path: "../fonts" !default;

@@ -1,0 +1,90 @@
+#network-branding {
+  background-color: #5D3169;
+  color: #fff;
+  height: 30px;
+  overflow:hidden;
+  span {
+    font-size: 14px;
+    padding-top:5px;
+    padding-right:.5em;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  }
+  img {
+    height: 30px;
+    max-height:45px;
+    width:auto;
+  }
+  img.masthead-logo {
+    height: 20px;
+    margin:.25em .5em;
+  }
+  a{color:#fff;}
+}
+
+
+#main-nav {
+  nav,
+  nav a,
+  nav ul,
+  nav li,
+  nav ul li,
+  .dropdown-menu{
+    background-color:$pineGreen;
+    text-transform: uppercase;
+  }
+  nav a,
+  nav a:hover,
+  .dropdown-item,
+  #main-nav .dropdown-item:focus,
+  #main-nav .dropdown-item:hover{
+    color:#fff;
+  }
+
+  nav .nav-link {
+    display: block;
+    padding: 25px 1rem;
+    font-size: .75rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+nav a,
+nav a:hover,
+.dropdown-item,
+#main-nav .dropdown-item:focus,
+#main-nav .dropdown-item:hover{
+  color:#fff;
+}
+#main-nav .dropdown-item:hover,
+#main-nav nav ul li.current-menu-parent>a,
+#main-nav nav ul li.current_page_parent>a,
+#main-nav nav ul li.current-menu-item>a{
+  background:#aaa;
+  background-color:#aaa;
+}
+#main-nav-mobile .dropdown-menu{
+  border:none;
+}
+#main-nav-mobile .dropdown-item:focus,
+#main-nav-mobile .dropdown-item:hover{
+  background:none;
+  color:#fff;
+}
+#main-nav-mobile li {
+  padding: .25rem 0;
+}
+#main-nav-mobile .sub-menu li{
+  list-style-type: none;
+}
+#main-nav-mobile .sub-menu{
+  padding-left:1em;
+}
+.dropdown-menu{
+  border-radius:0;
+  width:100%;
+  padding:0;
+}
+.dropdown-menu li a{
+  display:block;
+  padding: .5rem 0;
+}

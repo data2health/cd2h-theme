@@ -33,7 +33,7 @@
   </div>
 </div>
 
-	<div class="container pl-0 pr-0">
+	<div class="container">
 		<div id="header-logos" class="row no-gutters align-items-center justify-content-center pt-3 pt-md-0 mt-2 mt-md-3 mb-4">
 			<div class="pl-1 pl-md-0 col-9 col-md-8">
 				<?php dynamic_sidebar('network-logo'); ?>
@@ -100,82 +100,6 @@
 		</nav>
 
 	<?php endif; ?>
-
-
-		<?php
-			/* Get an array of Ancestors and Parents if they exist */
-			$parents = get_post_ancestors( $post->ID );
-			/* Get the top Level page->ID count base 1, array base 0 so -1 */
-			$parentid = ($parents) ? $parents[count($parents)-1]: $post->ID;
-			$govPage = get_page_by_path( 'governance-guidelines' );
-
-			if (is_home() || is_single() || is_archive()) {
-				//if is communications item, show communications page header
-				$pageID = get_option( 'page_for_posts' );
-			} elseif ( $parentid == $govPage->ID || is_page($govPage)) {
-				//if is descendant of governance page, show governance header
-				$pageID = $govPage->ID;
-			} else {
-				//else, show the current page header
-				$pageID = get_the_id();
-			}
-		?>
-
-		<?php if (has_post_thumbnail($pageID) && (!is_search())) : ?>
-
-			<div id="banner-container" class="row no-gutters">
-			  <div class="col-12 border-top border-white">
-					<div id="header-banner" class="col-12 d-flex align-items-center justify-content-center" style="background-image:url('<?php echo get_the_post_thumbnail_url($pageID); ?>');">
-						<div class="text-center text-light">
-						<?php if (class_exists('acf')) : ?>
-							<h1><?php the_field('banner_title', $pageID); ?></h1>
-							<h2><?php the_field('banner_sub_title',$pageID); ?></h2>
-						<?php endif; ?>
-						</div>
-					</div>
-			  </div>
-			</div>
-
-		<?php endif; ?>
-
-		<?php if (is_home() || is_single() || is_archive()) : ?>
-
-		<div id="calendar-wrapper" class="row no-gutters mt-1">
-
-		  <div id="calendar" class="col-10">
-
-		  <?php
-			if (get_the_category()){
-				$category = get_the_category()[0]->term_id;
-			} else {
-				$category = '';
-			}
-		  $args = array(
-		    'posts_per_page'   => -1,
-		    'orderby'          => 'date',
-		    'order'            => 'ASC',
-		    'post_type'        => 'post',
-		    'post_status'      => 'publish',
-				'category'         => $category
-		  );
-		  $calendar_posts = get_posts( $args );
-		  foreach ( $calendar_posts as $post ) : setup_postdata( $post ); ?>
-		    <a href="<?php the_permalink(); ?>">
-		      <div id="slide-post-<?php echo get_the_id(); ?>" class="date-item text-center border-right border-light pt-3 pb-3" style="display:none;">
-		        <div class="month small font-weight-light"><?php echo get_the_date('F'); ?></div>
-		        <div class="day h2 align-middle"><?php echo get_the_date('d'); ?></div>
-		        <div class="year"><?php echo get_the_date('Y'); ?></div>
-		      </div>
-		    </a>
-		  <?php endforeach;	wp_reset_postdata();?>
-		  </div>
-		</div>
-
-		<?php endif; ?>
-
-
 	</div>
 
 <div id="wrapper" class="container">
-
-	<div class="row pt-0 mt-1">

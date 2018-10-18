@@ -1,0 +1,121 @@
+.hero-container {
+  height: 610px;
+  background-color: $snowGreen;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: relative;
+  .hero-slide {
+    position: relative;
+    height: 610px;
+    .slider-content {
+
+    }
+  }
+  .carousel-controls {
+    text-align: right;
+    margin-bottom: 30px;
+    .arrow-ico {
+      display: inline-block;
+      background-image: url('../img/icons/chevrons/chevron-8x15-gold.png');
+      height: 15px;
+      width: 8px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 3px;
+    }
+    .prev, .next, .divider {
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    .prev, .next {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .prev {
+      padding-right: 5px;
+      .arrow-ico {
+        margin-right: 5px;
+        transform: rotate(180deg);
+      }
+    }
+    .next {
+      padding-left: 5px;
+      .arrow-ico {
+        margin-left: 5px;
+      }
+    }
+    .divider {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .owl-nav {
+    color: $white;
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    z-index: 5;
+    .owl-prev, .owl-next {
+      &:focus {
+        outline: none;
+      }
+      .prev-arrow-ico, .next-arrow-ico {
+        position: relative;
+        top: 3px;
+      }
+    }
+    .owl-prev .prev-arrow-ico {
+      margin-right: 5px;
+    }
+    .owl-next .next-arrow-ico {
+      margin-left: 5px;
+    }
+    .slide-counter {
+      display: inline-block;
+      font-size: 29px;
+      letter-spacing: 1.16px;
+      & > span {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .current-slide {
+        color: #E9D29B;
+      }
+    }
+  }
+}
+
+@media(min-width: 768px){
+  .hero-slider {
+    a {
+      color: $white;
+    }
+    .hero-slide {
+      .slider-content {
+        background-color: $white;
+        margin-left: 100px;
+        max-width: 525px;
+        padding: 50px;
+      }
+      .slide-body {
+        font-size: .9rem;
+        letter-spacing: 0.5px;
+        //font-weight: 300;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .hero-slider {
+    .owl-nav {
+      display: none;
+    }
+  }
+}

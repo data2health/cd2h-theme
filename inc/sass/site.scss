@@ -1,7 +1,13 @@
 @import "theme/variables";
 @import "bootstrap/bootstrap";
 @import "font-awesome/fontawesome";
-@import "font-awesome/fa-solid";
-@import "font-awesome/fa-brands";
+@import "font-awesome/solid";
+@import "font-awesome/brands";
+@import "owl-carousel";
+
 
 @import "theme/header";
+@import "theme/content";
+@import "theme/text";
+@import "theme/shortcode";
+@import "theme/footer";

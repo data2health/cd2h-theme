@@ -1,8 +1,7 @@
-			</div>
 
 		</div><!-- container end -->
 		<?php if(!is_search()) : ?>
-		<footer class="container-fluid">
+		<footer class="site-footer container-fluid">
 			<?php wp_nav_menu( array(
 				'menu'    => 'footer menu',
 				'depth'             => 1,

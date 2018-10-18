@@ -37,7 +37,7 @@ function theme_styles() {
 	//wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/bootstrap-4.1.0-dist/css/bootstrap.min.css' );
 	//wp_enqueue_style( 'slick_js_css', get_template_directory_uri() . '/css/slick.min.css');
 	//wp_enqueue_style( 'main_css', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style('main_css', get_template_directory_uri() . '/dist/css/site.min.css', array(), '5', 'screen');
+	wp_enqueue_style('main_css', get_template_directory_uri() . '/dist/css/site.css', array(), '5', 'screen');
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
@@ -47,7 +47,7 @@ function theme_js() {
 	//wp_enqueue_script( 'fontawesome_js', get_template_directory_uri() . '/scripts/all.js',array(),'5.0.6',true);
 	//wp_enqueue_script( 'slick_js', get_template_directory_uri() . '/scripts/slick.min.js',array('jquery'),'1.8.0',true);
 	//wp_enqueue_script( 'scroll_sneak_js', get_template_directory_uri() . '/scripts/scroll-sneak.js',array('jquery'),'',true);
-	wp_enqueue_script('main_js', get_template_directory_uri() . '/dist/js/site.min.js', array('jquery'), '1', true);
+	wp_enqueue_script('main_js', get_template_directory_uri() . '/dist/js/site.js', array('jquery'), '1', true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_js');
 
@@ -56,6 +56,7 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'ctsa-website' ),
+	'footer' => __( 'Footer Menu', 'ctsa-website' ),
 ) );
 
 //Activates featured image only on page selected as "static front page"
@@ -162,6 +163,8 @@ if( !$menu_exists){
         'menu-item-title' =>  __('DISCLAIMER'),
         'menu-item-url' => 'https://ncats.nih.gov/disclaimer',
         'menu-item-status' => 'publish'));
+} else {
+	$menu_id = wp_get_nav_menu_object( $menu_name );
 }
 // Grab the theme locations and assign our newly-created menu to the menu location
 if( !has_nav_menu( $menulocation ) ){
