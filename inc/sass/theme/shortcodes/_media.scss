@@ -29,8 +29,7 @@
   }
 }
 
-
-.mediaObj {
+.media.mediaObj {
   .media-picture {
     height: 127px;
     width: 127px;
@@ -42,4 +41,8 @@
     letter-spacing: 0.25px;
     line-height: 28px;
   }
+}
+
+.media.portrait {
+  display: block;
 }

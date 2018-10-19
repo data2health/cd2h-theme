@@ -11816,16 +11816,19 @@ nav a:hover,
 .mediaPerson.secondary .h3 {
   color: #4A7D8F; }
 
-.mediaObj .media-picture {
+.media.mediaObj .media-picture {
   height: 127px;
   width: 127px;
   border-radius: 300px;
   border: 2px solid transparernt; }
 
-.mediaObj .h3 {
+.media.mediaObj .h3 {
   font-size: 24px;
   letter-spacing: 0.25px;
   line-height: 28px; }
+
+.media.portrait {
+  display: block; }
 
 .newsletter-footer {
   color: #fff;

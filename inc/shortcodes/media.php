@@ -20,7 +20,7 @@
   </div>
   <?php } ?>
   <div class="media-body">
-    <h3 class="h3 mt-4"><?php echo $title; ?></h3>
+    <h3 class="h3 mt-4 mb-3"><?php echo $title; ?></h3>
     <div class="body-inner mb-4 px-md-4">
       <?php echo $content; ?>
     </div>

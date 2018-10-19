@@ -173,7 +173,7 @@ class WPBakeryShortCode_cd2h_media_person extends WPBakeryShortCode {
         "title" => '',
         "btn_text" => '',
         "btn_url" => '#',
-        "format" => 'landscape',
+        "format" => 'portrait',
         "color" => 'primary',
         "extra_classes" => '',
       ), $atts
