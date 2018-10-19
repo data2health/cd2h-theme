@@ -11,4 +11,24 @@
   border-color: $white;
   &.btn-primary {color: $primary;}
   &.btn-secondary {color: $secondary;}
+  &:hover {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+  }
+}
+
+.btn-link-text {
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  color: $primary;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid $primary;
+  }
 }

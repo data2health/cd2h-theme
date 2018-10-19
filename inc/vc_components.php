@@ -8,6 +8,7 @@ add_action('vc_before_init', function() {
   require 'components/image.php';
   require 'components/hero.php';
   require 'components/headline.php';
+  require 'components/media.php';
   require 'components/padding.php';
   require 'components/posts.php';
 });

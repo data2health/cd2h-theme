@@ -1,23 +1,62 @@
-
-		</div><!-- container end -->
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Wildern
+ */
+ $twitter =  get_option('social_twitter');
+ $linkedin = get_option('social_linkedin');
+ $facebook = get_option('social_facebook');
+ $footer_logo = get_option('footer_logo');
+?>
+	</div><!-- container end -->
 		<?php if(!is_search()) : ?>
-		<footer class="site-footer container-fluid">
-			<?php wp_nav_menu( array(
-				'menu'    => 'footer menu',
-				'depth'             => 1,
-				'container'         => 'ul',
-				'container_class'   => '',
-				'container_id'      => '',
-				'menu_class'        => 'flex-column flex-sm-row nav pt-4 pb-3 justify-content-center',
-				'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-				'walker'            => new WP_Bootstrap_Navwalker(),
-			) ); ?>
 
-			<div class="row">
-				<div class="col-12 text-center pt-3 pb-3">
-				<p>If you have problems viewing PDF files, download the latest version of Adobe Reader <a href="http://get.adobe.com/reader/" title="Visit to download Adobe Reader" target="_blank">Adobe Reader <i class="fa fa-external-link-alt" aria-hidden="true"></i></a></p>
-				<p>For <a href="http://edi.nih.gov/consulting/language-access-program/about" target="_blank" title="Read the plan">language access <i class="fa fa-external-link-alt" aria-hidden="true"></i></a> assistance, contact the <a href="mailto:info@ncats.nih.gov" title="Email Public Information Officer">NCATS Public Information Officer <i class="far fa-envelope" aria-hidden="true"></i></a></p>
-				<p>National Center for Advancing Translational Sciences (NCATS), 6701 Democracy Boulevard, Bethesda MD 20892-4874 • 301-594-8966</p>
+		<footer class="site-footer container">
+			<div class="newsletter-footer">
+				<div class="row py-4 justify-content-md-center align-items-center">
+					<div class="col-md-7 text-center align-self-center">
+						<p class="mb-0">Stay up to date with new research and programs through CD2H</p>
+					</div>
+					<div class="col-md-4 text-center">
+						<a class="btn btn-block btn-primary btn-white" href="#">Subscribe to Our Newsletter</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="site-footer-inner">
+				<div class="logo-gooter py-3 py-md-5">
+					<a class="footer-logo d-block mx-auto" href="/">
+	          <img src="<?php echo $footer_logo; ?>" />
+	        </a>
+				</div>
+				<?php wp_nav_menu( array(
+					'menu'    => 'footer menu',
+					'depth'             => 1,
+					'container'         => 'ul',
+					'container_class'   => '',
+					'container_id'      => '',
+					'menu_class'        => 'flex-column flex-sm-row nav pt-4 pb-3 justify-content-center',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker(),
+				) ); ?>
+
+				<div class="row">
+					<div class="col-12 text-center pt-3 pb-3">
+					<p>If you have problems viewing PDF files, download the latest version of Adobe Reader <a href="http://get.adobe.com/reader/" title="Visit to download Adobe Reader" target="_blank">Adobe Reader <i class="fa fa-external-link-alt" aria-hidden="true"></i></a></p>
+					<p>For <a href="http://edi.nih.gov/consulting/language-access-program/about" target="_blank" title="Read the plan">language access <i class="fa fa-external-link-alt" aria-hidden="true"></i></a> assistance, contact the <a href="mailto:info@ncats.nih.gov" title="Email Public Information Officer">NCATS Public Information Officer <i class="far fa-envelope" aria-hidden="true"></i></a></p>
+
+					<div class="social text-center">
+						<?php if(!empty($twitter)){ ?>
+			      	<a href="<?php echo $twitter; ?>" title="Twitter" class="px-2"><span class="twitter-icon"></span></a>
+	          <?php } ?>
+					</div>
+					<p class="copyright mt-5">National Center for Advancing Translational Sciences (NCATS), 6701 Democracy Boulevard, Bethesda MD 20892-4874 • 301-594-8966</p>
+					</div>
 				</div>
 			</div>
 		</footer><!-- #colophon -->

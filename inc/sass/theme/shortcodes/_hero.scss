@@ -6,13 +6,6 @@
 
 .hero-slider {
   position: relative;
-  .hero-slide {
-    position: relative;
-    height: 610px;
-    .slider-content {
-
-    }
-  }
   .carousel-controls {
     text-align: right;
     margin-bottom: 30px;
@@ -91,24 +84,27 @@
   }
 }
 
+.hero-slide {
+  position: relative;
+  a { color: $white; }
+  .slider-content {
+    background-color: $white;
+    margin-left: 100px;
+    max-width: 575px;
+    padding: 50px;
+    .slide-body {
+      font-size: .9rem;
+      letter-spacing: 0.5px;
+      line-height: 1.75;
+      //font-weight: 300;
+    }
+  }
+}
+
 @media(min-width: 768px){
-  .hero-slider {
-    a {
-      color: $white;
-    }
-    .hero-slide {
-      .slider-content {
-        background-color: $white;
-        margin-left: 100px;
-        max-width: 525px;
-        padding: 50px;
-      }
-      .slide-body {
-        font-size: .9rem;
-        letter-spacing: 0.5px;
-        //font-weight: 300;
-      }
-    }
+  .hero-slide {
+    position: relative;
+    height: 610px;
   }
 }
 

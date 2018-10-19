@@ -41,7 +41,7 @@ vc_map(array(
   "description" => "Slide for hero carousel",
   "base" => "cd2h_hero_slide",
   "category" => "Hero",
-  "as_child" => array('only' => 'cd2h_hero_slider'),
+  //"as_child" => array('only' => 'cd2h_hero_slider'),
   "params" => array(
     array(
       "admin_label" => true,
@@ -80,7 +80,6 @@ vc_map(array(
       "param_name" => "btn_url",
       "value" => '',
     ),
-
   )
 ));
 class WPBakeryShortCode_cd2h_hero_slide extends WPBakeryShortCode {

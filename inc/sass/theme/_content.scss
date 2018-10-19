@@ -8,10 +8,14 @@
 
 .innovate {
   background-color: $primary;
+  background-image: url('../img/ico-innovate.png');
+  background-repeat: no-repeat;
+  background-size: 263px 208px;
+  background-position: 65px center;
   .innovate-inner {
     margin-top: -50px;
     margin-bottom: -50px;
-    padding: 50px;
+    padding: 75px;
     background-color: $iceBlue;
   }
 }

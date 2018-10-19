@@ -27,12 +27,12 @@ $post_wp_query = new WP_Query($args); ?>
         endwhile; wp_reset_postdata();
       endif; ?>
     </div>
-    <div class="mt-4 text-center">
+    <div class="text-center">
       <div class="d-block posts-footer-link py-2">
-        <a class="btn-link" href="#">View Past Events</a>
+        <a class="btn-link btn-link-text" href="#">View Past Events</a>
       </div>
       <div class="d-block posts-footer-link py-2">
-        <a class="btn-link" href="#">Visit Our Blog</a>
+        <a class="btn-link btn-link-text" href="#">Visit Our Blog</a>
       </div>
     </div>
   </div>
