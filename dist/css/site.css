@@ -11830,6 +11830,11 @@ nav a:hover,
 .media.portrait {
   display: block; }
 
+.media.landscape {
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important; }
+
 .newsletter-footer {
   color: #fff;
   background-color: #296DB2; }
