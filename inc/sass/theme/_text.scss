@@ -12,8 +12,15 @@
       background-color: $primary;
       margin-bottom: 40px;
     }
+    &.primary {
+      &::after { background-color: $primary;}
+    }
     &.secondary {
       &::after { background-color: $secondary;}
+    }
+    &.white {
+      color: $white;
+      &::after { background-color: $white;}
     }
   }
 }

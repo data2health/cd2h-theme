@@ -1,0 +1,36 @@
+.card.cardPost {
+  height: 525px;
+  border-radius: 10px;
+  .card-img-top {
+    background-color: $snowGreen;
+    height: 200px;
+    margin-bottom: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .h6 {
+    font-size: 9.5px;
+    color: $primary;
+    letter-spacing: 1.36px;
+    text-transform: uppercase;
+  }
+
+  .card-title {
+    font-size: 24px;
+    color: #4B4B4B;
+    letter-spacing: 0.25px;
+    line-height: 28px;
+  }
+
+  .card-footer {
+    background-color: $primary;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 12px;
+    letter-spacing: 1.75px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1.25rem 1.25rem;
+  }
+}

@@ -12,10 +12,10 @@ $args = array(
 $post_wp_query = new WP_Query($args); ?>
 
 
-  <div class="posts-slider posts-container <?php echo $extra_classes; ?>">
+  <div class="posts-slider posts-container mb-5 <?php echo $extra_classes; ?>">
     <div class="posts-owl-carousel owl-carousel">
       <?php
-      if ( $bio_wp_query->have_posts() ) :
+      if ( $post_wp_query->have_posts() ) :
         while ( $post_wp_query->have_posts() ) : $post_wp_query->the_post();
           $post_ID = get_the_ID();
           $title = get_the_title($post_ID);
@@ -26,5 +26,13 @@ $post_wp_query = new WP_Query($args); ?>
           include(locate_template('template-parts/cardPost.php'));
         endwhile; wp_reset_postdata();
       endif; ?>
+    </div>
+    <div class="mt-4 text-center">
+      <div class="d-block posts-footer-link py-2">
+        <a class="btn-link" href="#">View Past Events</a>
+      </div>
+      <div class="d-block posts-footer-link py-2">
+        <a class="btn-link" href="#">Visit Our Blog</a>
+      </div>
     </div>
   </div>

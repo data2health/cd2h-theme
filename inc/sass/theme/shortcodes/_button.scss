@@ -1,0 +1,14 @@
+.btn {
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-size: 12px;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+}
+
+.btn-white {
+  background-color: $white;
+  border-color: $white;
+  &.btn-primary {color: $primary;}
+  &.btn-secondary {color: $secondary;}
+}
