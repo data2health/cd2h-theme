@@ -11,5 +11,6 @@ add_action('vc_before_init', function() {
   require 'components/media.php';
   require 'components/padding.php';
   require 'components/posts.php';
+  require 'components/workgroup.php';
 });
 ?>

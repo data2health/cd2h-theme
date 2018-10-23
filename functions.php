@@ -177,7 +177,15 @@ function ctsa_widgets_init() {
 	register_sidebar( array(
 			'name'          => __( 'Network Logo', 'theme_name' ),
 			'id'            => 'network-logo',
-			'before_widget' => '<div id="network-logo" class="d-none d-md-inline-block float-left">',
+			'before_widget' => '<div id="network-logo" class="d-none d-md-block col-md-4 px-5 site-logo">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<!--',
+			'after_title'   => '-->',
+	) );
+	register_sidebar( array(
+			'name'          => __( 'Network Logo #2', 'theme_name' ),
+			'id'            => 'network-logo-2',
+			'before_widget' => '<div id="network-logo-2" class="d-none d-md-block col-md-4 px-4 site-logo">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<!--',
 			'after_title'   => '-->',
@@ -185,7 +193,15 @@ function ctsa_widgets_init() {
 	register_sidebar( array(
 			'name'          => __( 'Site Logo', 'theme_name' ),
 			'id'            => 'site-logo',
-			'before_widget' => '<div id="site-logo" class="d-inline-block float-left">',
+			'before_widget' => '<div id="site-logo" class="col-md-4 pr-3 site-logo">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<!--',
+			'after_title'   => '-->',
+	) );
+	register_sidebar( array(
+			'name'          => __( 'Footer Logo', 'theme_name' ),
+			'id'            => 'footer-logo',
+			'before_widget' => '<div id="footer-logo" class="col-md-3 pr-3 site-logo">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<!--',
 			'after_title'   => '-->',
@@ -233,6 +249,10 @@ function my_body_classes( $classes ) {
 
 // Helper Functions
 require get_template_directory() . '/inc/util.php';
+
+// Post types
+require get_template_directory() . '/inc/post_type/person.php';
+require get_template_directory() . '/inc/post_type/workgroup.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';

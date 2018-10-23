@@ -1,0 +1,77 @@
+.card.cardWorkgroup {
+  background: #FFFFFF;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+  border-radius: 10px;
+  border-width: 0;
+  height: 550px;
+  .workgroup-icon {
+    border-radius: 100px;
+    height: 100px;
+    width: 100px;
+    background-color: $snowGreen;
+  }
+
+  .card-top {
+    height: 190px;
+    padding: 50px;
+    .h3 {
+      font-size: 32px;
+      color: #4A7D8F;
+      letter-spacing: 0.5px;
+      line-height: 35px;
+    }
+    .h4 {
+      font-size: 17px;
+      color: #A4BEC7;
+      letter-spacing: 0;
+    }
+    .h6 {
+      font-weight: bold;
+      font-size: 12px;
+      color: #4A7D8F;
+      letter-spacing: 2.18px;
+      text-transform: uppercase;
+    }
+  }
+  .card-members,
+  .card-excerpt {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 1px solid #DBE5E9;
+  }
+
+  .card-members {
+    .h6 {
+      font-weight: 400;
+      font-size: 12px;
+      color: #4A7D8F;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .card-footer {
+    background-color: $secondary;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 12px;
+    letter-spacing: 1.75px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1.25rem 1.25rem;
+  }
+}
+
+
+.workgroup-owl-carousel {
+  padding-left: 60px;
+  padding-right: 60px;
+
+  .owl-item {
+    padding: 5px;
+    &.active {
+      .card.cardWorkgroup {}
+    }
+  }
+}

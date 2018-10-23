@@ -54,9 +54,22 @@
         nav: true,
         navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
         margin: 30,
+        padding: 60,
         rewind: false,
         dots: false,
         items: 3,
+      });
+    }
+    if($(".workgroup-owl-carousel").length){
+      $('.workgroup-owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: false,
+        nav: true,
+        navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
+        margin: 30,
+        rewind: false,
+        dots: false,
+        items: 1,
       });
     }
     // Handle scrolling anchor links

@@ -55,3 +55,10 @@ function get_page_options() {
   }
   return $choice_array;
 }
+
+function media_metabox_enqueue($hook) {
+  if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+    wp_enqueue_script('custom-admin-js', get_stylesheet_directory_uri() . '/inc/js/media-upload.js', array('jquery'));
+  }
+}
+add_action('admin_enqueue_scripts', 'media_metabox_enqueue');

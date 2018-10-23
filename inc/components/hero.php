@@ -37,8 +37,8 @@ class WPBakeryShortCode_cd2h_hero_slider extends WPBakeryShortCodesContainer {
 
 // Hero Collection Slide
 vc_map(array(
-  "name" => "Hero Carousel Slide",
-  "description" => "Slide for hero carousel",
+  "name" => "Hero",
+  "description" => "Slide for hero carousel or standalone hero unit",
   "base" => "cd2h_hero_slide",
   "category" => "Hero",
   //"as_child" => array('only' => 'cd2h_hero_slider'),
@@ -80,6 +80,20 @@ vc_map(array(
       "param_name" => "btn_url",
       "value" => '',
     ),
+    array(
+      "admin_label" => true,
+      "type" => "textfield",
+      "heading" => __("Button Text #2"),
+      "param_name" => "btn_text_2",
+      "value" => '',
+    ),
+    array(
+      "admin_label" => true,
+      "type" => "textfield",
+      "heading" => __("Button URL #2"),
+      "param_name" => "btn_url_2",
+      "value" => '',
+    ),
   )
 ));
 class WPBakeryShortCode_cd2h_hero_slide extends WPBakeryShortCode {
@@ -90,6 +104,8 @@ class WPBakeryShortCode_cd2h_hero_slide extends WPBakeryShortCode {
         "title" => '',
         "btn_text" => '',
         "btn_url" => '',
+        "btn_text_2" => '',
+        "btn_url_2" => '',
       ), $atts
     ));
     if ($image) { $image = wp_get_attachment_image_src($atts['image'], 'full'); }

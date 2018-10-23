@@ -36,8 +36,11 @@
 	<div class="container">
 		<div id="header-logos" class="row no-gutters align-items-center justify-content-center pt-3 pt-md-0 mt-2 mt-md-3 mb-4">
 			<div class="pl-1 pl-md-0 col-9 col-md-8">
-				<?php dynamic_sidebar('network-logo'); ?>
-				<?php dynamic_sidebar('site-logo'); ?>
+				<div class="row align-items-center">
+					<?php dynamic_sidebar('site-logo'); ?>
+					<?php dynamic_sidebar('network-logo'); ?>
+					<?php dynamic_sidebar('network-logo-2'); ?>
+				</div>
 			</div>
 			<?php if(!is_search()) : ?>
 			<div class="col-2 text-center d-md-none">

@@ -6,53 +6,13 @@
 
 .hero-slider {
   position: relative;
-  .carousel-controls {
-    text-align: right;
-    margin-bottom: 30px;
-    .arrow-ico {
-      display: inline-block;
-      background-image: url('../img/icons/chevrons/chevron-8x15-gold.png');
-      height: 15px;
-      width: 8px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: relative;
-      top: 3px;
-    }
-    .prev, .next, .divider {
-      font-size: 12px;
-      line-height: 20px;
-    }
 
-    .prev, .next {
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    .prev {
-      padding-right: 5px;
-      .arrow-ico {
-        margin-right: 5px;
-        transform: rotate(180deg);
-      }
-    }
-    .next {
-      padding-left: 5px;
-      .arrow-ico {
-        margin-left: 5px;
-      }
-    }
-    .divider {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
-  }
   .owl-nav {
     color: $white;
     position: absolute;
-    right: 60px;
-    bottom: 60px;
+    right: 30px;
+    left: 30px;
+    bottom: 60%;
     z-index: 5;
     .owl-prev, .owl-next {
       &:focus {
@@ -61,14 +21,33 @@
       .prev-arrow-ico, .next-arrow-ico {
         position: relative;
         top: 3px;
+        display: inline-block;
+        background-image: url('../img/icons/chevrons/left_chevron_hero.png');
+        height: 25px;
+        width: 13px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
       }
     }
-    .owl-prev .prev-arrow-ico {
-      margin-right: 5px;
+    .owl-prev {
+      position: absolute;
+      left: 0;
+      .prev-arrow-ico {
+        margin-right: 5px;
+      }
     }
-    .owl-next .next-arrow-ico {
-      margin-left: 5px;
+
+    .owl-next {
+      position: absolute;
+      right: 0;
+      .next-arrow-ico {
+        margin-left: 5px;
+        transform: rotate(180deg);
+      }
     }
+
     .slide-counter {
       display: inline-block;
       font-size: 29px;
@@ -86,6 +65,7 @@
 
 .hero-slide {
   position: relative;
+  background-color: $iceBlue;
   a { color: $white; }
   .slider-content {
     background-color: $white;

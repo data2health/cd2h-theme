@@ -4,8 +4,6 @@
   background-repeat: no-repeat;
 }
 
-
-
 .innovate {
   background-color: $primary;
   background-image: url('../img/ico-innovate.png');
@@ -17,5 +15,26 @@
     margin-bottom: -50px;
     padding: 75px;
     background-color: $iceBlue;
+  }
+}
+
+.arrow-md {
+  &::after {
+    content: '';
+    background-image: url('../img/arrow_long_secondary.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.site-logo {
+  p { margin: 0; }
+  img { width: 100%; height:auto; }
+}
+
+.vc_single_image-wrapper {
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }

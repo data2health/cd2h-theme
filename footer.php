@@ -8,31 +8,27 @@
  *
  * @package Wildern
  */
- $twitter =  get_option('social_twitter');
- $linkedin = get_option('social_linkedin');
- $facebook = get_option('social_facebook');
- $footer_logo = get_option('footer_logo');
 ?>
 	</div><!-- container end -->
 		<?php if(!is_search()) : ?>
 
-		<footer class="site-footer container">
+		<footer class="site-footer">
 			<div class="newsletter-footer">
-				<div class="row py-4 justify-content-md-center align-items-center">
-					<div class="col-md-7 text-center align-self-center">
-						<p class="mb-0">Stay up to date with new research and programs through CD2H</p>
-					</div>
-					<div class="col-md-4 text-center">
-						<a class="btn btn-block btn-primary btn-white" href="#">Subscribe to Our Newsletter</a>
-					</div>
-				</div>
+        <div class="container">
+          <div class="row py-4 justify-content-md-center align-items-center">
+  					<div class="col-md-7 text-center align-self-center">
+  						<p class="mb-0">Stay up to date with new research and programs through CD2H</p>
+  					</div>
+  					<div class="col-md-4 text-center">
+  						<a class="btn btn-block btn-primary btn-white" href="#">Subscribe to Our Newsletter</a>
+  					</div>
+  				</div>
+        </div>
 			</div>
 
-			<div class="site-footer-inner">
-				<div class="logo-gooter py-3 py-md-5">
-					<a class="footer-logo d-block mx-auto" href="/">
-	          <img src="<?php echo $footer_logo; ?>" />
-	        </a>
+			<div class="site-footer-inner container">
+				<div class="logo-footer row no-gutters justify-content-center py-3 py-md-5">
+					<?php dynamic_sidebar('footer-logo'); ?>
 				</div>
 				<?php wp_nav_menu( array(
 					'menu'    => 'footer menu',

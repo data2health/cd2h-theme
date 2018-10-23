@@ -1,20 +1,37 @@
 .btn {
   border-radius: 30px;
-  padding: 10px 30px;
+  padding: 10px 35px 10px 30px;
   font-size: 12px;
   letter-spacing: 1.71px;
   text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    background-image: url('../img/icons/chevrons/btn_chevron.png');
+    height: 9px;
+    width: 5px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 .btn-white {
   background-color: $white;
   border-color: $white;
+  &::after {
+    background-image: url('../img/icons/chevrons/btn_chevron_alt.png');
+  }
   &.btn-primary {color: $primary;}
   &.btn-secondary {color: $secondary;}
   &:hover {
     background-color: transparent;
     border-color: $white;
     color: $white;
+    &::after { background-image: url('../img/icons/chevrons/btn_chevron.png'); }
   }
 }
 
