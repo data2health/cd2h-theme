@@ -7320,6 +7320,47 @@ a.text-dark:hover, a.text-dark:focus {
   text-rendering: auto;
   line-height: 1; }
 
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -.0667em; }
+
+.fa-xs {
+  font-size: .75em; }
+
+.fa-sm {
+  font-size: .875em; }
+
+.fa-1x {
+  font-size: 1em; }
+
+.fa-2x {
+  font-size: 2em; }
+
+.fa-3x {
+  font-size: 3em; }
+
+.fa-4x {
+  font-size: 4em; }
+
+.fa-5x {
+  font-size: 5em; }
+
+.fa-6x {
+  font-size: 6em; }
+
+.fa-7x {
+  font-size: 7em; }
+
+.fa-8x {
+  font-size: 8em; }
+
+.fa-9x {
+  font-size: 9em; }
+
+.fa-10x {
+  font-size: 10em; }
+
 .fa-fw {
   text-align: center;
   width: 1.25em; }
@@ -11463,7 +11504,8 @@ readers do not read off random characters that represent icons */
 #main-nav nav ul li,
 #main-nav .dropdown-menu {
   background-color: #4A7D8F;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-top: 0; }
 
 #main-nav nav a,
 #main-nav nav a:hover,
@@ -11595,9 +11637,9 @@ nav a:hover,
     background-color: #F1F5F6; }
   .card.cardWorkgroup .card-top {
     height: 190px;
-    padding: 50px; }
+    padding: 25px; }
     .card.cardWorkgroup .card-top .h3 {
-      font-size: 32px;
+      font-size: 24px;
       color: #4A7D8F;
       letter-spacing: 0.5px;
       line-height: 35px; }
@@ -11750,7 +11792,7 @@ nav a:hover,
   height: 115px; }
 
 .callout-inner {
-  height: 500px;
+  height: 560px;
   position: relative;
   z-index: 10; }
   .callout-inner .media-img {
@@ -11761,7 +11803,7 @@ nav a:hover,
     color: #fff; }
   .callout-inner .media-body {
     width: 100%;
-    max-width: 500px; }
+    max-width: 560px; }
 
 .cd2h-callout-wrapper {
   position: relative;
@@ -11878,6 +11920,57 @@ nav a:hover,
 
 .mediaPerson.landscape {
   margin-bottom: 50px; }
+
+.lab-projects {
+  padding: 80px;
+  background-color: #F2F7FB;
+  color: #296DB2; }
+
+.lab-project-list {
+  border-right: 1px solid #296DB2; }
+  .lab-project-list .nav-tabs {
+    border-bottom-width: 0; }
+  .lab-project-list .h3 {
+    font-size: 16px;
+    letter-spacing: 2.29px;
+    text-transform: uppercase; }
+  .lab-project-list .h6 {
+    font-size: 12px;
+    color: #94B6D8;
+    letter-spacing: 1.71px;
+    text-transform: uppercase; }
+  .lab-project-list a {
+    color: #94B6D8; }
+
+.lab-project-detailed .project-header .h4 {
+  font-family: 400;
+  font-size: 24px;
+  letter-spacing: 0; }
+
+.lab-project-detailed .project-header .project-lead {
+  font-size: 16px;
+  letter-spacing: 0; }
+
+.lab-project-detailed .project-header .cd2h-project {
+  color: #94B6D8;
+  font-size: 16px;
+  font-style: italic; }
+
+.lab-project-detailed .project-header .project-email {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #94B6D8;
+  letter-spacing: 2px; }
+  .lab-project-detailed .project-header .project-email a {
+    color: #94B6D8; }
+
+.lab-project-detailed .project-acknowledgements {
+  font-weight: bold;
+  font-size: 13px;
+  color: #94B6D8;
+  letter-spacing: 0.17px;
+  line-height: 25px; }
 
 .newsletter-footer {
   color: #fff;

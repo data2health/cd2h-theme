@@ -219,14 +219,13 @@ add_action( 'widgets_init', 'ctsa_widgets_init' );
 
 //Test if current page has children
 function has_children() {
-    global $post;
-
-    $children = get_pages( array( 'child_of' => $post->ID ) );
-    if( count( $children ) == 0 ) {
-        return false;
-    } else {
-        return true;
-    }
+	global $post;
+	$children = get_pages( array( 'child_of' => $post->ID ) );
+	if( count( $children ) == 0 ) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 if (class_exists('acf')){
@@ -236,15 +235,11 @@ if (class_exists('acf')){
 	}
 }
 
-
 //add site name to body_class
 add_filter( 'body_class','my_body_classes' );
 function my_body_classes( $classes ) {
-
     $classes[] = get_bloginfo( 'name' );
-
     return $classes;
-
 }
 
 // Helper Functions
@@ -253,6 +248,8 @@ require get_template_directory() . '/inc/util.php';
 // Post types
 require get_template_directory() . '/inc/post_type/person.php';
 require get_template_directory() . '/inc/post_type/workgroup.php';
+require get_template_directory() . '/inc/post_type/lab_project.php';
+require get_template_directory() . '/inc/post_type/dream_challenge.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';

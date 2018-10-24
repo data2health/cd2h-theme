@@ -12,5 +12,7 @@ add_action('vc_before_init', function() {
   require 'components/padding.php';
   require 'components/posts.php';
   require 'components/workgroup.php';
+  require 'components/lab_project.php';
+  require 'components/dream.php';
 });
 ?>

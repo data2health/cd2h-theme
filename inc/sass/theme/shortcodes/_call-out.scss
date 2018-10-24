@@ -1,5 +1,5 @@
 .callout-inner {
-  height: 500px;
+  height: 560px;
   position: relative;
   z-index: 10;
   .media-img {
@@ -7,12 +7,10 @@
     width: 175px;
     background-size: contain;
   }
-  .media {
-    color: $white;
-  }
+  .media { color: $white; }
   .media-body {
     width: 100%;
-    max-width: 500px;
+    max-width: 560px;
   }
 }
 

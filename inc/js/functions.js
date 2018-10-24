@@ -72,6 +72,18 @@
         items: 1,
       });
     }
+    if($(".dream-ideas-owl-carousel").length){
+      $('.dream-ideas-owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: false,
+        nav: true,
+        navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
+        margin: 30,
+        rewind: false,
+        dots: false,
+        items: 2,
+      });
+    }
     // Handle scrolling anchor links
     $doc.on('click', '.scroll-to a', function(e){
       var href = $(this).attr('href');

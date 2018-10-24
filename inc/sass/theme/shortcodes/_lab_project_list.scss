@@ -1,0 +1,58 @@
+.lab-projects {
+  padding: 80px;
+  background-color: $iceBlue;
+  color: $azureBlue;
+}
+
+
+.lab-project-list {
+  border-right: 1px solid $azureBlue;
+  .nav-tabs {border-bottom-width: 0;}
+  .h3 {
+    font-size: 16px;
+    letter-spacing: 2.29px;
+    text-transform: uppercase;
+  }
+  .h6 {
+    font-size: 12px;
+    color: $articBlue;
+    letter-spacing: 1.71px;
+    text-transform: uppercase;
+  }
+  a {color: $articBlue;}
+}
+
+
+.lab-project-detailed {
+  .project-header {
+    .h4 {
+      font-family: 400;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+    .project-lead {
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+    .cd2h-project {
+      color: $articBlue;
+      font-size: 16px;
+      font-style: italic;
+    }
+    .project-email {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: $articBlue;
+      letter-spacing: 2px;
+      a {color: $articBlue;}
+    }
+  }
+  .project-acknowledgements {
+    font-weight: bold;
+    font-size: 13px;
+    color: $articBlue;
+    letter-spacing: 0.17px;
+    line-height: 25px;
+  }
+}

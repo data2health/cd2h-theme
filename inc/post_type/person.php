@@ -55,3 +55,44 @@ function person_post_type() {
 
 }
 add_action( 'init', 'person_post_type', 0 );
+
+add_action( 'load-post.php', 'person_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'person_meta_boxes_setup' );
+
+//Meta box setup function.
+function person_meta_boxes_setup() {
+  // Add meta boxes on the 'add_meta_boxes' hook.
+  add_action( 'add_meta_boxes', 'person_meta_boxes' );
+  // Save post meta on the 'save_post' hook.
+  add_action( 'save_post', 'save_person_meta', 10, 2 );
+}
+
+function person_meta_boxes() {
+  add_meta_box( 'person_meta', esc_html__( 'Additional Content', 'cd2h' ), 'person_meta_box', 'person', 'normal', 'default' );
+}
+
+function person_meta_box( $object, $box ) {
+  wp_nonce_field( basename( __FILE__ ), 'person_nonce' );
+?>
+  <p>
+    <label for="email"><strong>Email</strong></label><br />
+    <input class="widefat" type="text" name="email" id="email" value="<?php echo get_post_meta($object->ID, 'email', true); ?>" size="30" />
+  </p>
+<?php }
+
+/* Save the meta box's post metadata. */
+  function save_person_meta( $post_id, $post ) {
+    /* Verify the nonce before proceeding. */
+    if ( !isset( $_POST['person_nonce'] ) || !wp_verify_nonce( $_POST['person_nonce'], basename( __FILE__ ) ) )
+    return $post_id;
+    /* Get the post type object. */
+    $post_type = get_post_type_object( $post->post_type );
+    /* Check if the current user has permission to edit the post. */
+    if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+    return $post_id;
+    $meta_keys = array('email', );
+    foreach($meta_keys as $key){
+      $meta_val = get_post_val($key);
+      update_post_meta($post_id, $key, $meta_val);
+    }
+  }

@@ -22,6 +22,14 @@ function set_post_meta($post_id, $input_name, $meta_val = ""){
   update_post_meta($post_id, $meta_val, $post_val);
 }
 
+function media_metabox_enqueue($hook) {
+  if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
+    wp_enqueue_script('custom-admin-js', get_stylesheet_directory_uri() . '/inc/js/media-upload.js', array('jquery'));
+  }
+}
+add_action('admin_enqueue_scripts', 'media_metabox_enqueue');
+
+
 function get_post_options() {
   $args = array(
     'posts_per_page'   => -1,
@@ -56,9 +64,19 @@ function get_page_options() {
   return $choice_array;
 }
 
-function media_metabox_enqueue($hook) {
-  if ( 'post.php' == $hook || 'post-new.php' == $hook ) {
-    wp_enqueue_script('custom-admin-js', get_stylesheet_directory_uri() . '/inc/js/media-upload.js', array('jquery'));
+function get_person_options() {
+  $args = array(
+    'posts_per_page'   => -1,
+    'orderby'          => 'title',
+    'order'            => 'DESC',
+    'post_type'        => 'person',
+    'post_status'      => 'publish',
+  );
+  $posts = get_posts($args);
+  $choice_array = array();
+  foreach($posts as $post){
+    $title = get_the_title($post->ID);
+    $choice_array[$title] = $post->ID;
   }
+  return $choice_array;
 }
-add_action('admin_enqueue_scripts', 'media_metabox_enqueue');
