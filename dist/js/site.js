@@ -4519,6 +4519,7 @@ var ScrollSneak = function(prefix, wait) {
         nav: true,
         navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
         margin: 30,
+        padding: 10,
         rewind: false,
         dots: false,
         items: 2,

@@ -21,5 +21,7 @@
       <h6 class="h6 mb-4">Members Involved</h6>
     </div>
   </div>
-  <a class="card-footer d-block text-center secondary" href="#">Register Interest</a>
+  <div class="card-footer d-block text-center secondary">
+    
+  </div>
 </div>

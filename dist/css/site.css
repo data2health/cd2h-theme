@@ -11505,7 +11505,8 @@ readers do not read off random characters that represent icons */
 #main-nav .dropdown-menu {
   background-color: #4A7D8F;
   text-transform: uppercase;
-  margin-top: 0; }
+  margin-top: 0;
+  border-width: 0; }
 
 #main-nav nav a,
 #main-nav nav a:hover,
@@ -11658,6 +11659,10 @@ nav a:hover,
     padding-top: 40px;
     padding-bottom: 40px;
     border-top: 1px solid #DBE5E9; }
+  .card.cardWorkgroup .card-excerpt {
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    line-height: 25px; }
   .card.cardWorkgroup .card-members .h6 {
     font-weight: 400;
     font-size: 12px;
@@ -11680,6 +11685,20 @@ nav a:hover,
   padding-right: 60px; }
   .workgroup-owl-carousel .owl-item {
     padding: 5px; }
+
+.card.cardDream-sm {
+  height: 320px; }
+  .card.cardDream-sm .card-top .h3 {
+    color: #296DB2; }
+  .card.cardDream-sm .card-top .h4 {
+    color: #94B6D8; }
+  .card.cardDream-sm .card-top .h6 {
+    color: #296DB2; }
+  .card.cardDream-sm .card-excerpt {
+    color: #94B6D8; }
+
+.dream-ideas-owl-carousel .owl-item {
+  padding: 5px; }
 
 .headline.h1 {
   font-size: 35px;

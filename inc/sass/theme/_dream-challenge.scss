@@ -1,0 +1,18 @@
+.card.cardDream-sm {
+  height: 320px;
+  .card-top {
+    .h3 { color: $azureBlue; }
+    .h4 { color: $articBlue; }
+    .h6 { color: $azureBlue; }
+  }
+  .card-excerpt { color: $articBlue; }
+}
+
+.dream-ideas-owl-carousel {
+  .owl-item {
+    padding: 5px;
+    &.active {
+      .card.cardWorkgroup {}
+    }
+  }
+}
