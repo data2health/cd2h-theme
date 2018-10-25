@@ -86,7 +86,7 @@
 		<nav class="d-lg-none navbar navbar-expand-lg px-0" role="navigation">
 		  <div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<button class="navbar-toggler text-light d-block w-100 text-left py-2" type="button" data-toggle="collapse" data-target="#main-nav-mobile" aria-controls="main-nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler text-light d-block w-100 text-left py-3" type="button" data-toggle="collapse" data-target="#main-nav-mobile" aria-controls="main-nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fas fa-bars"></i> Menu
 			</button>
 				<?php

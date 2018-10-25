@@ -16,7 +16,7 @@ $post_wp_query = new WP_Query($args); ?>
 
 
   <div class="dream-challenge-container dream-current my-5 <?php echo $extra_classes; ?>">
-    <div class="row">
+    <div class="dream-current-owl-carousel owl-carousel">
       <?php
       if ( $post_wp_query->have_posts() ) :
         while ( $post_wp_query->have_posts() ) : $post_wp_query->the_post();
@@ -29,10 +29,9 @@ $post_wp_query = new WP_Query($args); ?>
           $icon_id = get_post_meta($post_ID, 'icon', true);
           $icon = '';
           if(!empty($icon_id)){$icon = wp_get_attachment_image_src(get_post_thumbnail_id($icon_id), 'full')[0];}
+          $people_array =  get_post_meta($post_ID, 'people', true);
           $content = get_the_content();
-          echo '<div class="col-md-4">';
-          include(locate_template('template-parts/cardWorkgroup.php'));
-          echo '</div>';
+          include(locate_template('template-parts/cardDream.php'));
         endwhile; wp_reset_postdata();
       endif; ?>
     </div>

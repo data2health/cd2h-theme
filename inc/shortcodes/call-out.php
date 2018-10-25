@@ -14,7 +14,7 @@
  */
 ?>
 
-<div class="cd2h-callout-wrapper fsr-holder text-center text-md-left mb-3 mb-md-0 <?php echo $color; ?>">
+<div class="cd2h-callout-wrapper fsr-holder <?php echo $format; ?> mb-3 mb-md-0 <?php echo $color; ?>">
   <?php if(!empty($background)) { ?>
     <img src="<?php echo $background[0]; ?>" alt="<?php echo $title; ?>" class="image-full sr-only" />
   <?php } ?>

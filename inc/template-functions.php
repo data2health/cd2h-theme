@@ -35,3 +35,6 @@ function cd2h_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'cd2h_pingback_header' );
+
+// Strip read more junk from excerpt
+add_filter('excerpt_more','__return_false');

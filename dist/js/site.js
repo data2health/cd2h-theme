@@ -4520,6 +4520,23 @@ var ScrollSneak = function(prefix, wait) {
         }
       });
     }
+    if($(".dream-current-owl-carousel").length){
+      $('.dream-current-owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: false,
+        nav: true,
+        navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
+        margin: 30,
+        padding: 10,
+        rewind: false,
+        dots: false,
+        items: 3,
+        responsive: {
+          0: { items: 1, margin: 15 },
+          768: { items: 3,margin: 30 }
+        }
+      });
+    }
     if($(".dream-ideas-owl-carousel").length){
       $('.dream-ideas-owl-carousel').owlCarousel({
         loop: true,

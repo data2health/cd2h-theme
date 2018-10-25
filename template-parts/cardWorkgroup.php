@@ -1,7 +1,7 @@
-<div class="card cardWorkgroup">
+<div class="card cardDefault cardWorkgroup">
   <div class="card-top d-md-flex align-items-center">
     <div class="media d-block d-md-flex text-center text-md-left">
-      <div class="mx-auto mr-md-3 align-self-center workgroup-icon fsr-holder">
+      <div class="mx-auto mr-md-3 align-self-center card-icon fsr-holder">
         <?php if(!empty($icon)) { ?>
           <img src="<?php echo $icon; ?>" alt="<?php echo $title; ?>" class="image-full sr-only" />
         <?php } ?>

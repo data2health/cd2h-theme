@@ -21,7 +21,7 @@ $args = array(
 $post_wp_query = new WP_Query($args); ?>
 
 <div class="d-none d-md-block">
-  <table class="table table-borderless cd2h-table cd2h-liason-table <?php echo $extra_classes; ?>">
+  <table class="table table-borderless cd2h-table cd2h-liason-table text-left <?php echo $extra_classes; ?>">
     <thead>
       <tr>
         <th scope="col" class="pl-4 border-right">Entity</th>
@@ -70,7 +70,7 @@ $post_wp_query = new WP_Query($args); ?>
         $post_ID = $liason->ID;
         $title = get_the_title($post_ID);
         $representative = get_post_meta($post_ID, 'representative', true);
-        echo '<li class="my-2">';
+        echo '<li class="mt-2 mb-4">';
         echo '<h5 class="h4 mb-1">' . $title . '</h5>';
         echo '<h6 class="h5 mb-0">' . $representative . '</h6>';
         echo '</li>';

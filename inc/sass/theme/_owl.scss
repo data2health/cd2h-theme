@@ -1,0 +1,56 @@
+.owl-carousel {
+  .owl-nav {
+    color: $white;
+    position: absolute;
+    right: 30px;
+    left: 30px;
+    bottom: 60%;
+    z-index: 5;
+    .owl-prev, .owl-next {
+      &:focus { outline: none;}
+      .prev-arrow-ico,
+      .next-arrow-ico {
+        position: relative;
+        top: 3px;
+        display: inline-block;
+        background-image: url('../img/icons/chevrons/slider-chevron.png');
+        height: 25px;
+        width: 13px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+    }
+    .owl-prev {
+      position: absolute; left: 0;
+      .prev-arrow-ico { margin-right: 5px; transform: rotate(180deg);}
+    }
+    .owl-next {
+      position: absolute; right: 0;
+      .next-arrow-ico { margin-left: 5px; }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .owl-carousel {
+    .owl-nav button.owl-prev,
+    .owl-nav button.owl-next {
+      background-color: $pineGreen;
+      padding: 5px !important;
+      position: absolute;
+    }
+    .owl-nav button.owl-prev {left: -30px;}
+    .owl-nav button.owl-next {
+      right: -30px;
+    }
+    .prev-arrow-ico,
+    .next-arrow-ico {
+      position: relative;
+      top: 3px;
+      display: inline-block;
+      background-image: url('../img/icons/chevrons/chevron_hero.png');
+    }
+  }
+}

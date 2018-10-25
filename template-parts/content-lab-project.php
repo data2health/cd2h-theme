@@ -20,7 +20,7 @@
   <div class="project-footer mt-3">
     <?php if (!empty($test_prototype)) { ?>
       <a class="btn btn-primary d-block d-md-inline-block mb-3 mb-md-0" href="<?php echo $test_prototype; ?>">Test Prototype</a>
-    <?php if (!empty($submit_feedback)) { ?>
+    <?php } if (!empty($submit_feedback)) { ?>
       <a class="btn btn-primary d-block d-md-inline-block mb-3 mb-md-0" href="<?php echo $submit_feedback; ?>">Submit Feedback</a>
     <?php } ?>
   </div>

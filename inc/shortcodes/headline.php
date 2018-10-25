@@ -8,6 +8,8 @@
  * @param string $extra_classes
  *
  */
+
+ $title = str_replace(' | ', '<br />', $title);
 ?>
 
 <?php if ($extra_classes) {?><div class="<?php echo $extra_classes; ?>"><?php } ?>

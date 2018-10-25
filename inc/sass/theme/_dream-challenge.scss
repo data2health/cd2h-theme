@@ -1,5 +1,4 @@
 .card.cardDream-sm {
-  height: 320px;
   .card-top {
     .h3 { color: $azureBlue; }
     .h4 { color: $articBlue; }
@@ -8,11 +7,19 @@
   .card-excerpt { color: $articBlue; }
 }
 
-.dream-ideas-owl-carousel {
+.dream-current-owl-carousel.owl-carousel,
+.dream-ideas-owl-carousel.owl-carousel {
+  .owl-nav {
+    right: -35px;
+    left: -35px;
+  }
   .owl-item {
     padding: 5px;
-    &.active {
-      .card.cardWorkgroup {}
-    }
+  }
+}
+
+@media(min-width: 768px){
+  .card.cardDream-sm {
+    height: 320px;
   }
 }

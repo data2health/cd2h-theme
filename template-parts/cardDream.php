@@ -1,7 +1,7 @@
-<div class="card cardWorkgroup cardDream mb-5">
-  <div class="card-top">
-    <div class="media">
-      <div class="mr-3 align-self-center workgroup-icon fsr-holder">
+<div class="card cardDefault cardDream mb-5">
+  <div class="card-top d-md-flex align-items-center">
+    <div class="media d-block d-md-flex text-center text-md-left">
+      <div class="mx-auto mr-md-3 align-self-center card-icon fsr-holder">
         <?php if(!empty($icon)) { ?>
           <img src="<?php echo $icon; ?>" alt="<?php echo $title; ?>" class="image-full sr-only" />
         <?php } ?>
@@ -17,11 +17,34 @@
     <div class="card-excerpt px-5">
       <p class="card-text"><?php echo $excerpt; ?></p>
     </div>
+    <?php if(!empty($people_array)) { ?>
     <div class="card-members px-5">
-      <h6 class="h6 mb-4">Members Involved</h6>
+      <h6 class="h6 mb-2">Members Involved</h6>
+      <div class="person-list">
+        <?php foreach ($people_array as $person) {
+            $person_name = get_the_title($person);
+            echo '<span class="person">' . $person_name .'</span>';
+          } ?>
+      </div>
     </div>
+    <?php } ?>
   </div>
   <div class="card-footer d-block text-center secondary">
-    
+    <span class="h6 mb-3 d-block">Partiicipate In This Challenge</span>
+
+    <div class="row">
+      <a href="#" class="col-4">
+        <i class="fas fa-comment"></i>
+        <span class="d-block">Give Feedback</span>
+      </a>
+      <a href="#" class="col-4">
+        <i class="fas fa-file-alt"></i>
+        <span class="d-block">Submit Your Data</span>
+      </a>
+      <a href="#" class="col-4">
+        <i class="fas fa-user"></i>
+        <span class="d-block">Build A Team</span>
+      </a>
+    </div>
   </div>
 </div>

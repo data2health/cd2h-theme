@@ -63,13 +63,14 @@ function dream_meta_boxes_setup() {
   add_action( 'add_meta_boxes', 'dream_meta_boxes' );
   // Save post meta on the 'save_post' hook.
   add_action( 'save_post', 'save_dream_meta', 10, 2 );
+
 }
 
 function dream_meta_boxes() {
   add_meta_box( 'dream_meta', esc_html__( 'Meta Data', 'cd2h' ), 'dream_meta_box', 'dream_challenge', 'side', 'default' );
   add_meta_box( 'dream_content', esc_html__( 'Additional Content', 'cd2h' ), 'dream_content_box', 'dream_challenge', 'normal', 'default' );
+	add_meta_box( 'dream_person_meta', esc_html__( 'People Involved', 'cd2h' ), 'dream_person_box', 'dream_challenge', 'side', 'default' );
 }
-
 
 function dream_meta_box( $object, $box ) {
   wp_nonce_field( basename( __FILE__ ), 'dream_nonce' );
@@ -110,6 +111,19 @@ function dream_content_box( $object, $box ) {
 </p>
 <?php }
 
+function dream_person_box( $object, $box ) {
+  $person_options = get_person_options();
+  $current_people = get_post_meta($object->ID, 'people', true);
+  if(empty($current_people)) { $current_people = []; }
+?>
+<p>
+  <?php foreach ($person_options as $key => $val){ ?>
+    <label><input type="checkbox" name="people[]" value="<?php echo $val; ?>" <?php if (in_array($val, $current_people)){ echo "checked"; }?>> <?php echo $key; ?></label><br>
+  <?php } ?>
+</p>
+
+<?php }
+
 /* Save the meta box's post metadata. */
   function save_dream_meta( $post_id, $post ) {
     /* Verify the nonce before proceeding. */
@@ -120,7 +134,7 @@ function dream_content_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('current', 'dream-icon', 'secondary', 'tertiary',);
+    $meta_keys = array('current', 'dream-icon', 'secondary', 'tertiary', 'people');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

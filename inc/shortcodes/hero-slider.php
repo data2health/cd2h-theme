@@ -11,9 +11,4 @@
   <div class="hero-owl-carousel owl-carousel">
     <?php echo wpb_js_remove_wpautop($content); ?>
   </div>
-  <div class="carousel-controls d-block d-md-none">
-    <span class="prev"><i class="arrow-ico"></i> Prev</span><span class="divider">/</span>
-    <span class="next">Next <i class="arrow-ico"></i></span>
-  </div>
-  <span class="scroll d-none d-md-block"></span>
 </div>
