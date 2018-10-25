@@ -18,7 +18,7 @@ $projects_full = get_posts(array(
   'post_status' => 'publish',
 )); ?>
 
-<div class="lab-projects">
+<div class="lab-projects mb-5 mb-md-0">
   <div class="row no-gutters justify-content-center">
     <div class="col-md-3 lab-project-list">
       <?php
@@ -37,7 +37,7 @@ $projects_full = get_posts(array(
           )
         )); ?>
         <h4 class="h3 mb-2"><?php echo $term->name; ?></h4>
-        <ul class="list-unstyled mb-3 ml-3 ml-md-4 nav nav-tabs mb-0" role="tablist">
+        <ul class="list-unstyled mb-3 ml-0 ml-md-4 nav nav-tabs mb-0 d-block d-md-flex" role="tablist">
         <?php foreach($projects as $project){
           $post_ID = $project->ID;
           $title = get_the_title($post_ID);
@@ -47,8 +47,8 @@ $projects_full = get_posts(array(
           $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
           $test_prototype = get_post_meta($post_ID, '$test-prototype', true);
           $content = get_post_field('post_content', $project->ID);
-          echo '<li class="h6 my-2"><a href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
-          echo '<div class="d-block d-md-none">';
+          echo '<li class="h6 my-2"><a class="d-none d-md-block" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
+          echo '<div class="d-block d-md-none mb-4">';
           include(locate_template('template-parts/content-lab-project.php'));
           echo '</div>';
         } ?>

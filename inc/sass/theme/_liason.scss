@@ -1,0 +1,43 @@
+.cd2h-table {
+  font-weight: 300;
+  font-size: 12px;
+  color: $azureBlue;
+  letter-spacing: 1.71px;
+  text-transform: uppercase;
+  thead {
+    border-bottom: 1px solid #D5D5D7;
+    th {
+      font-weight: 500;
+      font-size: 12px;
+      color: $azureBlue;
+      letter-spacing: 1.71px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.cd2h-liason-list {
+  color: $azureBlue;
+  .h3 {
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1.71px;
+    color: $azureBlue;
+    border-bottom: 1px solid #D5D5D7;
+    text-transform: uppercase;
+  }
+  .h4 {
+    font-weight: 400;
+    font-size: 12px;
+    color: $azureBlue;
+    letter-spacing: 1.71px;
+    text-transform: uppercase;
+  }
+  .h5 {
+    font-weight: 300;
+    font-size: 12px;
+    color: $azureBlue;
+    letter-spacing: 1.71px;
+    text-transform: uppercase;
+  }
+}

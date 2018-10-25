@@ -49,3 +49,13 @@
     border-bottom: 1px solid $primary;
   }
 }
+
+.btn-light {
+  color: #212529;
+  background-color: $iceBlue;
+  border-color: $iceBlue;
+}
+
+.btn.btn-light {
+  &::after { display: none; }
+}

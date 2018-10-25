@@ -25,13 +25,20 @@
   }
   &.primary {
     &::before {
-      background-image: linear-gradient(45deg, rgba(41,110,177,0.30) 0%, #296EB1 100%);
+      background-image: linear-gradient(-45deg, rgba(41,110,177,0.30) 0%, #296EB1 100%);
     }
   }
   &.secondary {
     &::before {
       opacity: 0.8;
-      background-image: linear-gradient(-146deg, #4A7D8F 2%, #A4BEC7 99%);
+      background-image: linear-gradient(146deg, #4A7D8F 2%, #A4BEC7 99%);
     }
+  }
+}
+
+
+@media(max-width: 767px){
+  .callout-inner {
+    .media {width: 100%;}
   }
 }

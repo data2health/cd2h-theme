@@ -34,8 +34,8 @@
 </div>
 
 	<div class="container">
-		<div id="header-logos" class="row no-gutters align-items-center justify-content-center pt-3 pt-md-0 mt-2 mt-md-3 mb-4">
-			<div class="pl-1 pl-md-0 col-9 col-md-8">
+		<div id="header-logos" class="row no-gutters align-items-center justify-content-md-center pt-3 pt-md-0 mt-2 mt-md-3 mb-4">
+			<div class="pl-1 pl-md-0 col-8 col-md-8">
 				<div class="row align-items-center">
 					<?php dynamic_sidebar('site-logo'); ?>
 					<?php dynamic_sidebar('network-logo'); ?>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<?php if(!is_search()) : ?>
-			<div class="col-2 text-center d-md-none">
+			<div class="col-4 text-center d-md-none">
 				<a class="btn btn-light" data-toggle="collapse" href="#searchform-mobile" role="button" aria-expanded="false" aria-controls="searchform-mobile">
 					<i class="fas fa-search"></i>
 				</a>
@@ -83,10 +83,10 @@
 		</div>
 
 		<?php //Mobile Nav ?>
-		<nav class="d-lg-none navbar navbar-expand-lg" role="navigation">
+		<nav class="d-lg-none navbar navbar-expand-lg px-0" role="navigation">
 		  <div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<button class="navbar-toggler text-light" type="button" data-toggle="collapse" data-target="#main-nav-mobile" aria-controls="main-nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler text-light d-block w-100 text-left py-2" type="button" data-toggle="collapse" data-target="#main-nav-mobile" aria-controls="main-nav-mobile" aria-expanded="false" aria-label="Toggle navigation">
 				<i class="fas fa-bars"></i> Menu
 			</button>
 				<?php
@@ -96,7 +96,7 @@
 					'container'         => 'div',
 					'container_class'   => 'collapse navbar-collapse',
 					'container_id'      => 'main-nav-mobile',
-					'menu_class'        => 'nav navbar-nav'
+					'menu_class'        => 'nav navbar-nav px-3'
 				) );
 				?>
 			</div>

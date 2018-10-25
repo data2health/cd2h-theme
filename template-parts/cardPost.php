@@ -1,4 +1,4 @@
-<div class="card cardPost mb-5">
+<div class="card cardPost mb-md-5">
   <div class="card-img-top fsr-holder">
   <?php if(!empty($image)) { ?>
     <img src="<?php echo $image ?>" alt="<?php echo $title; ?>" class="sr-only image-full" />

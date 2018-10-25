@@ -4498,6 +4498,10 @@ var ScrollSneak = function(prefix, wait) {
         rewind: false,
         dots: false,
         items: 3,
+        responsive: {
+          0: { items: 1, margin: 15 },
+          768: { items: 3,margin: 30 }
+        }
       });
     }
     if($(".workgroup-owl-carousel").length){
@@ -4510,6 +4514,10 @@ var ScrollSneak = function(prefix, wait) {
         rewind: false,
         dots: false,
         items: 1,
+        responsive: {
+          0: { margin: 15 },
+          768: { margin: 30 }
+        }
       });
     }
     if($(".dream-ideas-owl-carousel").length){
@@ -4523,6 +4531,10 @@ var ScrollSneak = function(prefix, wait) {
         rewind: false,
         dots: false,
         items: 2,
+        responsive: {
+          0: { items: 1, margin: 15 },
+          768: { items: 2,margin: 30 }
+        }
       });
     }
     // Handle scrolling anchor links

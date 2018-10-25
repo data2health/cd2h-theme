@@ -32,3 +32,13 @@
     }
   }
 }
+
+@media(min-width: 768px){
+  .text-md-left {
+    .headline {
+      &.h1, &.h2 {
+        &::after { margin-left: 0; margin-right: auto; }
+      }
+    }
+  }
+}

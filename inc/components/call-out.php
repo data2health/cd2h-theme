@@ -60,6 +60,13 @@ vc_map(array(
         'Secondary' => 'secondary',
       ),
     ),
+    array(
+      "admin_label" => true,
+      "type" => "textfield",
+      "heading" => __("Extra Classes"),
+      "param_name" => "extra_classes",
+      "value" => '',
+    ),
   )
 ));
 class WPBakeryShortCode_cd2h_call_out extends WPBakeryShortCode {
@@ -72,6 +79,7 @@ class WPBakeryShortCode_cd2h_call_out extends WPBakeryShortCode {
         "btn_text" => '',
         "btn_url" => '',
         "color" => 'primary',
+        "extra_classes" => '',
       ), $atts
     ));
     if ($image) { $image = wp_get_attachment_image_src($atts['image'], 'full'); }

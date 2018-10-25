@@ -13,7 +13,7 @@
 ?>
 
 
-<div class="media mediaObj <?php echo $color; ?> <?php echo $extra_classes; ?>">
+<div class="media mediaObj mb-5 mb-md-2 <?php echo $color; ?> <?php echo $extra_classes; ?>">
   <?php if(!empty($image)) { ?>
   <div class="media-picture mx-auto">
     <img class="mr-3" src="<?php echo $image[0] ?>" alt="<?php echo $title; ?>">

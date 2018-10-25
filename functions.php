@@ -250,6 +250,7 @@ require get_template_directory() . '/inc/post_type/person.php';
 require get_template_directory() . '/inc/post_type/workgroup.php';
 require get_template_directory() . '/inc/post_type/lab_project.php';
 require get_template_directory() . '/inc/post_type/dream_challenge.php';
+require get_template_directory() . '/inc/post_type/liaison.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';

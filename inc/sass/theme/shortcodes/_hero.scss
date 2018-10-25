@@ -1,7 +1,8 @@
-.hero-container {
-  height: 610px;
-  background-color: $snowGreen;
-  overflow: hidden;
+.hero-container { overflow: hidden; }
+
+.hero-thumbnnail {
+  height: 300px;
+  width: 100%;
 }
 
 .hero-slider {
@@ -65,13 +66,10 @@
 
 .hero-slide {
   position: relative;
-  background-color: $iceBlue;
   a { color: $white; }
   .slider-content {
     background-color: $white;
-    margin-left: 100px;
-    max-width: 575px;
-    padding: 50px;
+    padding: 20px 0;
     .slide-body {
       font-size: .9rem;
       letter-spacing: 0.5px;
@@ -82,16 +80,33 @@
 }
 
 @media(min-width: 768px){
-  .hero-slide {
-    position: relative;
+  .hero-container {
     height: 610px;
+    background-color: $snowGreen;
+  }
+  .hero-slide {
+    height: 610px;
+    background-color: $iceBlue;
+    .slider-content {
+      max-width: 575px;
+      margin-left: 100px;
+      padding: 50px 50px;
+    }
   }
 }
 
 @media(max-width: 767px){
+  .hero-slide {background-image: none !important; }
   .hero-slider {
-    .owl-nav {
-      display: none;
+    .carousel-controls.d-block.d-md-none {
+      position: absolute;
+      top: 300px;
+      z-index: 5;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.5px;
     }
+    margin-bottom: 25px;
+    .owl-nav {display: none;}
   }
 }

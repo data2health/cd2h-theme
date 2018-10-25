@@ -66,6 +66,7 @@ function entity_cat_init() {
     )
   );
 }
+add_action( 'vc_before_init', 'entity_cat_init' );
 
 add_action( 'load-post.php', 'liaison_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'liaison_meta_boxes_setup' );
@@ -86,8 +87,8 @@ function liaison_meta_box( $object, $box ) {
   wp_nonce_field( basename( __FILE__ ), 'liaison_nonce' );
 ?>
   <p>
-    <label for="email"><strong>Representative</strong></label><br />
-    <input class="widefat" type="text" name="email" id="email" value="<?php echo get_post_meta($object->ID, 'representative', true); ?>" size="30" />
+    <label for="representative"><strong>Representative</strong></label><br />
+    <input class="widefat" type="text" name="representative" id="representative" value="<?php echo get_post_meta($object->ID, 'representative', true); ?>" size="30" />
   </p>
 <?php }
 
