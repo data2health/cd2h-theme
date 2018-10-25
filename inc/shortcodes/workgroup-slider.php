@@ -23,9 +23,14 @@ $post_wp_query = new WP_Query($args); ?>
           $tertiary = get_post_meta($post_ID, 'tertiary', true);
           $slug = sanitize_title_with_dashes($title);
           $excerpt = get_the_excerpt();
-          $icon_id = get_post_meta($post_ID, 'icon', true);
-          $icon = '';
-          if(!empty($icon_id)){$icon = wp_get_attachment_image_src(get_post_thumbnail_id($icon_id), 'full')[0];}
+          $people_array =  get_post_meta($post_ID, 'people', true);
+          $icon_id = get_post_meta($post_ID, 'workgroup-icon', true);
+          //echo $icon_id;
+          if(!empty($icon_id)){
+            $icon = wp_get_attachment_image_src($icon_id, 'full')[0];
+          } else {
+            $icon = '';
+          }
           $content = get_the_content();
           include(locate_template('template-parts/cardWorkgroup.php'));
         endwhile; wp_reset_postdata();

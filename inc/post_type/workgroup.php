@@ -79,6 +79,8 @@ function workgroup_meta_boxes_setup() {
 function workgroup_meta_boxes() {
   add_meta_box( 'workgroup_meta', esc_html__( 'Meta Data', 'cd2h' ), 'workgroup_meta_box', 'workgroup', 'side', 'default' );
   add_meta_box( 'workgroup_content', esc_html__( 'Additional Content', 'cd2h' ), 'workgroup_content_box', 'workgroup', 'normal', 'default' );
+	add_meta_box( 'workgroup_person_meta', esc_html__( 'People Involved', 'cd2h' ), 'meta_person_box', 'workgroup', 'side', 'default' );
+
 }
 
 
@@ -131,7 +133,7 @@ function workgroup_content_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('active', 'workgroup-icon', 'secondary', 'tertiary',);
+    $meta_keys = array('active', 'workgroup-icon', 'secondary', 'tertiary', 'people');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

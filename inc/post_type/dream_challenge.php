@@ -69,7 +69,7 @@ function dream_meta_boxes_setup() {
 function dream_meta_boxes() {
   add_meta_box( 'dream_meta', esc_html__( 'Meta Data', 'cd2h' ), 'dream_meta_box', 'dream_challenge', 'side', 'default' );
   add_meta_box( 'dream_content', esc_html__( 'Additional Content', 'cd2h' ), 'dream_content_box', 'dream_challenge', 'normal', 'default' );
-	add_meta_box( 'dream_person_meta', esc_html__( 'People Involved', 'cd2h' ), 'dream_person_box', 'dream_challenge', 'side', 'default' );
+	add_meta_box( 'dream_person_meta', esc_html__( 'People Involved', 'cd2h' ), 'meta_person_box', 'dream_challenge', 'side', 'default' );
 }
 
 function dream_meta_box( $object, $box ) {
@@ -111,18 +111,6 @@ function dream_content_box( $object, $box ) {
 </p>
 <?php }
 
-function dream_person_box( $object, $box ) {
-  $person_options = get_person_options();
-  $current_people = get_post_meta($object->ID, 'people', true);
-  if(empty($current_people)) { $current_people = []; }
-?>
-<p>
-  <?php foreach ($person_options as $key => $val){ ?>
-    <label><input type="checkbox" name="people[]" value="<?php echo $val; ?>" <?php if (in_array($val, $current_people)){ echo "checked"; }?>> <?php echo $key; ?></label><br>
-  <?php } ?>
-</p>
-
-<?php }
 
 /* Save the meta box's post metadata. */
   function save_dream_meta( $post_id, $post ) {

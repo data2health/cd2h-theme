@@ -4,7 +4,6 @@
 * @param array $extra_classes
 *
 */
-//$section_slug = sanitize_title_with_dashes($faq_title);
 $args = array(
   'taxonomy' => 'section',
   'hide_empty' => false,
@@ -20,10 +19,9 @@ $projects_full = get_posts(array(
 
 <div class="lab-projects mb-5 mb-md-0">
   <div class="row no-gutters justify-content-center">
-    <div class="col-md-3 lab-project-list">
-      <?php
-      $count = 0; foreach ( $terms as $term ) {
-        $section_slug = sanitize_title_with_dashes($term->id);
+    <div class="col-md-3 lab-project-list nav nav-tabs" role="tablist">
+      <?php foreach ( $terms as $term ) {
+        $section_slug = sanitize_title_with_dashes($term->term_id);
         $projects = get_posts(array(
           'post_type' => 'lab_project',
           'numberposts' => -1,
@@ -36,8 +34,12 @@ $projects_full = get_posts(array(
             )
           )
         )); ?>
-        <h4 class="h3 mb-2"><?php echo $term->name; ?></h4>
-        <ul class="list-unstyled mb-3 ml-0 ml-md-4 nav nav-tabs mb-0 d-block d-md-flex" role="tablist">
+        <h4 class="h3 mb-2 d-none d-md-block"><?php echo $term->name; ?></h4>
+        <span class="d-block d-md-none text-center project-cat-xs pb-1 mb-2">
+          <a class="d-block" href="#project-type-<?php echo $section_slug; ?>" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="project-type-<?php echo $section_slug; ?>">
+            <?php echo $term->name; ?>
+        </a></span>
+        <ul class="list-unstyled mb-3 ml-0 ml-md-4 mb-0 d-md-flex collapse" id="project-type-<?php echo $section_slug; ?>" >
         <?php foreach($projects as $project){
           $post_ID = $project->ID;
           $title = get_the_title($post_ID);
@@ -47,8 +49,8 @@ $projects_full = get_posts(array(
           $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
           $test_prototype = get_post_meta($post_ID, '$test-prototype', true);
           $content = get_post_field('post_content', $project->ID);
-          echo '<li class="h6 my-2"><a class="d-none d-md-block" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
-          echo '<div class="d-block d-md-none mb-4">';
+          echo '<li class="h6 my-2 d-none d-md-block"><a class="nav-link py-0" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
+          echo '<div class="d-block d-md-none">';
           include(locate_template('template-parts/content-lab-project.php'));
           echo '</div>';
         } ?>
@@ -78,6 +80,5 @@ $projects_full = get_posts(array(
       } ?>
       </div>
     </div>
-
   </div>
 </div>

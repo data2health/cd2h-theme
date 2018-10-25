@@ -27,7 +27,7 @@ $post_wp_query = new WP_Query($args); ?>
           $excerpt = get_the_excerpt();
           $icon_id = get_post_meta($post_ID, 'icon', true);
           $icon = '';
-          if(!empty($icon_id)){$icon = wp_get_attachment_image_src(get_post_thumbnail_id($icon_id), 'full')[0];}
+          if(!empty($icon_id)){$icon = wp_get_attachment_image_src($icon_id, 'full')[0];}
           $content = get_the_content();
           include(locate_template('template-parts/cardDream-sm.php'));
         endwhile; wp_reset_postdata();

@@ -4,3 +4,12 @@
     left: -35px;
   }
 }
+
+@media(max-width: 767px){
+  .posts-owl-carousel.owl-carousel {
+    .owl-nav {
+      right: 15px;
+      left: 15px;
+    }
+  }
+}

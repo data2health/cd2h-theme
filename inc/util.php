@@ -80,3 +80,17 @@ function get_person_options() {
   }
   return $choice_array;
 }
+
+
+function meta_person_box( $object, $box ) {
+  $person_options = get_person_options();
+  $current_people = get_post_meta($object->ID, 'people', true);
+  if(empty($current_people)) { $current_people = []; }
+?>
+<p>
+  <?php foreach ($person_options as $key => $val){ ?>
+    <label><input type="checkbox" name="people[]" value="<?php echo $val; ?>" <?php if (in_array($val, $current_people)){ echo "checked"; }?>> <?php echo $key; ?></label><br>
+  <?php } ?>
+</p>
+
+<?php }

@@ -4,6 +4,30 @@
   color: $azureBlue;
 }
 
+.project-cat-xs {
+  color: $azureBlue;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid $azureBlue;
+  text-transform: uppercase;
+  a {
+    color: $azureBlue !important;
+    font-weight: 500;
+    position: relative;
+    &::after {
+      content: '-';
+      position: absolute;
+      right: 0;
+      font-size: 22px;
+      line-height: 15px;
+    }
+    &:focus {
+      &::after {
+        content: '+';
+      }
+    }
+  }
+}
 
 .lab-project-list {
   .nav-tabs {border-bottom-width: 0;}
@@ -18,7 +42,13 @@
     letter-spacing: 1.71px;
     text-transform: uppercase;
   }
-  a {color: $articBlue;}
+  .nav-link {
+    color: $articBlue; border-width: 0;
+    &.active {
+      background-color: transparent !important;
+      color: $articBlue;
+    }
+  }
 }
 
 

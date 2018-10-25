@@ -23,3 +23,13 @@
     height: 320px;
   }
 }
+
+
+@media(max-width: 767px){
+  .dream-ideas-owl-carousel.owl-carousel {
+    .owl-nav {
+      right: -15px;
+      left: -15px;
+    }
+  }
+}
