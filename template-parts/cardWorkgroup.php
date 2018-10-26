@@ -29,5 +29,5 @@
     </div>
     <?php } ?>
   </div>
-  <a class="card-footer d-block text-center secondary" href="#">Register Interest</a>
+  <a class="card-footer d-block text-center secondary" href="https://redcap.iths.org/surveys/index.php?s=Y43RWPRKAF">Register Interest</a>
 </div>

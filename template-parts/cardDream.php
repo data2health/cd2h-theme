@@ -30,7 +30,7 @@
     <?php } ?>
   </div>
   <div class="card-footer d-block text-center secondary">
-    <span class="h6 mb-3 d-block">Partiicipate In This Challenge</span>
+    <span class="h6 mb-3 d-block">Participate In This Challenge</span>
 
     <div class="row">
       <a href="#" class="col-4">

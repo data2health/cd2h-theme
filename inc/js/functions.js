@@ -114,6 +114,14 @@
         }
       });
     }
+    if($(".lab-project-list").length){
+      jQuery('.lab-project-list .nav-link').click(function(){
+        console.log('showing tab');
+        jQuery('.lab-project-list .nav-link').not(this).removeClass('active');
+        jQuery(this).tab('show');
+      });
+    }
+
     // Handle scrolling anchor links
     $doc.on('click', '.scroll-to a', function(e){
       var href = $(this).attr('href');
