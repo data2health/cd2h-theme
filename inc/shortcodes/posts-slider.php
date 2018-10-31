@@ -4,11 +4,14 @@
 * @param string $extra_classes
 */
 $args = array(
-  'posts_per_page'   => -1,
+  'posts_per_page'   => $number,
   'order' => 'ASC',
   'post_status' => 'publish',
   'post_type' => 'post',
 );
+if(!empty($category)){
+  $args['cat'] = $category;
+}
 $post_wp_query = new WP_Query($args); ?>
 
 
@@ -17,16 +20,16 @@ $post_wp_query = new WP_Query($args); ?>
       <?php
       if ( $post_wp_query->have_posts() ) :
         while ( $post_wp_query->have_posts() ) : $post_wp_query->the_post();
-          $post_ID = get_the_ID();
-          $title = get_the_title($post_ID);
-          $slug = sanitize_title_with_dashes($title);
-          $excerpt = get_the_excerpt();
-          $featured_category_id = get_post_meta($post_ID, 'featured-category', true);
-          if (!empty($featured_category_id)) {
-            $featured_category = get_term($featured_category_id);
-          } else { $featured_category = ''; }
-          $image = wp_get_attachment_image_src(get_post_thumbnail_id($post_ID), 'full');
-          $content = get_the_content();
+        $post_ID = get_the_ID();
+        $title = get_the_title($post_ID);
+        $slug = sanitize_title_with_dashes($title);
+        $featured_category_id = get_post_meta($post_ID, 'featured-category', true);
+        if (!empty($featured_category_id)) {
+          $featured_category = get_term($featured_category_id)->name;
+        } else { $featured_category = ''; }
+        $excerpt = get_the_excerpt();
+        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post_ID), 'full');
+        $content = get_the_content();
           include(locate_template('template-parts/cardPost.php'));
         endwhile; wp_reset_postdata();
       endif; ?>

@@ -22,6 +22,8 @@ class WPBakeryShortCode_cd2h_posts_slider extends WPBakeryShortCode {
   protected function content($atts, $content = null) {
     extract(shortcode_atts(
       array(
+        "number" => '9',
+        "category" => '',
         "extra_classes" => '',
       ), $atts
     ));
@@ -47,6 +49,17 @@ vc_map(array(
       "heading" => __("Post count"),
       "param_name" => "number",
       "value" => '',
+    ),
+    array(
+      "admin_label" => true,
+      "type" => "dropdown",
+      "heading" => __("Formatting"),
+      "description" => "Styling",
+      "param_name" => "format",
+      "value" => array(
+        'Default' => '',
+        'Condensed' => 'condensed',
+      ),
     ),
     array(
       "admin_label" => true,

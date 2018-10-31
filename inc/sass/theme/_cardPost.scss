@@ -1,4 +1,7 @@
+.media.cardPost,
 .card.cardPost {
+  background-color: $white;
+  border-radius: 8px;
   height: 525px;
   border-radius: 10px;
   .card-img-top {
@@ -41,5 +44,36 @@
 }
 
 .cardPost.secondary {
-  .card-footer {background-color: $secondary;}
+  .h6 { color: $secondary; }
+  .card-footer {
+    background-color: $secondary;
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 5px;
+      background-image: url('../img/icons/chevrons/btn_chevron.png');
+      height: 9px;
+      width: 5px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.media.cardPost {
+  height: auto;
+  .card-img-top {
+    width: 150px;
+    height: 260px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 0px;
+  }
+  .card-body {
+    min-height: 200px;
+  }
+  .card-footer {
+    border-bottom-left-radius: 0px;
+  }
 }

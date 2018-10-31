@@ -64,6 +64,10 @@
   font-weight: 500;
 }
 
+.btn-link.secondary{
+  color: $secondary;
+}
+
 @media(max-width: 767px){
   .btn.btn-link {
     padding-left: 0;

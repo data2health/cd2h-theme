@@ -11747,28 +11747,36 @@ nav a:hover,
     .card.card-lg .card-top {
       min-height: 190px; } }
 
+.media.cardPost,
 .card.cardPost {
+  background-color: #fff;
+  border-radius: 8px;
   height: 525px;
   border-radius: 10px; }
+  .media.cardPost .card-img-top,
   .card.cardPost .card-img-top {
     background-color: #F1F5F6;
     height: 200px;
     margin-bottom: 25px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
+  .media.cardPost .h6,
   .card.cardPost .h6 {
     font-size: 9.5px;
     color: #296DB2;
     letter-spacing: 1.36px;
     text-transform: uppercase; }
+  .media.cardPost .card-title,
   .card.cardPost .card-title {
     font-size: 24px;
     color: #4B4B4B;
     letter-spacing: 0.25px;
     line-height: 28px;
     font-weight: 400; }
+  .media.cardPost .card-text,
   .card.cardPost .card-text {
     font-weight: 300; }
+  .media.cardPost .card-footer,
   .card.cardPost .card-footer {
     background-color: #296DB2;
     text-transform: uppercase;
@@ -11779,8 +11787,34 @@ nav a:hover,
     border-bottom-right-radius: 10px;
     padding: 1.25rem 1.25rem; }
 
+.cardPost.secondary .h6 {
+  color: #4A7D8F; }
+
 .cardPost.secondary .card-footer {
   background-color: #4A7D8F; }
+  .cardPost.secondary .card-footer::after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    background-image: url("../img/icons/chevrons/btn_chevron.png");
+    height: 9px;
+    width: 5px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; }
+
+.media.cardPost {
+  height: auto; }
+  .media.cardPost .card-img-top {
+    width: 150px;
+    height: 260px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 0px; }
+  .media.cardPost .card-body {
+    min-height: 200px; }
+  .media.cardPost .card-footer {
+    border-bottom-left-radius: 0px; }
 
 .workgroup-owl-carousel .owl-item {
   padding: 5px; }
@@ -12062,6 +12096,9 @@ nav a:hover,
 
 .btn.btn-link {
   font-weight: 500; }
+
+.btn-link.secondary {
+  color: #4A7D8F; }
 
 @media (max-width: 767px) {
   .btn.btn-link {
