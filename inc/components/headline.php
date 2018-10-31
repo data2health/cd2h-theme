@@ -1,7 +1,7 @@
 <?php
 // Callout Heading
 vc_map(array(
-  "name" => "headline",
+  "name" => "Headline",
   "description" => "Heading for a Content Section",
   "base" => "cd2h_headline",
   "category" => "Content",
@@ -34,6 +34,7 @@ vc_map(array(
         'Headline 2' => 'headline h2',
         'Title' => 'title h1',
         'Title 2' => 'title h2',
+        'Title 3' => 'title h3',
       ),
     ),
     array(

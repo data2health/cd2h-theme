@@ -246,6 +246,7 @@ function my_body_classes( $classes ) {
 require get_template_directory() . '/inc/util.php';
 
 // Post types
+require get_template_directory() . '/inc/post_type/post.php';
 require get_template_directory() . '/inc/post_type/person.php';
 require get_template_directory() . '/inc/post_type/workgroup.php';
 require get_template_directory() . '/inc/post_type/lab_project.php';

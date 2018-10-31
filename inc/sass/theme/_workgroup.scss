@@ -6,3 +6,11 @@
     }
   }
 }
+
+@media(min-width: 768px){
+  .card.cardWorkgroup {
+    .card-top {
+      min-height: 200px;
+    }
+  }
+}

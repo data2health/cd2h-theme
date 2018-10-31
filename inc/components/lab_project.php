@@ -5,7 +5,7 @@ vc_map(array(
   "name" => "Lab Projects List",
   "description" => "Displays a list of lab project organized by category",
   "base" => "cd2h_lab_project_block",
-  "category" => "Team",
+  "category" => "Content",
   "show_settings_on_create" => false,
   "content_element" => true,
   "params" => array(

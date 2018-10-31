@@ -81,6 +81,15 @@ function get_person_options() {
   return $choice_array;
 }
 
+function get_post_category_options() {
+  $options = array( 'All Posts' => '');
+  $categories = get_categories(array('hide_empty' => false,));
+  foreach($categories as $category){
+    $options[$category->name] = $category->term_id;
+  }
+  return $options;
+}
+
 
 function meta_person_box( $object, $box ) {
   $person_options = get_person_options();

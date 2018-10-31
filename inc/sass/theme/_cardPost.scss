@@ -39,3 +39,7 @@
     padding: 1.25rem 1.25rem;
   }
 }
+
+.cardPost.secondary {
+  .card-footer {background-color: $secondary;}
+}

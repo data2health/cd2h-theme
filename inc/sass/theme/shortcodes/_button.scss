@@ -59,3 +59,14 @@
 .btn.btn-light {
   &::after { display: none; }
 }
+
+.btn.btn-link {
+  font-weight: 500;
+}
+
+@media(max-width: 767px){
+  .btn.btn-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

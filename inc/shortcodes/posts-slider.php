@@ -21,6 +21,10 @@ $post_wp_query = new WP_Query($args); ?>
           $title = get_the_title($post_ID);
           $slug = sanitize_title_with_dashes($title);
           $excerpt = get_the_excerpt();
+          $featured_category_id = get_post_meta($post_ID, 'featured-category', true);
+          if (!empty($featured_category_id)) {
+            $featured_category = get_term($featured_category_id);
+          } else { $featured_category = ''; }
           $image = wp_get_attachment_image_src(get_post_thumbnail_id($post_ID), 'full');
           $content = get_the_content();
           include(locate_template('template-parts/cardPost.php'));

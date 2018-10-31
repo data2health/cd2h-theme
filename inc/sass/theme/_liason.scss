@@ -14,6 +14,12 @@
       text-transform: uppercase;
     }
   }
+
+  th, td {
+    &:last-of-type {
+      border-right-width: 0 !important;
+    }
+  }
 }
 
 .cd2h-liason-list {
