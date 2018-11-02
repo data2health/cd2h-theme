@@ -17,7 +17,7 @@ if(!empty($category)){
 }
 $post_wp_query = new WP_Query($args); ?>
 
-<div class="posts-container mb-5 <?php echo $extra_classes; ?>">
+<div class="posts-container mb-md-5 <?php echo $extra_classes; ?>">
   <div class="row">
   <?php
   if ( $post_wp_query->have_posts() ) :

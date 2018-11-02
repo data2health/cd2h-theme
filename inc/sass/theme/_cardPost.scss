@@ -64,16 +64,20 @@
 .media.cardPost {
   height: auto;
   .card-img-top {
-    width: 150px;
-    height: 260px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 10px;
+    height: 200px;
     margin-bottom: 0px;
   }
-  .card-body {
-    min-height: 200px;
-  }
-  .card-footer {
-    border-bottom-left-radius: 0px;
+}
+
+@media(min-width: 768px){
+  .media.cardPost {
+    .card-img-top {
+      height: 260px;
+      width: 150px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
+    .card-body { min-height: 200px; }
+    .card-footer { border-bottom-left-radius: 0px; }
   }
 }

@@ -24,7 +24,7 @@
     $color = 'primary';
   }
 ?>
-<div class="card cardPost mb-md-5 <?php echo $color; ?>">
+<div class="card cardPost mb-5 <?php echo $color; ?>">
   <div class="card-img-top fsr-holder">
   <?php if(!empty($image)) { ?>
     <img src="<?php echo $image[0] ?>" alt="<?php echo $title; ?>" class="sr-only image-full" />
