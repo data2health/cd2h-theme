@@ -12,45 +12,25 @@
  * @package CD2H_Website
  */
 
+$post_id = get_option( 'page_for_posts' );
+
+$title = get_the_title($post_id);
+$the_content = apply_filters('the_content', get_post_field('post_content', $post_id));
+$image = get_post_thumbnail_id($post_id);
+
 get_header();
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			<?php echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_content .'[/cd2h_hero_slide]' ); ?>
+			<?php echo do_shortcode( '[cd2h_padding_block]' ); ?>
 
-		<?php
-		if ( have_posts() ) :
+			<div class="posts-container">
+				<div class="posts-container-inner">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
+				</div>
+			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

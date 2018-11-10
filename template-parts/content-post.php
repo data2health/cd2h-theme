@@ -7,28 +7,23 @@
  * @package CD2H_Website
  */
 
- $classes = array('col-md-8', );
-
 ?>
 
-<div class="row">
-<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="entry-title h1 mb-3">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title h1 mb-3"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php
-				cd2h_posted_on();
-				cd2h_posted_by();
-				?>
+				<?php cd2h_posted_by(); ?> | <?php cd2h_posted_on();?>
 			</div><!-- .entry-meta -->
+      <?php cd2h_entry_footer(); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -55,9 +50,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php cd2h_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
-
-</div>

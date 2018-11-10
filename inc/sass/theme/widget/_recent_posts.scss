@@ -1,0 +1,33 @@
+.recent-posts-widget {
+  .widget-title {
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.69px;
+  }
+  .card-widget {
+    border-width: 0;
+    .card-img-top {
+      height: 150px;
+    }
+  }
+  .widget-post {
+    border-bottom: 1px solid #979797;
+    .fsr-holder {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .h6 {
+      font-weight: 500;
+      font-size: 11px;
+      color: $azureBlue;
+      letter-spacing: 3.14px;
+    }
+    .h5 {
+      font-weight: 400;
+      font-size: 18px;
+      color: #4B4B4B;
+      letter-spacing: 0.56px;
+    }
+  }
+}

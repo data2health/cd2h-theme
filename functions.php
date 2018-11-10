@@ -175,7 +175,7 @@ if( !has_nav_menu( $menulocation ) ){
 
 function ctsa_widgets_init() {
 	register_sidebar( array(
-			'name'          => __( 'Network Logo', 'theme_name' ),
+			'name'          => __( 'Network Logo', 'cd2h' ),
 			'id'            => 'network-logo',
 			'before_widget' => '<div id="network-logo" class="d-none d-md-block col-md-4 px-5 site-logo">',
 			'after_widget'  => '</div>',
@@ -183,7 +183,7 @@ function ctsa_widgets_init() {
 			'after_title'   => '-->',
 	) );
 	register_sidebar( array(
-			'name'          => __( 'Network Logo #2', 'theme_name' ),
+			'name'          => __( 'Network Logo #2', 'cd2h' ),
 			'id'            => 'network-logo-2',
 			'before_widget' => '<div id="network-logo-2" class="d-none d-md-block col-md-4 px-4 site-logo">',
 			'after_widget'  => '</div>',
@@ -191,7 +191,7 @@ function ctsa_widgets_init() {
 			'after_title'   => '-->',
 	) );
 	register_sidebar( array(
-			'name'          => __( 'Site Logo', 'theme_name' ),
+			'name'          => __( 'Site Logo', 'cd2h' ),
 			'id'            => 'site-logo',
 			'before_widget' => '<div id="site-logo" class="col-md-4 pr-3 site-logo">',
 			'after_widget'  => '</div>',
@@ -199,7 +199,7 @@ function ctsa_widgets_init() {
 			'after_title'   => '-->',
 	) );
 	register_sidebar( array(
-			'name'          => __( 'Footer Logo', 'theme_name' ),
+			'name'          => __( 'Footer Logo', 'cd2h' ),
 			'id'            => 'footer-logo',
 			'before_widget' => '<div id="footer-logo" class="col-md-3 pr-3 site-logo">',
 			'after_widget'  => '</div>',
@@ -207,7 +207,7 @@ function ctsa_widgets_init() {
 			'after_title'   => '-->',
 	) );
     register_sidebar( array(
-        'name'          => __( 'Sidebar', 'theme_name' ),
+        'name'          => __( 'Sidebar', 'cd2h' ),
         'id'            => 'sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -262,6 +262,8 @@ require get_template_directory() . '/inc/template-functions.php';
 // Theme settings
 require get_template_directory() . '/inc/theme-settings.php';
 
+//Load widgets
+require get_template_directory() . '/inc/widgets/recent_posts.php';
 
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'cd2h_register_required_plugins' );

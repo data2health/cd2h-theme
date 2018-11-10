@@ -34,7 +34,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'cd2h' ),
+						__( 'Edit <span class="sr-only">%s</span>', 'cd2h' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -43,7 +43,7 @@
 					),
 					get_the_title()
 				),
-				'<span class="edit-link">',
+				'<span class="edit-link sr-only">',
 				'</span>'
 			);
 			?>
