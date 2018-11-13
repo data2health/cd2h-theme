@@ -7,53 +7,62 @@
  * @package CD2H_Website
  */
 
+ $post_id = get_option( 'page_for_posts' );
+ $title = get_the_title($post_id);
+ $the_content = apply_filters('the_content', get_post_field('post_content', $post_id));
+ $image = get_post_thumbnail_id($post_id);
+
+ $archive_category = get_queried_object();
+
+
 get_header();
 ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-			<div class="row">
+			<header class="page-header sr-only">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
 
-				<div class="col-md-8">
-				<?php if ( have_posts() ) : ?>
+			<?php echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_content .'[/cd2h_hero_slide]' ); ?>
 
-					<header class="page-header">
+			<div class="blog-container mb-4">
+				<div class="blog-container-inner">
+
+					<ul class="cat-list list-inline text-center mb-3 mb-5">
+						<?php $categories = get_categories( array(
+							    'orderby' => 'name',
+							    'order'   => 'ASC',
+									'hide_empty' => false,
+							) );
+							foreach( $categories as $category ) {
+							    $category_link = sprintf(
+							        '<a href="%1$s" alt="%2$s">%3$s</a>',
+							        esc_url( get_category_link( $category->term_id ) ),
+							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+							        esc_html( $category->name )
+							    );
+									if ($category->term_id == $archive_category->term_id) { $activeClass= 'active'; } else { $activeClass = ''; }
+							    echo '<li class="list-inline-item mx-3 '.$activeClass.'">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li> ';
+							} ?>
+					</ul>
+
+					<?php if ( have_posts() ) : ?>
 						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="archive-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
-
-					<?php
-					/* Start the Loop */
-					while ( have_posts() ) :
-						the_post();
-
-						/*
-						 * Include the Post-Type-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', get_post_type() );
-
-					endwhile;
-
-					the_posts_navigation();
-
-				else :
-
-					get_template_part( 'template-parts/content', 'none' );
-
-				endif; ?>
-		</div>
-		<div class="col-md-4">
-			<div class="entry-sidebar mx-2 ml-md-4 mr-md-0">
-				<?php dynamic_sidebar('sidebar'); ?>
+						while ( have_posts() ) :
+							the_post();
+							get_template_part( 'template-parts/content', 'media' );
+						endwhile;
+						the_posts_navigation();
+					else :
+						get_template_part( 'template-parts/content', 'none' );
+					endif; ?>
+				</div>
 			</div>
-		</div>
-
-		</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
