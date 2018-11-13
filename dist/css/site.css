@@ -11891,6 +11891,20 @@ nav a:hover,
     .nav-links .nav-next a {
       background-color: #296DB2;
       width: 175px; }
+  .nav-links .nav-previous a::after {
+    display: none !important; }
+  .nav-links .nav-previous a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    background-image: url("../img/icons/chevrons/btn_chevron.png");
+    height: 9px;
+    width: 5px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
 .owl-carousel .owl-nav {
   color: #fff;

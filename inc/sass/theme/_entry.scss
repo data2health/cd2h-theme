@@ -67,4 +67,19 @@
       width: 175px;
     }
   }
+  .nav-previous a {
+    &::after {display: none !important;}
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-right: 5px;
+      background-image: url('../img/icons/chevrons/btn_chevron.png');
+      height: 9px;
+      width: 5px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+    }
+  }
 }
