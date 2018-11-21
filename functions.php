@@ -249,7 +249,7 @@ require get_template_directory() . '/inc/util.php';
 require get_template_directory() . '/inc/post_type/post.php';
 require get_template_directory() . '/inc/post_type/person.php';
 require get_template_directory() . '/inc/post_type/workgroup.php';
-require get_template_directory() . '/inc/post_type/lab_project.php';
+require get_template_directory() . '/inc/post_type/project.php';
 require get_template_directory() . '/inc/post_type/dream_challenge.php';
 require get_template_directory() . '/inc/post_type/liaison.php';
 

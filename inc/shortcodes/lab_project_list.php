@@ -11,10 +11,17 @@ $args = array(
 $terms = get_terms( $args );
 $count = 0;
 
+$meta_query = array(
+ 'is_public' => array(
+   'key' => 'lab_project',
+   'value' => 'true',
+ )
+);
 $projects_full = get_posts(array(
-  'post_type' => 'lab_project',
+  'post_type' => 'project',
   'numberposts' => -1,
   'post_status' => 'publish',
+  'meta_query' => $meta_query,
 )); ?>
 
 <div class="lab-projects mb-5 mb-md-0">
@@ -23,9 +30,10 @@ $projects_full = get_posts(array(
       <?php foreach ( $terms as $term ) {
         $section_slug = sanitize_title_with_dashes($term->term_id);
         $projects = get_posts(array(
-          'post_type' => 'lab_project',
+          'post_type' => 'project',
           'numberposts' => -1,
           'post_status' => 'publish',
+          'meta_query' => $meta_query,
           'tax_query' => array(
             array(
               'taxonomy' => 'section',
@@ -45,11 +53,12 @@ $projects_full = get_posts(array(
           $title = get_the_title($post_ID);
           $slug = 'project-' . $post_ID;
           $lead = get_post_meta($post_ID, 'project-lead', true);
+          $secondary = get_post_meta($post_ID, 'secondary', true);
           $acknowledgements = get_post_meta($post_ID, 'acknowledgements', true);
           $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
           $test_prototype = get_post_meta($post_ID, '$test-prototype', true);
           $content = get_post_field('post_content', $project->ID);
-          echo '<li class="h6 my-2 d-none d-md-block"><a class="nav-link py-0" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
+          echo '<li class="h6 my-2 d-none d-md-block w-100"><a class="nav-link py-0" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
           echo '<div class="d-block d-md-none">';
           include(locate_template('template-parts/content-lab-project.php'));
           echo '</div>';
@@ -69,6 +78,7 @@ $projects_full = get_posts(array(
         $title = get_the_title($post_ID);
         $slug = 'project-' . $post_ID;
         $lead = get_post_meta($post_ID, 'project-lead', true);
+        $secondary = get_post_meta($post_ID, 'secondary', true);
         $acknowledgements = get_post_meta($post_ID, 'acknowledgements', true);
         $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
         $test_prototype = get_post_meta($post_ID, '$test-prototype', true);

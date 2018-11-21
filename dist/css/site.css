@@ -11768,6 +11768,12 @@ nav a:hover,
 .screen-reader-text {
   display: none; }
 
+.blue-bg {
+  background-color: #F2F7FB; }
+
+.green-bg {
+  background-color: #F1F5F6; }
+
 @media (min-width: 768px) {
   .innovate {
     background-color: #296DB2;
@@ -12022,12 +12028,39 @@ nav a:hover,
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 1.25rem 1.25rem; }
+    .card.cardDefault .card-footer::after {
+      content: '';
+      display: inline-block;
+      margin-left: 5px;
+      background-image: url("../img/icons/chevrons/btn_chevron.png");
+      height: 9px;
+      width: 5px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat; }
     .card.cardDefault .card-footer a {
       color: #fff; }
     .card.cardDefault .card-footer .h6 {
       font-weight: 500;
       font-size: 11px;
       letter-spacing: 2px; }
+
+.card.cardPrimary .card-top .h6,
+.card.cardPrimary .card-top .h3 {
+  color: #296DB2; }
+
+.card.cardPrimary .card-top .h4 {
+  color: #94B6D8; }
+
+.card.cardPrimary .card-body .card-text {
+  color: #94B6D8; }
+
+.card.cardPrimary .card-footer {
+  background-color: #296DB2; }
+
+.card.cardDefault .card-icon {
+  height: 75px;
+  width: 75px; }
 
 @media (min-width: 768px) {
   .workgroup-owl-carousel {
@@ -12083,16 +12116,6 @@ nav a:hover,
 
 .cardPost.secondary .card-footer {
   background-color: #4A7D8F; }
-  .cardPost.secondary .card-footer::after {
-    content: '';
-    display: inline-block;
-    margin-left: 5px;
-    background-image: url("../img/icons/chevrons/btn_chevron.png");
-    height: 9px;
-    width: 5px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat; }
 
 .media.cardPost {
   height: auto; }
@@ -12113,6 +12136,25 @@ nav a:hover,
 
 .workgroup-owl-carousel .owl-item {
   padding: 5px; }
+
+.workgroup-overview-inner {
+  max-width: 760px; }
+
+.workgroup-projects-list {
+  max-width: 900px; }
+
+.lead-contact-title {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2.29px; }
+
+.lead-contact {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 12px;
+  color: #A4BEC7;
+  letter-spacing: 3.43px; }
 
 @media (min-width: 768px) {
   .card.cardWorkgroup .card-top {
@@ -12225,6 +12267,12 @@ nav a:hover,
 .text-center .headline.h1::after, .text-center .headline.h2::after {
   margin-left: auto;
   margin-right: auto; }
+
+.color-primary {
+  color: #296DB2; }
+
+.color-secondary {
+  color: #4A7D8F; }
 
 @media (min-width: 768px) {
   .text-md-left .headline.h1::after, .text-md-left .headline.h2::after {

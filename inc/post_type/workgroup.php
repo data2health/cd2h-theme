@@ -45,8 +45,8 @@ function workgroup_post_type() {
 		'label'                 => __( 'Workgroup', 'cd2h' ),
 		'description'           => __( 'Workgroup post type', 'cd2h' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'excerpt' ),
+		'taxonomies'            => array(),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -77,10 +77,10 @@ function workgroup_meta_boxes_setup() {
 }
 
 function workgroup_meta_boxes() {
-  add_meta_box( 'workgroup_meta', esc_html__( 'Meta Data', 'cd2h' ), 'workgroup_meta_box', 'workgroup', 'side', 'default' );
+  add_meta_box( 'workgroup_meta', esc_html__( 'Icon', 'cd2h' ), 'workgroup_meta_box', 'workgroup', 'side', 'default' );
   add_meta_box( 'workgroup_content', esc_html__( 'Additional Content', 'cd2h' ), 'workgroup_content_box', 'workgroup', 'normal', 'default' );
 	add_meta_box( 'workgroup_person_meta', esc_html__( 'People Involved', 'cd2h' ), 'meta_person_box', 'workgroup', 'side', 'default' );
-
+	add_meta_box( 'workgroup_secondary_image', esc_html__( 'Secondary Image', 'cd2h' ), 'workgroup_secondary_image_box', 'workgroup', 'side', 'default' );
 }
 
 
@@ -88,22 +88,32 @@ function workgroup_meta_box( $object, $box ) {
   wp_nonce_field( basename( __FILE__ ), 'workgroup_nonce' );
   $workgroup_icon = get_post_meta($object->ID, 'workgroup-icon', true);
   $image = '';
-  $curr_active = get_post_meta($object->ID, 'active', true);
-  if(empty($curr_active)) { $curr_active = false; }
   if(!empty($workgroup_icon)){$image = wp_get_attachment_image_src($workgroup_icon)[0];}
 ?>
-  <p>
-    <label for="active">
-      <input type="checkbox" name="active" value="true" <?php if($curr_active){ echo "checked"; } ?>> <strong>Active</strong>
-    </label>
-  </p>
-  <div class="media-section">
-    <label for="workgroup-icon"><strong>Icon</strong></label><br>
+  <div class="media-section" style="text-align: center;">
     <input type="hidden" id="workgroup-icon" name="workgroup-icon" value="<?php echo $workgroup_icon; ?>" />
     <a class="button image-add" href="#" data-uploader-title="Add Icon" data-uploader-button-text="Add image" data-for-input="workgroup-icon" <?php if(!empty($image)){ echo 'style="display:none;"'; } ?> >Add image</a><br>
       <div class="change-section" <?php if(empty($image)){ echo 'style="display:none;"'; } ?>>
         <a class="change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image" data-for-input="workgroup-icon">
           <img class="image-preview" src="<?php echo $image; ?>" />
+        </a><br>
+        <p class="howto">Click the icon to edit or update</p>
+        <small><a class="remove-image" href="#">Remove icon</a></small>
+      </div>
+  </div>
+<?php }
+
+function workgroup_secondary_image_box( $object, $box ) {
+  $secondary_image = get_post_meta($object->ID, 'secondary-image', true);
+  $secondary_image_src = '';
+  if(!empty($secondary_image)){$secondary_image_src = wp_get_attachment_image_src($secondary_image)[0];}
+?>
+  <div class="media-section">
+    <input type="hidden" id="secondary-image" name="secondary-image" value="<?php echo $secondary_image; ?>" />
+    <a class="button image-add" href="#" data-uploader-title="Add Image" data-uploader-button-text="Add image" data-for-input="secondary-image" <?php if(!empty($secondary_image_src)){ echo 'style="display:none;"'; } ?> >Add image</a><br>
+      <div class="change-section" <?php if(empty($secondary_image_src)){ echo 'style="display:none;"'; } ?>>
+        <a class="change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image" data-for-input="secondary-image">
+          <img class="image-preview" src="<?php echo $secondary_image_src; ?>" />
         </a><br>
         <p class="howto">Click the image to edit or update</p>
         <small><a class="remove-image" href="#">Remove image</a></small>
@@ -112,7 +122,13 @@ function workgroup_meta_box( $object, $box ) {
 <?php }
 
 function workgroup_content_box( $object, $box ) {
-?>
+	$curr_active = get_post_meta($object->ID, 'active', true);
+	if(empty($curr_active)) { $curr_active = false; } ?>
+<p>
+	<label for="active">
+		<input type="checkbox" name="active" value="true" <?php if($curr_active){ echo "checked"; } ?>> <strong>Active</strong>
+	</label>
+</p>
 <p>
   <label for="secondary"><strong>Secondary Information</strong></label><br />
   <input class="widefat" type="text" name="secondary" id="secondary" value="<?php echo get_post_meta($object->ID, 'secondary', true); ?>" size="30" />
@@ -120,6 +136,10 @@ function workgroup_content_box( $object, $box ) {
 <p>
   <label for="tertiary"><strong>Tertiary Information</strong></label><br />
   <input class="widefat" type="text" name="tertiary" id="tertiary" value="<?php echo get_post_meta($object->ID, 'tertiary', true); ?>" size="30" />
+</p>
+<p>
+  <label for="learn-more"><strong>Learn More URL</strong></label><br />
+  <input class="widefat" type="text" name="learn-more" id="learn-more" value="<?php echo get_post_meta($object->ID, 'learn-more', true); ?>" size="30" />
 </p>
 <?php }
 
@@ -133,7 +153,7 @@ function workgroup_content_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('active', 'workgroup-icon', 'secondary', 'tertiary', 'people');
+    $meta_keys = array('active', 'workgroup-icon', 'secondary-image', 'secondary', 'tertiary', 'learn-more', 'people');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

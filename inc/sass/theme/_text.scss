@@ -50,6 +50,9 @@
   }
 }
 
+.color-primary {color: $primary; }
+.color-secondary {color: $secondary;}
+
 @media(min-width: 768px){
   .text-md-left {
     .headline {

@@ -1,12 +1,12 @@
 <?php
 
-function lab_project_post_type() {
+function project_post_type() {
 
   $labels = array(
-    'name'                  => _x( 'Lab Projects', 'Post Type General Name', 'cd2h' ),
-    'singular_name'         => _x( 'Lab Project', 'Post Type Singular Name', 'cd2h' ),
-    'menu_name'             => __( 'Lab Projects', 'cd2h' ),
-    'name_admin_bar'        => __( 'Lab Projects', 'cd2h' ),
+    'name'                  => _x( 'Projects', 'Post Type General Name', 'cd2h' ),
+    'singular_name'         => _x( 'Project', 'Post Type Singular Name', 'cd2h' ),
+    'menu_name'             => __( 'Projects', 'cd2h' ),
+    'name_admin_bar'        => __( 'Projects', 'cd2h' ),
     'archives'              => __( 'Item Archives', 'cd2h' ),
     'attributes'            => __( 'Item Attributes', 'cd2h' ),
     'parent_item_colon'     => __( 'Parent Item:', 'cd2h' ),
@@ -32,7 +32,7 @@ function lab_project_post_type() {
     'filter_items_list'     => __( 'Filter items list', 'cd2h' ),
   );
   $args = array(
-    'label'                 => __( 'Lab Project', 'cd2h' ),
+    'label'                 => __( 'Project', 'cd2h' ),
     'description'           => __( 'CD2H Labs projects', 'cd2h' ),
     'labels'                => $labels,
     'supports'              => array( 'title', 'editor', 'thumbnail' ),
@@ -51,15 +51,15 @@ function lab_project_post_type() {
     'publicly_queryable'    => true,
     'capability_type'       => 'page',
   );
-  register_post_type( 'lab_project', $args );
+  register_post_type( 'project', $args );
 
 }
-add_action( 'init', 'lab_project_post_type', 0 );
+add_action( 'init', 'project_post_type', 0 );
 
 // Add sections for lab projects
 function lab_cat_init() {
   register_taxonomy(
-    'section', 'lab_project',
+    'section', 'project',
     array(
       'label' => __( 'Project Type' ),
       'rewrite' => array( 'slug' => 'section' ),
@@ -69,24 +69,27 @@ function lab_cat_init() {
 }
 add_action( 'vc_before_init', 'lab_cat_init' );
 
-add_action( 'load-post.php', 'lab_project_meta_boxes_setup' );
-add_action( 'load-post-new.php', 'lab_project_meta_boxes_setup' );
+add_action( 'load-post.php', 'project_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'project_meta_boxes_setup' );
 
 //Meta box setup function.
-function lab_project_meta_boxes_setup() {
+function project_meta_boxes_setup() {
   // Add meta boxes on the 'add_meta_boxes' hook.
-  add_action( 'add_meta_boxes', 'lab_project_meta_boxes' );
+  add_action( 'add_meta_boxes', 'project_meta_boxes' );
   // Save post meta on the 'save_post' hook.
-  add_action( 'save_post', 'save_lab_project_meta', 10, 2 );
+  add_action( 'save_post', 'save_project_meta', 10, 2 );
 }
 
-function lab_project_meta_boxes() {
-  add_meta_box( 'lab_project_meta', esc_html__( 'Additional Content', 'cd2h' ), 'lab_project_meta_box', 'lab_project', 'normal', 'default' );
+function project_meta_boxes() {
+  add_meta_box( 'project_meta', esc_html__( 'Additional Content', 'cd2h' ), 'project_meta_box', 'project', 'normal', 'default' );
+  add_meta_box( 'project_workgroup_meta', esc_html__( 'Workgroups', 'cd2h' ), 'project_workgroup_box', 'project', 'side', 'default' );
+  add_meta_box( 'project_icon', esc_html__( 'Icon', 'cd2h' ), 'project_icon_box', 'project', 'side', 'default' );
 }
 
-function lab_project_meta_box( $object, $box ) {
-  wp_nonce_field( basename( __FILE__ ), 'lab_project_nonce' );
-  $curr_active = get_post_meta($object->ID, 'active', true);
+function project_meta_box( $object, $box ) {
+  wp_nonce_field( basename( __FILE__ ), 'project_nonce' );
+  $curr_lab_project = get_post_meta($object->ID, 'lab_project', true);
+  $curr_cd2h_project = get_post_meta($object->ID, 'cd2h_project', true);
   $people = get_person_options();
   if(empty($curr_active)) { $curr_active = false; }
 
@@ -94,8 +97,13 @@ function lab_project_meta_box( $object, $box ) {
 
 ?>
   <p>
-    <label for="active">
-      <input type="checkbox" name="active" value="true" <?php if($curr_active){ echo "checked"; } ?>> <strong>CD2H Project</strong>
+    <label for="cd2h_project">
+      <input type="checkbox" name="cd2h_project" value="true" <?php if($curr_cd2h_project){ echo "checked"; } ?>> <strong>CD2H Project</strong>
+    </label>
+  </p>
+  <p>
+    <label for="lab_project">
+      <input type="checkbox" name="lab_project" value="true" <?php if($curr_lab_project){ echo "checked"; } ?>> <strong>Lab Project</strong>
     </label>
   </p>
   <p>
@@ -106,6 +114,14 @@ function lab_project_meta_box( $object, $box ) {
         <option value="<?php echo $val; ?>" <?php if($val == $project_lead){ echo "selected"; } ?> ><?php echo $key; ?></option>
       <?php } ?>
     </select>
+  </p>
+  <p>
+    <label for="secondary"><strong>Secondary Information</strong></label><br />
+    <input class="widefat" type="text" name="secondary" id="secondary" value="<?php echo get_post_meta($object->ID, 'secondary', true); ?>" size="30" />
+  </p>
+  <p>
+    <label for="tertiary"><strong>Tertiary Information</strong></label><br />
+    <input class="widefat" type="text" name="tertiary" id="tertiary" value="<?php echo get_post_meta($object->ID, 'tertiary', true); ?>" size="30" />
   </p>
   <p>
     <label for="acknowledgements"><strong>Acknowledgements</strong></label><br />
@@ -122,17 +138,49 @@ function lab_project_meta_box( $object, $box ) {
 
 <?php }
 
+function project_icon_box( $object, $box ) {
+  $project_icon = get_post_meta($object->ID, 'project-icon', true);
+  $project_icon_source = '';
+  if(!empty($project_icon)){$project_icon_source = wp_get_attachment_image_src($project_icon)[0];}
+?>
+<div class="media-section" style="text-align: center;">
+  <input type="hidden" id="project-icon" name="project-icon" value="<?php echo $project_icon; ?>" />
+  <a class="button image-add" href="#" data-uploader-title="Add Icon" data-uploader-button-text="Add image" data-for-input="project-icon" <?php if(!empty($project_icon_source)){ echo 'style="display:none;"'; } ?> >Add image</a><br>
+    <div class="change-section" <?php if(empty($project_icon_source)){ echo 'style="display:none;"'; } ?>>
+      <a class="change-image" href="#" data-uploader-title="Change image" data-uploader-button-text="Change image" data-for-input="project-icon">
+        <img class="image-preview" src="<?php echo $project_icon_source; ?>" />
+      </a><br>
+      <p class="howto">Click the icon to edit or update</p>
+      <small><a class="remove-image" href="#">Remove icon</a></small>
+    </div>
+</div>
+<?php }
+
+function project_workgroup_box( $object, $box ) {
+  // Workgroups
+  $workgroup_options = get_workgroup_options();
+  $curr_workgroups = get_post_meta($object->ID, 'workgroups', true);
+  if(empty($curr_workgroups)) { $curr_workgroups = []; }
+?>
+<p>
+  <?php foreach ($workgroup_options as $key => $val){ ?>
+    <label><input type="checkbox" name="workgroups[]" value="<?php echo $val; ?>" <?php if (in_array($val, $curr_workgroups)){ echo "checked"; }?>> <?php echo $key; ?></label><br>
+  <?php } ?>
+</p>
+
+<?php }
+
 /* Save the meta box's post metadata. */
-  function save_lab_project_meta( $post_id, $post ) {
+  function save_project_meta( $post_id, $post ) {
     /* Verify the nonce before proceeding. */
-    if ( !isset( $_POST['lab_project_nonce'] ) || !wp_verify_nonce( $_POST['lab_project_nonce'], basename( __FILE__ ) ) )
+    if ( !isset( $_POST['project_nonce'] ) || !wp_verify_nonce( $_POST['project_nonce'], basename( __FILE__ ) ) )
     return $post_id;
     /* Get the post type object. */
     $post_type = get_post_type_object( $post->post_type );
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('active', 'project-lead', 'acknowledgements', 'test-prototype', 'submit-feedback',);
+    $meta_keys = array('cd2h_project', 'lab_project', 'project-lead', 'project-icon', 'workgroups', 'acknowledgements', 'test-prototype', 'submit-feedback', 'secondary', 'tertiary',);
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

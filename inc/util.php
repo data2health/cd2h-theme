@@ -81,6 +81,23 @@ function get_person_options() {
   return $choice_array;
 }
 
+function get_workgroup_options() {
+  $args = array(
+    'posts_per_page'   => -1,
+    'orderby'          => 'title',
+    'order'            => 'DESC',
+    'post_type'        => 'workgroup',
+    'post_status'      => 'publish',
+  );
+  $posts = get_posts($args);
+  $choice_array = array();
+  foreach($posts as $post){
+    $title = get_the_title($post->ID);
+    $choice_array[$title] = $post->ID;
+  }
+  return $choice_array;
+}
+
 function get_post_category_options() {
   $options = array( 'All Posts' => '');
   $categories = get_categories(array('hide_empty' => false,));

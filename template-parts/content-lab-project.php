@@ -11,8 +11,9 @@
     <span class="cd2h-project"><i class="fas fa-check"></i> CD2H project</span>
     <?php if (!empty($lead)) { ?><span class="d-block project-email"><a href="mailto:?php echo $person_email; ?>"><?php echo $person_email; ?></a></span><?php } ?>
   </header>
-  <div class="lab-probect-content mb-2">
-  <?php echo $content; ?>
+  <div class="lab-project-content mb-2">
+    <strong class="d-block mb-2"><?php echo $secondary; ?></strong>
+    <?php echo $content; ?>
   </div>
   <?php if (!empty($acknowledgements)) { ?>
   <small class="project-acknowledgements"><strong>Acknowledgements:</strong> <?php echo $acknowledgements; ?></small>
