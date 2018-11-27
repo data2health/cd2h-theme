@@ -47,6 +47,17 @@
   .h6 { color: $secondary; }
   .card-footer {
     background-color: $secondary;
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 5px;
+      background-image: url('../img/icons/chevrons/btn_chevron.png');
+      height: 9px;
+      width: 5px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }
 
