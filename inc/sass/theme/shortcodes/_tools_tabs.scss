@@ -1,0 +1,118 @@
+.tools-tabs-container {
+  .nav-tabs {
+    border: 0;
+    .nav-link{
+      background-color: $skyBlue;
+      border-radius: 0;
+      border: 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.7px;
+      &.active {
+        background-color: $iceBlue;
+        color: $azureBlue;
+      }
+    }
+  }
+  .main-content {
+    padding: 15px;
+    background-color: $iceBlue;
+  }
+  .child-content {
+    padding: 15px;
+  }
+  .nav-pills {
+    .nav-link{
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      &.active {
+        background-color: transparent;
+        color: $azureBlue;
+        span {
+          padding-bottom: 3px;
+          border-bottom: 1px solid $azureBlue;
+        }
+      }
+    }
+  }
+
+  .grid {
+    margin-left: -5px;
+    margin-right: -5px;
+    .grid-item, .grid-sizer {
+      padding: 5px;
+    }
+    .item-wrapper {
+      position: relative;
+      padding: 10px;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .squared .item-wrapper{
+      background-color: $azureBlue;
+      &.gradient::before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        background-image: linear-gradient(-45deg, rgba(41,110,177,0.30) 0%, #296EB1 100%);
+      }
+    }
+    .rectangle .item-wrapper {
+      background-color: $pineGreen;
+      &.gradient::before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        opacity: 0.6;
+        background-image: linear-gradient(146deg, #4A7D8F 2%, #A4BEC7 99%);
+      }
+    }
+    .tool-item {
+      color: $white;
+      a {
+        color: $white;
+      }
+
+      .tool-title {
+        font-size: 16px;
+        position: relative;
+      }
+      .tool-icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+  .card {
+    background-color: $iceBlue;
+    border: 0;
+    border-radius: 0;
+    .card-title {
+      margin: 0;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    .nav-link.collapsed {
+      background-color: $skyBlue;
+    }
+  }
+}
+
+@media(min-width: 768px){
+  .tools-tabs-container {
+    .main-content {
+      padding: 100px;
+    }
+  }
+}

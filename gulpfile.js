@@ -83,9 +83,12 @@ gulp.task('concat-js', function() {
     return gulp.src([
         'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         'node_modules/owl.carousel/dist/owl.carousel.js',
+        'node_modules/isotope-layout/dist/isotope.pkgd.js',
+        'node_modules/isotope-packery/packery-mode.pkgd.js',
         'node_modules/pace-js/pace.js',
         'inc/js/scroll-sneak.js',
         'inc/js/slick.min.js',
+        'inc/js/bootstrap-tabcollapse.js',
         'inc/js/functions.js',
     ])
     .pipe(sourcemaps.init())

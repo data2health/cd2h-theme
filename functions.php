@@ -252,6 +252,7 @@ require get_template_directory() . '/inc/post_type/workgroup.php';
 require get_template_directory() . '/inc/post_type/project.php';
 require get_template_directory() . '/inc/post_type/dream_challenge.php';
 require get_template_directory() . '/inc/post_type/liaison.php';
+require get_template_directory() . '/inc/post_type/tools_resources.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';

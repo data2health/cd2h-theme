@@ -10,6 +10,7 @@
     FsrImage: 'image-full',
   };
   var $fade_elements = $('.fade-item');
+  var grid = $('.masonry-grid');
 
   $(document).on( 'post-load', function () {
     check_if_in_view();
@@ -17,12 +18,41 @@
     //console.log('Loading more content');
   });
 
+  function reload_grid(){
+    //console.log('reloading grid');
+    makeSquare();
+    makeRect();
+    grid.isotope();
+  }
 
   $doc.ready(function () {
     $body = $('body');
     check_if_in_view();
     makeSquare();
+    makeRect();
     fullscreener($('.' + $classes.FsrImage));
+
+    $('#tools-tabs').tabCollapse();
+
+    grid.isotope({
+      layoutMode: 'masonry',
+      itemSelector: '.grid-item',
+      masonry: {
+        columnWidth: '.grid-sizer',
+      }
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      //e.target // newly activated tab
+      //e.relatedTarget // previous active tab
+      reload_grid();
+    });
+
+    $doc.on("shown.bs.collapse", '.collapse', function (e) {
+      reload_grid();
+    });
+
+    $win.on('resize', function(){ reload_grid(); });
 
     // Open the shop menu by default on woocommerce pages
     if($body.hasClass('woocommerce-page')){
@@ -174,6 +204,20 @@
       var $element = jQuery(this);
       var elementWidth = $element.outerWidth();
       $element.css('height', elementWidth);
+      //console.log('Made a square');
+    });
+  }
+
+  function makeRect(){
+    var $rect = jQuery('.rectangle');
+    $.each($rect, function() {
+      var $element = jQuery(this);
+      var elementWidth = $element.outerWidth();
+      if($win.width() > 768){
+        $element.css('height', elementWidth / 2);
+      } else {
+        $element.css('height', elementWidth);
+      }
       //console.log('Made a square');
     });
   }
