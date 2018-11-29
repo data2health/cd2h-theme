@@ -20,20 +20,22 @@ $child_categories = get_terms( 'tool_category',
     <?php if(!empty($child_categories)): ?>
     <div class="col-md-5">
       <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-        <?php foreach($child_categories as $idx => $child){
+        <?php $idx = 0;
+        foreach($child_categories as $child){
           $child_is_active = $idx == 0;
           $child_cat_id = $child->term_id;
           $child_tab_id = "tools-sub-" . $child_cat_id;
         ?>
         <a class="nav-link <?php if($child_is_active){ echo 'active'; }?>" id="tab-<?php echo $child_tab_id; ?>" data-toggle="tab" href="#<?php echo $child_tab_id; ?>" role="tab" aria-controls="<?php echo $child_tab_id; ?>" ><span><?php echo $child->name; ?></span></a>
-        <?php } ?>
+        <?php $idx++; } ?>
       </div>
     </div>
     <?php endif; ?>
     <div class="col-md-7">
       <?php if(!empty($child_categories)){ ?>
       <div class="tab-content child-content">
-        <?php foreach($child_categories as $idx => $child){
+        <?php $idx = 0;
+        foreach($child_categories as $child){
           $child_is_active = $idx == 0;
           $child_cat_id = $child->term_id;
           $child_tab_id = "tools-sub-" . $child_cat_id;
@@ -53,7 +55,7 @@ $child_categories = get_terms( 'tool_category',
         <div class="tools-tab tab-pane fade <?php if($child_is_active){ echo 'show active'; } ?>" id="<?php echo $child_tab_id; ?>" role="tabpanel" aria-labelledby="tab-<?php echo $child_tab_id; ?>">
           <?php include(locate_template('template-parts/_partial_tool_grid.php')); ?>
         </div>
-        <?php } ?>
+        <?php $idx++; } ?>
       </div>
       <?php } else {
         $tools = get_posts(array(
