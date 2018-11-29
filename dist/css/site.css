@@ -11896,26 +11896,26 @@ nav a:hover,
     .blog-container .cat-list li.active,
     .blog-container .cat-list li:hover {
       border-bottom: 1px solid #4A7D8F; }
-  .blog-container .media.post {
+  .blog-container .media {
     padding: 30px 0;
     border-bottom: 1px solid #DBE5E9; }
-    .blog-container .media.post .media-image {
+    .blog-container .media .media-image {
       width: 100%;
       height: 250px; }
-    .blog-container .media.post .h3.entry-title {
+    .blog-container .media .h3.entry-title {
       font-weight: 400;
       font-size: 22px;
       letter-spacing: 0.69px;
       line-height: 28px; }
-      .blog-container .media.post .h3.entry-title a {
+      .blog-container .media .h3.entry-title a {
         color: #4B4B4B; }
-    .blog-container .media.post .cat-links {
+    .blog-container .media .cat-links {
       font-weight: 400;
       font-size: 13px;
       color: #4A7D8F;
       letter-spacing: 0.46px;
       line-height: 25px; }
-      .blog-container .media.post .cat-links a {
+      .blog-container .media .cat-links a {
         color: #4A7D8F; }
 
 .blog-container-inner {
@@ -11925,9 +11925,9 @@ nav a:hover,
 @media (min-width: 768px) {
   .blog-container {
     padding: 95px; }
-    .blog-container .media.post {
+    .blog-container .media {
       margin: 30px 60px; }
-      .blog-container .media.post .media-image {
+      .blog-container .media .media-image {
         width: 195px;
         height: 195px; }
   .blog-container-inner {

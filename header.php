@@ -42,7 +42,6 @@
 					<?php dynamic_sidebar('network-logo-2'); ?>
 				</div>
 			</div>
-			<?php if(!is_search()) : ?>
 			<div class="col-4 text-center d-md-none">
 				<a class="btn btn-light" data-toggle="collapse" href="#searchform-mobile" role="button" aria-expanded="false" aria-controls="searchform-mobile">
 					<i class="fas fa-search"></i>
@@ -54,17 +53,9 @@
 			<div id="searchform-mobile" class="collapse col-11 col-md-4 mt-4 p-1">
 				<?php get_search_form( true );?>
 			</div>
-			<?php endif; ?>
 		</div>
-
-		<?php if (is_search()) : ?>
-		<div id="searchform" class="col-12">
-			<?php get_search_form( true );?>
-		</div>
-		<?php endif; ?>
 
 		<?php //Desktop Nav ?>
-		<?php if (!is_search()) : ?>
 		<div id="main-nav" class="row no-gutters">
 			<div class="col-12 d-none d-lg-block">
 				<?php
@@ -101,8 +92,6 @@
 				?>
 			</div>
 		</nav>
-
-	<?php endif; ?>
 	</div>
 
 <div id="wrapper" class="container">

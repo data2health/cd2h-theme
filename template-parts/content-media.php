@@ -18,9 +18,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+  <?php if ($image) {?>
   <div class="media-image mr-md-4 mb-3">
     <img class="sr-only image-full" src="<?php echo $image[0]; ?>" alt="">
   </div>
+  <?php } ?>
   <div class="media-body">
   	<header class="entry-header">
   		<?php
