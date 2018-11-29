@@ -10,8 +10,6 @@
  */
 ?>
 	</div><!-- container end -->
-		<?php if(!is_search()) : ?>
-
 		<footer class="site-footer">
 			<div class="newsletter-footer">
         <div class="container">
@@ -56,7 +54,6 @@
 				</div>
 			</div>
 		</footer><!-- #colophon -->
-		<?php endif; ?>
 
 	</div><!-- #page we need this extra closing tag here -->
 
