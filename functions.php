@@ -129,6 +129,27 @@ function wpdocs_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
+//* Changing excerpt more - only works where excerpt IS hand-crafted
+function manual_excerpt_more( $excerpt ) {
+	$excerpt_more = '';
+	if( has_excerpt() ) {
+    	$excerpt_more = '&nbsp;...';
+	}
+	return $excerpt . $excerpt_more;
+}
+add_filter( 'get_the_excerpt', 'manual_excerpt_more', 5);
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more', 5);
+
 // Check if the Footer Menu exists
 $menu_name = 'Footer Menu';
 $menulocation = 'footer-menu';
