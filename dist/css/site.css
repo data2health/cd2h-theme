@@ -11893,6 +11893,8 @@ nav a:hover,
       color: #4A7D8F; }
       .blog-container .cat-list a:hover {
         text-decoration: none; }
+    .blog-container .cat-list li {
+      border-bottom: 1px solid transparent; }
     .blog-container .cat-list li.active,
     .blog-container .cat-list li:hover {
       border-bottom: 1px solid #4A7D8F; }
@@ -11921,6 +11923,10 @@ nav a:hover,
 .blog-container-inner {
   background-color: #fff;
   padding: 15px; }
+
+@media (max-width: 767px) {
+  .blog-container-inner .cat-list .list-inline-item {
+    display: block; } }
 
 @media (min-width: 768px) {
   .blog-container {
@@ -12226,6 +12232,7 @@ nav a:hover,
 .media.cardPost {
   height: auto; }
   .media.cardPost .card-img-top {
+    min-height: 200px;
     height: 200px;
     margin-bottom: 0px; }
 
@@ -12238,7 +12245,15 @@ nav a:hover,
   .media.cardPost .card-body {
     min-height: 200px; }
   .media.cardPost .card-footer {
-    border-bottom-left-radius: 0px; } }
+    border-bottom-left-radius: 0px; }
+  .cardPost.condensed {
+    position: relative;
+    height: 100%; }
+    .cardPost.condensed .card-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0; } }
 
 .workgroup-owl-carousel .owl-item {
   padding: 5px; }
@@ -12868,10 +12883,21 @@ nav a:hover,
     font-weight: bold;
     padding: 0 2rem;
     width: auto;
-    color: #337AB7; }
+    color: #337AB7;
+    display: inline-block; }
   .site-footer .nav .btn, .site-footer .nav .nav-links .nav-previous a, .nav-links .nav-previous .site-footer .nav a,
   .site-footer .nav .nav-links .nav-next a, .nav-links .nav-next .site-footer .nav a {
-    background-color: transparent; }
+    margin-top: -8px;
+    background-color: transparent;
+    border: 1px solid #296DB2;
+    padding: 8px 15px 8px 0px; }
+    .site-footer .nav .btn a, .site-footer .nav .nav-links .nav-previous a a, .nav-links .nav-previous .site-footer .nav a a, .site-footer .nav .nav-links .nav-next a a, .nav-links .nav-next .site-footer .nav a a {
+      padding-left: 15px;
+      padding-right: 10px; }
+    .site-footer .nav .btn::after, .site-footer .nav .nav-links .nav-previous a::after, .nav-links .nav-previous .site-footer .nav a::after,
+    .site-footer .nav .nav-links .nav-next a::after, .nav-links .nav-next .site-footer .nav a::after {
+      margin-left: 0;
+      background-image: url("../img/icons/chevrons/btn_chevron_alt.png"); }
   .site-footer .nav li:nth-of-type(1) a {
     border-left: none; }
   .site-footer p {

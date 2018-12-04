@@ -18,5 +18,7 @@
       <p class="card-text"><?php echo $excerpt; ?></p>
     </div>
   </div>
-  <a class="card-footer d-block text-center primary" href="#">Read More</a>
+  <?php if (!empty($url)) {?>
+  <a class="card-footer d-block text-center primary" href="<?php echo $url; ?>">Read More</a>
+  <?php } ?>
 </div>

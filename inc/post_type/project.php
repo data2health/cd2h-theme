@@ -128,6 +128,10 @@ function project_meta_box( $object, $box ) {
     <input class="widefat" type="text" name="acknowledgements" id="acknowledgements" value="<?php echo get_post_meta($object->ID, 'acknowledgements', true); ?>" size="30" />
   </p>
   <p>
+    <label for="read-more"><strong>Read More URL</strong></label><br />
+    <input class="widefat" type="text" name="read-more" id="read-more" value="<?php echo get_post_meta($object->ID, 'read-more', true); ?>" size="30" />
+  </p>
+  <p>
     <label for="test-prototype"><strong>Test Prototype URL</strong></label><br />
     <input class="widefat" type="text" name="test-prototype" id="test-prototype" value="<?php echo get_post_meta($object->ID, 'test-prototype', true); ?>" size="30" />
   </p>
@@ -180,7 +184,7 @@ function project_workgroup_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('cd2h_project', 'lab_project', 'project-lead', 'project-icon', 'workgroups', 'acknowledgements', 'test-prototype', 'submit-feedback', 'secondary', 'tertiary',);
+    $meta_keys = array('cd2h_project', 'lab_project', 'project-lead', 'project-icon', 'workgroups', 'acknowledgements', 'test-prototype', 'submit-feedback', 'secondary', 'tertiary', 'read-more');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

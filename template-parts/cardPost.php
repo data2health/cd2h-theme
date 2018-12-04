@@ -23,6 +23,13 @@
   } else {
     $color = 'primary';
   }
+
+  if ($cat_slug == 'event' || $cat_slug == 'events') {
+    $btn_text= 'Register Now';
+  } else {
+    $btn_text= 'Continue Reading';
+  }
+
 ?>
 <div class="card cardPost mb-5 <?php echo $color; ?>">
   <div class="card-img-top fsr-holder">
@@ -35,9 +42,5 @@
     <h3 class="card-title"><?php echo $title; ?></h3>
     <p class="card-text"><?php echo $excerpt; ?></p>
   </div>
-  <?php if ($cat_slug == 'event' || $cat_slug == 'events') { ?>
-    <a class="card-footer d-block text-center" href="#">Register Now</a>
-  <?php } else { ?>
-    <a class="card-footer d-block text-center" href="#">Continue Reading</a>
-  <?php } ?>
+    <a class="card-footer d-block text-center" href="<?php echo $url; ?>"><?php echo $btn_text; ?></a>
 </div>

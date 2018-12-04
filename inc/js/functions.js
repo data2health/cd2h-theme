@@ -65,12 +65,12 @@
 
     if($(".hero-owl-carousel").length){
       $('.hero-owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         autoplay: false,
         nav: true,
         navText: ['<span class="prev-arrow-ico"></span>', '<span class="next-arrow-ico"></span>'],
         margin: 0,
-        rewind: false,
+        rewind: true,
         dots: false,
         items: 1,
         //onInitialized: counter, //When the plugin has initialized.

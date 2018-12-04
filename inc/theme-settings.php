@@ -14,20 +14,10 @@ function theme_options_menu() {
 
 function register_theme_options() {
   //register our settings
-  register_setting( 'main-options', 'site_logo' );
-  register_setting( 'main-options', 'site_author' );
-  register_setting( 'main-options', 'footer_logo' );
-  register_setting( 'main-options', 'footer_content' );
-  register_setting( 'main-options', 'social_email');
-  register_setting( 'main-options', 'social_facebook');
-  register_setting( 'main-options', 'social_twitter');
-  register_setting( 'main-options', 'social_google');
-  register_setting( 'main-options', 'social_instagram');
-  register_setting( 'main-options', 'social_linkedin');
-  register_setting( 'main-options', 'social_vimeo');
-  register_setting( 'main-options', 'social_youtube');
   register_setting( 'main-options', 'extra_header_scripts');
-  register_setting( 'main-options', 'footer_shortcode');
+  register_setting( 'main-options', 'newsletter_url');
+  register_setting( 'main-options', 'default_post_image' );
+  register_setting( 'main-options', 'default_404_image' );
 }
 
 function load_wp_media_files() {
@@ -67,93 +57,10 @@ function theme_options_page() {
     <?php settings_fields( 'main-options' ); ?>
     <?php do_settings_sections( 'main-options' ); ?>
     <table class="form-table">
-      <tr valign="top">
-        <th scope="row">Site Logo</th>
-        <td>
-          <img src="<?php echo get_option('site_logo'); ?>" /><br>
-          <label for="upload_image">
-            <input class="upload-target" id="site_logo" type="text" size="36" name="site_logo" value="<?php echo get_option('site_logo'); ?>" />
-            <input class="upload-btn" type="button" value="Upload Image" />
-            <br /><p class="description">Enter an URL or upload an image for the site logo.</p>
-          </label>
-        </td>
-      </tr>
-      <tr valign="top">
-        <th scope="row">Footer Logo</th>
-        <td>
-          <img src="<?php echo get_option('footer_logo'); ?>" /><br>
-          <label for="upload_image">
-            <input class="upload-target" id="footer_logo" type="text" size="36" name="footer_logo" value="<?php echo get_option('footer_logo'); ?>" />
-            <input class="upload-btn" type="button" value="Upload Image" />
-            <br /><p class="description">Enter an URL or upload an image for the site logo.</p>
-          </label>
-        </td>
-      </tr>
       <tr>
-        <th scope="row">Footer Content</th>
+        <th scope="row">Newsletter URL</th>
         <td>
-          <textarea id="footer_content" name="footer_content" class="widefat" rows="10"><?php echo get_option('footer_content'); ?></textarea>
-          <p class="description">Content like Copyright date.</p>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Newsletter Shortcode</th>
-        <td>
-          <input id="footer_shortcode" name="footer_shortcode" class="regular-text code" type="text" value="<?php echo get_option('footer_shortcode'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Site Author</th>
-        <td>
-          <input id="site_author" name="site_author" class="regular-text code" type="text" value="<?php echo get_option('site_author'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Site Email</th>
-        <td>
-          <input id="social_email" name="social_email" class="regular-text code" type="text" value="<?php echo get_option('social_email'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Facebook URL</th>
-        <td>
-          <input id="social_facebook" name="social_facebook" class="regular-text code" type="url" value="<?php echo get_option('social_facebook'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Twitter URL</th>
-        <td>
-          <input id="social_twitter" name="social_twitter" class="regular-text code" type="url" value="<?php echo get_option('social_twitter'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">LinkedIn URL</th>
-        <td>
-          <input id="social_linkedin" name="social_linkedin" class="regular-text code" type="url" value="<?php echo get_option('social_linkedin'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Google Plus URL</th>
-        <td>
-          <input id="social_google" name="social_google" class="regular-text code" type="url" value="<?php echo get_option('social_google'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Instagram URL</th>
-        <td>
-          <input id="social_instagram" name="social_instagram" class="regular-text code" type="text" value="<?php echo get_option('social_instagram'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Youtube URL</th>
-        <td>
-          <input id="social_youtube" name="social_youtube" class="regular-text code" type="url" value="<?php echo get_option('social_youtube'); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">Vimeo URL</th>
-        <td>
-          <input id="social_vimeo" name="social_vimeo" class="regular-text code" type="url" value="<?php echo get_option('social_vimeo'); ?>" />
+          <input id="newsletter_url" name="newsletter_url" class="regular-text code" type="text" value="<?php echo get_option('newsletter_url'); ?>" />
         </td>
       </tr>
       <tr>
@@ -161,6 +68,30 @@ function theme_options_page() {
         <td>
           <textarea id="extra_header_scripts" name="extra_header_scripts" class="widefat" rows="10"><?php echo get_option('extra_header_scripts'); ?></textarea>
           <p class="description">Any extra header scripts for things like tracking and analytics.</p>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <th scope="row">Default Posts Image</th>
+        <td>
+          <img src="<?php echo get_option('default_post_image'); ?>" width="300" height="auto" /><br>
+          <label for="upload_image">
+            <input class="upload-target" id="default_post_image" type="text" size="36" name="default_post_image" value="<?php echo get_option('default_post_image'); ?>" />
+            <input class="upload-btn" type="button" value="Upload Image" />
+            <br /><p class="description">Image path for image to use when no featured image is present.</p>
+          </label>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <th scope="row">Error Page Background Image</th>
+        <td>
+          <img src="<?php echo get_option('default_404_image'); ?>" width="300" height="auto" /><br>
+          <label for="upload_image">
+            <input class="upload-target" id="default_404_image" type="text" size="36" name="default_404_image" value="<?php echo get_option('default_404_image'); ?>" />
+            <input class="upload-btn" type="button" value="Upload Image" />
+            <br /><p class="description">Background image that appears on error pages</p>
+          </label>
         </td>
       </tr>
     </table>

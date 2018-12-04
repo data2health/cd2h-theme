@@ -29,6 +29,18 @@ function render_post_meta_box($object, $box){ ?>
     <hr  />
 
     <p>
+      <label><strong>Start Date</strong></label>
+      <br />
+      <input class="datepicker widefat" type="text" name="start-date" id="event-start-date" value="<?php echo esc_attr( get_post_meta($object->ID, 'start-date', true)); ?>" />
+    </p>
+
+    <p>
+      <label><strong>End Date</strong></label>
+      <br />
+      <input class="datepicker widefat" type="text" name="end-date" id="event-end-date" value="<?php echo esc_attr( get_post_meta($object->ID, 'end-date', true)); ?>" />
+    </p>
+
+    <p>
     <strong><label for="featured-category">Featured Category</label></strong>
     <select class="widefat" name="featured-category">
       <option value="" <?php if("" == $curr_cat){ echo "selected"; } ?>>None</option>
@@ -51,9 +63,21 @@ function render_post_meta_box($object, $box){ ?>
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('source-name', 'source-url', 'featured-category');
+    $meta_keys = array('source-name', 'source-url', 'featured-category', 'end-date', 'date-time');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);
     }
   }
+
+  function enqueue_date_picker(){
+    wp_enqueue_script(
+      'admin_js',
+      get_template_directory_uri() . '/inc/js/admin_dates.js',
+      array('jquery', 'jquery-ui-datepicker'),
+      time(),
+      true
+    );
+    wp_enqueue_style('jquery_ui_css','https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css',false,"1.9.0",false);
+  }
+  add_action('admin_enqueue_scripts', 'enqueue_date_picker');

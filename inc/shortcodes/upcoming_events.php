@@ -6,11 +6,25 @@
 * @param string $format
 * @param string $extra_classes
 */
+
+$today = date('Y/m/d');
+$meta_query = array(
+  'start' => array(
+    'key'     => 'start-date',
+    'value'   => $today,
+    'compare' => '>=',
+  ),
+);
+
 $args = array(
   'posts_per_page'   => $number,
   'order' => 'DESC',
   'post_status' => 'publish',
   'post_type' => 'post',
+  'orderby' => array(
+    'start' => 'ASC',
+  ),
+  'meta_query' => $meta_query,
 );
 if(!empty($category)){
   $args['cat'] = $category;

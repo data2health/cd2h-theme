@@ -27,7 +27,7 @@ get_header();
 			<div class="blog-container mb-4">
 				<div class="blog-container-inner">
 
-					<ul class="cat-list list-inline text-center mb-3 mb-5">
+					<ul class="cat-list list-inline text-center mb-3 mb-md-5">
 						<?php $categories = get_categories( array(
 							    'orderby' => 'name',
 							    'order'   => 'ASC',
@@ -40,7 +40,7 @@ get_header();
 							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
 							        esc_html( $category->name )
 							    );
-							    echo '<li class="list-inline-item mx-3">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li> ';
+							    echo '<li class="list-inline-item mx-3 my-2 my-md-0">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li> ';
 							} ?>
 					</ul>
 

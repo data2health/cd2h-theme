@@ -8,6 +8,8 @@
  *
  * @package Wildern
  */
+
+  $newsletter_url = get_option('newsletter_url');
 ?>
 	</div><!-- container end -->
 		<footer class="site-footer">

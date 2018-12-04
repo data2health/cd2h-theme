@@ -24,8 +24,22 @@
       padding: 0 2rem;
       width:auto;
       color: #337AB7;
+      display: inline-block;
     }
-    .btn { background-color: transparent; }
+    .btn {
+      margin-top: -8px;
+      background-color: transparent;
+      border: 1px solid $primary;
+      padding: 8px 15px 8px 0px;
+      a {
+        padding-left: 15px;
+        padding-right: 10px;
+      }
+      &::after {
+        margin-left: 0;
+        background-image: url('../img/icons/chevrons/btn_chevron_alt.png');
+      }
+    }
     li:nth-of-type(1) a{ border-left:none; }
   }
   p{
@@ -40,7 +54,7 @@
 }
 
 #footer-logo {
-  
+
 }
 
 @media (min-width: 768px){

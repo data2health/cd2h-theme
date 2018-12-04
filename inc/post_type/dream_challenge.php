@@ -109,6 +109,18 @@ function dream_content_box( $object, $box ) {
   <label for="tertiary"><strong>Tertiary Information</strong></label><br />
   <input class="widefat" type="text" name="tertiary" id="tertiary" value="<?php echo get_post_meta($object->ID, 'tertiary', true); ?>" size="30" />
 </p>
+<p>
+  <label for="submit-feedback"><strong>Feedback URL</strong></label><br />
+  <input class="widefat" type="text" name="submit-feedback" id="submit-feedback" value="<?php echo get_post_meta($object->ID, 'submit-feedback', true); ?>" size="30" />
+</p>
+<p>
+  <label for="submit-data"><strong>Submit Data URL</strong></label><br />
+  <input class="widefat" type="text" name="submit-data" id="submit-data" value="<?php echo get_post_meta($object->ID, 'submit-data', true); ?>" size="30" />
+</p>
+<p>
+  <label for="team-building"><strong>Team Building URL</strong></label><br />
+  <input class="widefat" type="text" name="team-building" id="team-building" value="<?php echo get_post_meta($object->ID, 'team-building', true); ?>" size="30" />
+</p>
 <?php }
 
 
@@ -122,7 +134,7 @@ function dream_content_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('current', 'dream-icon', 'secondary', 'tertiary', 'people');
+    $meta_keys = array('current', 'dream-icon', 'secondary', 'tertiary', 'people', 'submit-feedback', 'submit-data', 'team-building');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

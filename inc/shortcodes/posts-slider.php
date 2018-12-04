@@ -5,13 +5,17 @@
 */
 $args = array(
   'posts_per_page'   => $number,
-  'order' => 'ASC',
+  'order' => 'DESC',
   'post_status' => 'publish',
   'post_type' => 'post',
 );
 if(!empty($category)){
   $args['cat'] = $category;
 }
+
+$event_category_id = get_cat_ID( 'Events' );
+$event_category_link = get_category_link( $event_category_id );
+
 $post_wp_query = new WP_Query($args); ?>
 
 
@@ -22,6 +26,7 @@ $post_wp_query = new WP_Query($args); ?>
         while ( $post_wp_query->have_posts() ) : $post_wp_query->the_post();
         $post_ID = get_the_ID();
         $title = get_the_title($post_ID);
+        $url = get_the_permalink($post_ID);
         $slug = sanitize_title_with_dashes($title);
         $featured_category_id = get_post_meta($post_ID, 'featured-category', true);
         if (!empty($featured_category_id)) {
@@ -36,10 +41,10 @@ $post_wp_query = new WP_Query($args); ?>
     </div>
     <div class="text-center">
       <div class="d-block posts-footer-link py-2">
-        <a class="btn-link btn-link-text" href="#">View Past Events</a>
+        <a class="btn-link btn-link-text" href="<?php echo $event_category_link; ?>">View Past Events</a>
       </div>
       <div class="d-block posts-footer-link py-2">
-        <a class="btn-link btn-link-text" href="#">Visit Our Blog</a>
+        <a class="btn-link btn-link-text" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Visit Our Blog</a>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@
       color: $pineGreen;
       &:hover {text-decoration: none;}
     }
+    li {border-bottom: 1px solid transparent;}
     li.active,
     li:hover { border-bottom: 1px solid $pineGreen; }
   }
@@ -42,6 +43,16 @@
 .blog-container-inner {
   background-color: $white;
   padding: 15px;
+}
+
+@media(max-width: 767px){
+  .blog-container-inner {
+    .cat-list {
+      .list-inline-item {
+        display: block;
+      }
+    }
+  }
 }
 
 
