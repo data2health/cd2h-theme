@@ -16,7 +16,6 @@ function register_theme_options() {
   //register our settings
   register_setting( 'main-options', 'extra_header_scripts');
   register_setting( 'main-options', 'newsletter_url');
-  register_setting( 'main-options', 'default_post_image' );
   register_setting( 'main-options', 'default_404_image' );
 }
 
@@ -70,19 +69,7 @@ function theme_options_page() {
           <p class="description">Any extra header scripts for things like tracking and analytics.</p>
         </td>
       </tr>
-
-      <tr valign="top">
-        <th scope="row">Default Posts Image</th>
-        <td>
-          <img src="<?php echo get_option('default_post_image'); ?>" width="300" height="auto" /><br>
-          <label for="upload_image">
-            <input class="upload-target" id="default_post_image" type="text" size="36" name="default_post_image" value="<?php echo get_option('default_post_image'); ?>" />
-            <input class="upload-btn" type="button" value="Upload Image" />
-            <br /><p class="description">Image path for image to use when no featured image is present.</p>
-          </label>
-        </td>
-      </tr>
-
+      
       <tr valign="top">
         <th scope="row">Error Page Background Image</th>
         <td>

@@ -56,7 +56,8 @@ $post_wp_query = new WP_Query($args); ?>
       include(locate_template('template-parts/cardPost.php'));
       echo '</div>';
     }
-  endwhile; wp_reset_postdata();
+  endwhile; wp_reset_postdata(); else :
+    echo '<p class="text-center col-12">No upcoming events.</p>';
 endif; ?>
   </div>
 </div>

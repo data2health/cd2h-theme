@@ -20,7 +20,7 @@
   						<p class="mb-3 mb-md-0">Stay up to date with new research and programs through CD2H</p>
   					</div>
   					<div class="col-md-4 text-center">
-  						<a class="btn btn-block btn-primary btn-white" href="https://docs.google.com/forms/d/e/1FAIpQLSctJpFYOCyURD_m2vRIu2DfGAUJIk7x2_XUqV9xi5OpvB5rrQ/viewform">Subscribe to Our Newsletter</a>
+  						<a class="btn btn-block btn-primary btn-white" href="<?php echo $newsletter_url; ?>">Subscribe to Our Newsletter</a>
   					</div>
   				</div>
         </div>

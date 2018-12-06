@@ -23,11 +23,9 @@
 *.sublime-workspace
 nbproject
 Thumbs.db
+bower_components
+node_modules
 
 # Komodo
 .komodotools
 *.komodoproject
-
-# Folders to ignore
-bower_components
-node_modules

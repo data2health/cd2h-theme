@@ -41,7 +41,7 @@ $post_wp_query = new WP_Query($args); ?>
     </div>
     <div class="text-center">
       <div class="d-block posts-footer-link py-2">
-        <a class="btn-link btn-link-text" href="<?php echo $event_category_link; ?>">View Past Events</a>
+        <a class="btn-link btn-link-text" href="<?php echo $event_category_link; ?>">View All Events</a>
       </div>
       <div class="d-block posts-footer-link py-2">
         <a class="btn-link btn-link-text" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Visit Our Blog</a>
