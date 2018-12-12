@@ -19,6 +19,6 @@
     </div>
   </div>
   <?php if (!empty($url)) {?>
-  <a class="card-footer d-block text-center primary" href="<?php echo $url; ?>">Read More</a>
+  <a class="card-footer d-block text-center primary" href="<?php echo $url; ?>">Read The Full Proposal</a>
   <?php } ?>
 </div>

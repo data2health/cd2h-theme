@@ -19,8 +19,8 @@ $post_wp_query = new WP_Query($args); ?>
         while ( $post_wp_query->have_posts() ) : $post_wp_query->the_post();
           $post_ID = get_the_ID();
           $title = get_the_title($post_ID);
+          $url = get_the_permalink($post_ID);
           $secondary = get_post_meta($post_ID, 'secondary', true);
-          $tertiary = get_post_meta($post_ID, 'tertiary', true);
           $slug = sanitize_title_with_dashes($title);
           $excerpt = get_the_excerpt();
           $people_array =  get_post_meta($post_ID, 'people', true);

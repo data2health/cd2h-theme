@@ -8,8 +8,8 @@
       </div>
       <div class="media-body">
         <h3 class="h3 mt-0"><?php echo $title; ?></h3>
-        <h4 class="h4 mt-0"><?php echo $secondary; ?></h4>
-        <h6 class="h6 mt-0"><?php echo $tertiary; ?></h6>
+        <h4 class="h4 mt-0"><a href="https://redcap.iths.org/surveys/index.php?s=Y43RWPRKAF">Register Interest</a></h4>
+        <h6 class="h6 mt-0"><?php echo $secondary; ?></h6>
       </div>
     </div>
   </div><!-- /.card-top -->
@@ -19,7 +19,7 @@
     </div>
     <?php if(!empty($people_array)) { ?>
     <div class="card-members px-5">
-      <h6 class="h6 mb-2">Members Involved</h6>
+      <h6 class="h6 mb-2">Workgroup Leads</h6>
       <div class="person-list">
         <?php foreach ($people_array as $person) {
             $person_name = get_the_title($person);
@@ -29,5 +29,5 @@
     </div>
     <?php } ?>
   </div>
-  <a class="card-footer d-block text-center secondary" href="https://redcap.iths.org/surveys/index.php?s=Y43RWPRKAF">Register Interest</a>
+  <a class="card-footer d-block text-center secondary" href="<?php echo $url; ?>">Learn More</a>
 </div>

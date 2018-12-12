@@ -11792,6 +11792,11 @@ nav a:hover,
   letter-spacing: 1.75px;
   font-size: 14px; }
 
+.dropdown-item,
+#main-nav .dropdown-item:focus,
+#main-nav .dropdown-item:hover {
+  font-size: 12px; }
+
 #main-nav .dropdown-item:hover,
 #main-nav nav ul li.current-menu-parent > a,
 #main-nav nav ul li.current_page_parent > a,
@@ -12568,6 +12573,11 @@ nav a:hover,
 
 .btn-link.secondary {
   color: #4A7D8F; }
+
+.px-0-btn .btn, .px-0-btn .nav-links .nav-previous a, .nav-links .nav-previous .px-0-btn a,
+.px-0-btn .nav-links .nav-next a, .nav-links .nav-next .px-0-btn a {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
 
 @media (max-width: 767px) {
   .btn.btn-link, .nav-links .nav-previous a.btn-link,

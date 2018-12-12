@@ -134,10 +134,6 @@ function workgroup_content_box( $object, $box ) {
   <input class="widefat" type="text" name="secondary" id="secondary" value="<?php echo get_post_meta($object->ID, 'secondary', true); ?>" size="30" />
 </p>
 <p>
-  <label for="tertiary"><strong>Tertiary Information</strong></label><br />
-  <input class="widefat" type="text" name="tertiary" id="tertiary" value="<?php echo get_post_meta($object->ID, 'tertiary', true); ?>" size="30" />
-</p>
-<p>
   <label for="learn-more"><strong>Learn More URL</strong></label><br />
   <input class="widefat" type="text" name="learn-more" id="learn-more" value="<?php echo get_post_meta($object->ID, 'learn-more', true); ?>" size="30" />
 </p>
@@ -153,7 +149,7 @@ function workgroup_content_box( $object, $box ) {
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('active', 'workgroup-icon', 'secondary-image', 'secondary', 'tertiary', 'learn-more', 'people');
+    $meta_keys = array('active', 'workgroup-icon', 'secondary-image', 'secondary', 'learn-more', 'people');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);

@@ -35,7 +35,7 @@ function project_post_type() {
     'label'                 => __( 'Project', 'cd2h' ),
     'description'           => __( 'CD2H Labs projects', 'cd2h' ),
     'labels'                => $labels,
-    'supports'              => array( 'title', 'editor', 'thumbnail' ),
+    'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt'),
     'hierarchical'          => false,
     'taxonomies'            => array( 'section' ),
     'public'                => true,
@@ -128,7 +128,7 @@ function project_meta_box( $object, $box ) {
     <input class="widefat" type="text" name="acknowledgements" id="acknowledgements" value="<?php echo get_post_meta($object->ID, 'acknowledgements', true); ?>" size="30" />
   </p>
   <p>
-    <label for="read-more"><strong>Read More URL</strong></label><br />
+    <label for="read-more"><strong>Proposal URL (read more)</strong></label><br />
     <input class="widefat" type="text" name="read-more" id="read-more" value="<?php echo get_post_meta($object->ID, 'read-more', true); ?>" size="30" />
   </p>
   <p>

@@ -31,20 +31,6 @@ $secondary_image = wp_get_attachment_image_src($secondary_image_id, 'large');
  $people = get_posts($people_args);
 }
 
-$project_args = array(
- 'numberposts' => -1,
- 'orderby' => 'post_date',
- 'order' => 'DESC',
- 'post_type' => 'project',
- 'post_status' => 'publish',
- 'suppress_filters' => true,
- 'meta_key' => 'workgroups',
- 'meta_value' => $post_id,
- 'meta_compare' => 'LIKE',
-
-);
-$projects = get_posts($project_args);
-
 get_header();
 ?>
 
@@ -80,9 +66,6 @@ get_header();
         <div class="secondary-image mb-5">
           <img src="<?php echo $secondary_image[0]; ?>" />
         </div>
-        <div class="text-center mb-5">
-          <a href="#" class="btn btn-secondary">learn more about we have in the works</a>
-        </div>
       </div>
     </div>
 
@@ -93,7 +76,21 @@ get_header();
         </div>
         <div class="workgroup-projects-list mx-auto py-5">
           <div class="row">
-          <?php foreach ($projects as $project) {
+          <?php
+            $project_args = array(
+             'numberposts' => -1,
+             'orderby' => 'post_date',
+             'order' => 'DESC',
+             'post_type' => 'project',
+             'post_status' => 'publish',
+             'suppress_filters' => true,
+             'meta_key' => 'workgroups',
+             'meta_value' => $post_id,
+             'meta_compare' => 'LIKE',
+
+            );
+            $projects = get_posts($project_args);
+          foreach ($projects as $project) {
             $project_ID = $project->ID;
             $title = get_the_title($project_ID);
             $secondary = get_post_meta($project_ID, 'secondary', true);
