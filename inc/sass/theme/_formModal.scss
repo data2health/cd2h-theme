@@ -1,0 +1,81 @@
+.formModal {
+  .modal-dialog {max-width: 700px;}
+  .modal-header {border-width: 0;}
+  .modal-body .modal-title {
+    font-weight: 300;
+    font-size: 32px;
+    color: #494949;
+    letter-spacing: 0.44px;
+  }
+  .modal-content,
+  .form-control {
+    border-radius: 0;
+  }
+  .form-group {
+    text-align: left;
+  }
+  .form-control {
+    border-color: #979797;
+    &:focus {
+      box-shadow: none;
+      border-color: $primary;
+    }
+  }
+
+  label {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary;
+    letter-spacing: 1.75px;
+  }
+  input.form-control {
+    border-width: 0 0 1px 0;
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+  ::placeholder { //Chrome, Firefox, Opera, Safari 10.1+
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary;
+    letter-spacing: 1.75px;
+  }
+  :-ms-input-placeholder { // Internet Explorer 10-11
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary;
+    letter-spacing: 1.75px;
+  }
+  ::-ms-input-placeholder { // Microsoft Edge
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $primary;
+    letter-spacing: 1.75px;
+  }
+
+  .wpcf7-not-valid {
+    border-color: $danger;
+    //&::placeholder {color: $danger;}
+    //&:-ms-input-placeholder {color: $danger;}
+    //&::-ms-input-placeholder {color: $danger;}
+  }
+
+
+  .wpcf7-not-valid-tip {display: none;}
+
+  div.wpcf7-response-output,
+  div.wpcf7-validation-errors,
+  div.wpcf7-acceptance-missing {
+    border-width: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    text-align: center;
+    color: $danger;
+  }
+
+}

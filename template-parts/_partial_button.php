@@ -17,13 +17,13 @@ if (isset($color)) { $color = $color; } else {$color = 'primary';}
     <div class="modal fade formModal" id="formModal-<?php echo $form_id; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $form_id; ?>-FormTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-center" id="<?php echo $form_id; ?>-FormTitle"><?php echo $btn_text; ?></h5>
+          <div class="modal-header pb-0">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body px-md-5">
+            <h5 class="modal-title text-center mb-4" id="<?php echo $form_id; ?>-FormTitle"><?php echo get_the_title($form_id); ?></h5>
             <?php echo do_shortcode('[contact-form-7 id="' . $form_id . '"]')?>
           </div>
         </div>

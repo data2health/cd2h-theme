@@ -11,6 +11,13 @@ vc_map(array(
   "params" => array(
     array(
       "admin_label" => true,
+      "type" => "dropdown",
+      "heading" => __("Popup Form"),
+      "param_name" => "form_id",
+      "value" => get_form_options(),
+    ),
+    array(
+      "admin_label" => true,
       "type" => "textfield",
       "heading" => __("Extra classes"),
       "param_name" => "extra_classes",
@@ -22,6 +29,7 @@ class WPBakeryShortCode_cd2h_lab_project_block extends WPBakeryShortCode {
   protected function content($atts, $content = null) {
     extract(shortcode_atts(
       array(
+        "form_id" => '',
         "extra_classes" => '',
       ), $atts
     ));

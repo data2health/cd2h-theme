@@ -12871,6 +12871,102 @@ nav a:hover,
     color: #4B4B4B;
     letter-spacing: 0.56px; }
 
+.formModal .modal-dialog {
+  max-width: 700px; }
+
+.formModal .modal-header {
+  border-width: 0; }
+
+.formModal .modal-body .modal-title {
+  font-weight: 300;
+  font-size: 32px;
+  color: #494949;
+  letter-spacing: 0.44px; }
+
+.formModal .modal-content,
+.formModal .form-control {
+  border-radius: 0; }
+
+.formModal .form-group {
+  text-align: left; }
+
+.formModal .form-control {
+  border-color: #979797; }
+  .formModal .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #296DB2; }
+
+.formModal label {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal input.form-control {
+  border-width: 0 0 1px 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+.formModal ::-webkit-input-placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal :-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal ::-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal ::placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal :-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal ::-ms-input-placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #296DB2;
+  letter-spacing: 1.75px; }
+
+.formModal .wpcf7-not-valid {
+  border-color: #dc3545; }
+
+.formModal .wpcf7-not-valid-tip {
+  display: none; }
+
+.formModal div.wpcf7-response-output,
+.formModal div.wpcf7-validation-errors,
+.formModal div.wpcf7-acceptance-missing {
+  border-width: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-align: center;
+  color: #dc3545; }
+
 .newsletter-footer {
   color: #fff;
   background-color: #296DB2; }

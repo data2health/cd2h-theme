@@ -23,7 +23,7 @@ vc_map(array(
     array(
       "admin_label" => true,
       "type" => "dropdown",
-      "heading" => __("Project"),
+      "heading" => __("Form"),
       "param_name" => "form_id",
       "value" => get_form_options(),
     ),
