@@ -107,7 +107,7 @@ function project_meta_box( $object, $box ) {
     </label>
   </p>
   <p>
-    <strong><label for="venue-location">Project Lead</label></strong>
+    <strong><label for="project-lead">Project Lead</label></strong>
     <select class="widefat" name="project-lead">
       <option value="" <?php if("" == $project_lead){ echo "selected"; } ?>>None</option>
       <?php foreach($people as $key => $val){ ?>
@@ -134,10 +134,6 @@ function project_meta_box( $object, $box ) {
   <p>
     <label for="test-prototype"><strong>Test Prototype URL</strong></label><br />
     <input class="widefat" type="text" name="test-prototype" id="test-prototype" value="<?php echo get_post_meta($object->ID, 'test-prototype', true); ?>" size="30" />
-  </p>
-  <p>
-    <label for="submit-feedback"><strong>Submit Feedback URL</strong></label><br />
-    <input class="widefat" type="text" name="submit-feedback" id="submit-feedback" value="<?php echo get_post_meta($object->ID, 'submit-feedback', true); ?>" size="30" />
   </p>
 
 <?php }

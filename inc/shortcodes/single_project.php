@@ -9,6 +9,7 @@ $project_ID = $source_obj;
 $title = get_the_title($project_ID);
 $secondary = get_post_meta($project_ID, 'secondary', true);
 $tertiary = get_post_meta($project_ID, 'tertiary', true);
+$lead = get_post_meta($project_ID, 'project-lead', true);
 $slug = sanitize_title_with_dashes($title);
 $excerpt = get_the_excerpt($project_ID);
 $icon_id = get_post_meta($project_ID, 'project-icon', true);
