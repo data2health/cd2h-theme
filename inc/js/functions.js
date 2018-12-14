@@ -34,6 +34,14 @@
 
     $('#tools-tabs').tabCollapse();
 
+    $('.wpcf7-form-control-wrap.projectForm .wpcf7-form-control').select2({
+      placeholder: {
+        id: '---', // the value of the option
+        text: 'Project you’re providing feedback on*'
+      },
+      minimumResultsForSearch: -1,
+    });
+
     grid.isotope({
       layoutMode: 'masonry',
       itemSelector: '.grid-item',

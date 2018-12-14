@@ -86,6 +86,7 @@ gulp.task('concat-js', function() {
         'node_modules/isotope-layout/dist/isotope.pkgd.js',
         'node_modules/isotope-packery/packery-mode.pkgd.js',
         'node_modules/pace-js/pace.js',
+        'node_modules/select2/dist/js/select2.full.js',
         'inc/js/scroll-sneak.js',
         'inc/js/slick.min.js',
         'inc/js/bootstrap-tabcollapse.js',

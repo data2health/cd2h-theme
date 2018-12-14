@@ -8,7 +8,7 @@
       </div>
       <div class="media-body">
         <h3 class="h3 mb-0"><?php echo $title; ?></h3>
-        <h4 class="h4 mt-0"><?php foreach ($terms as $term) { echo $term->name; } ?></h4>
+        <?php if ($terms) {?><h4 class="h4 mt-0"><?php foreach ($terms as $term) { echo $term->name; } ?></h4><?php } ?>
         <h6 class="h6 mt-0"><?php echo $tertiary; ?></h6>
       </div>
     </div>

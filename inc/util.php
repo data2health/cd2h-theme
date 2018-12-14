@@ -98,6 +98,27 @@ function get_project_options() {
   return $choice_array;
 }
 
+function get_lab_project_options() {
+  $args = array(
+    'posts_per_page'   => -1,
+    'orderby'          => 'title',
+    'order'            => 'DESC',
+    'post_type'        => 'project',
+    'post_status'      => 'publish',
+    'meta_query' => array(
+     'is_public' => array('key' => 'lab_project', 'value' => 'true',),
+    ),
+  );
+  $posts = get_posts($args);
+  $choice_array = array();
+  foreach($posts as $post){
+    $title = get_the_title($post->ID);
+    $choice_array[$title] = $post->ID;
+  }
+  return $choice_array;
+}
+
+
 function get_workgroup_options() {
   $args = array(
     'posts_per_page'   => -1,
