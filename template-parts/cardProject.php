@@ -17,7 +17,7 @@ if(!empty($lead)){
       </div>
       <div class="media-body">
         <h3 class="h3 mb-0"><?php echo $title; ?></h3>
-        <?php if(!empty($lead)){ ?><h4 class="h4 mt-0"><?php echo $person_name; ?></h4><?php } ?>
+        <?php if(!empty($lead)){ ?><h4 class="h4 mt-0">Lead: <?php echo $person_name; ?></h4><?php } ?>
         <?php if ($terms) { ?><h6 class="h6 mt-0"><?php foreach ($terms as $term) { echo $term->name; } ?></h6>
       <?php } else { if(!empty($person_email)){ echo '<h6 class="h6 mt-0"><a href="mailto:'. $person_email .'">'. $person_email .'</a></h6>'; } } ?>
       </div>
