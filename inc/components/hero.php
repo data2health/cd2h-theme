@@ -94,6 +94,13 @@ vc_map(array(
       "param_name" => "btn_url_2",
       "value" => '',
     ),
+    array(
+      "admin_label" => true,
+      "type" => "dropdown",
+      "heading" => __("Project"),
+      "param_name" => "form_id",
+      "value" => get_form_options(),
+    ),
   )
 ));
 class WPBakeryShortCode_cd2h_hero_slide extends WPBakeryShortCode {
@@ -106,6 +113,7 @@ class WPBakeryShortCode_cd2h_hero_slide extends WPBakeryShortCode {
         "btn_url" => '',
         "btn_text_2" => '',
         "btn_url_2" => '',
+        "form_id" => '',
       ), $atts
     ));
     if ($image) { $image = wp_get_attachment_image_src($atts['image'], 'full'); }

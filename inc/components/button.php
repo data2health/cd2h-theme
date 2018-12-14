@@ -23,6 +23,13 @@ vc_map(array(
     array(
       "admin_label" => true,
       "type" => "dropdown",
+      "heading" => __("Project"),
+      "param_name" => "form_id",
+      "value" => get_form_options(),
+    ),
+    array(
+      "admin_label" => true,
+      "type" => "dropdown",
       "heading" => __("Button Color"),
       "param_name" => "color",
       "value" => array(
@@ -45,6 +52,7 @@ class WPBakeryShortCode_cd2h_button extends WPBakeryShortCode {
       array(
         "btn_text" => '',
         "btn_url" => '',
+        "form_id" => '',
         "color" => 'primary',
         "extra_classes" => '',
       ), $atts

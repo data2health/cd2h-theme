@@ -22,9 +22,7 @@
       <?php if(!empty($content)): ?>
       <span class="slide-body d-block mb-3"><?php echo $content; ?></span>
       <?php endif; ?>
-      <?php if(!empty($btn_text)) { ?>
-        <a class="btn btn-primary d-block d-md-inline-block mb-2 mr-md-2" href="<?php echo $btn_url; ?>"><?php echo $btn_text; ?></a>
-      <?php } ?>
+      <?php include(locate_template('template-parts/_partial_button.php')); ?>
       <?php if(!empty($btn_text_2)) { ?>
         <a class="btn btn-primary d-block d-md-inline-block mb-2" href="<?php echo $btn_url_2; ?>"><?php echo $btn_text_2; ?></a>
       <?php } ?>
