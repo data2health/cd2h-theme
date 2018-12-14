@@ -81,7 +81,7 @@ $projects_full = get_posts(array(
         $secondary = get_post_meta($post_ID, 'secondary', true);
         $acknowledgements = get_post_meta($post_ID, 'acknowledgements', true);
         $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
-        $test_prototype = get_post_meta($post_ID, '$test-prototype', true);
+        $test_prototype = get_post_meta($post_ID, 'test-prototype', true);
         $content_raw = get_post_field('post_content', $project->ID);
         $content = apply_filters('the_content', $content_raw);
         echo '<div class="tab-pane px-3 px-md-5 fade ' . $active_state . ' " id="'. $slug .'" role="tabpanel" aria-labelledby="'. $slug .'-tab">';

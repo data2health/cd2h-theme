@@ -50,9 +50,10 @@ get_header();
               <?php if(!empty($people_array)) {
                 foreach ($people as $person) {
                   $person_id = $person->ID;
-                  $person_name = get_the_title($person_id); ?>
+                  $person_name = get_the_title($person_id);
+                  $person_email = get_post_meta($person_id, 'email', true); ?>
                   <li class="lead-contact color-secondary py-2">
-                    <?php echo $person_name;  ?>
+                    <?php if ($person_email) {?><a href="mailto:<?php echo $person_email; ?>"><?php echo $person_name; ?></a><?php } else { ?><?php echo $person_name; ?><?php } ?>
                   </li>
                 <?php } } ?>
             </ul>
@@ -75,7 +76,8 @@ get_header();
           <?php echo do_shortcode( '[cd2h_headline title="Our Current Projects"]' ); ?>
         </div>
         <div class="workgroup-projects-list mx-auto py-5">
-          <div class="row">
+          <div class="row no-gutters grid masonry-grid">
+            <div class="grid-sizer col-md-6"></div>
           <?php
             $project_args = array(
              'numberposts' => -1,
@@ -102,7 +104,7 @@ get_header();
             $icon = '';
             if(!empty($icon_id)){$icon = wp_get_attachment_image_src($icon_id, 'full')[0];}
             $terms = get_the_terms( $project_ID, 'section' );
-            echo '<div class="col-md-6">';
+            echo '<div class="col-md-6 grid-item mb-4">';
             include(locate_template('template-parts/cardProject.php'));
             echo '</div>';
           } ?>
