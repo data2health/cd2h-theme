@@ -17,4 +17,6 @@ $url = get_post_meta($project_ID, 'read-more', true);
 $icon = '';
 if(!empty($icon_id)){$icon = wp_get_attachment_image_src($icon_id, 'full')[0];}
 $terms = get_the_terms( $project_ID, 'section' );
+echo '<div class="mb-5">';
 include(locate_template('template-parts/cardProject.php'));
+echo '</div>';
