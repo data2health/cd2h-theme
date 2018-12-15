@@ -16196,7 +16196,7 @@ var ScrollSneak = function(prefix, wait) {
     }
     if($(".lab-project-list").length){
       jQuery('.lab-project-list .nav-link').click(function(){
-        console.log('showing tab');
+        //console.log('showing tab');
         jQuery('.lab-project-list .nav-link').not(this).removeClass('active');
         jQuery(this).tab('show');
       });
