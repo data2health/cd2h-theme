@@ -273,13 +273,14 @@ require get_template_directory() . '/inc/theme-settings.php';
 //Load widgets
 require get_template_directory() . '/inc/widgets/recent_posts.php';
 
+// Required plugins
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'cd2h_register_required_plugins' );
 
 function cd2h_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'                  => esc_html__('WPBakery Visual Composer', 'focuson'),
+			'name'                  => esc_html__('WPBakery Page Builder', 'focuson'),
 			'slug'                  => 'js_composer',
 			'source'                => get_template_directory() . '/plugins/js_composer.zip',
 			'required'              => true,
