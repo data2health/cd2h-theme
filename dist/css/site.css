@@ -7522,6 +7522,20 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: center;
   width: 1.25em; }
 
+.fa-ul {
+  list-style-type: none;
+  margin-left: 2.5em;
+  padding-left: 0; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  width: 2em;
+  line-height: inherit; }
+
 .fa-border {
   border: solid 0.08em #eee;
   border-radius: .1em;
@@ -13403,6 +13417,12 @@ nav a:hover,
     font-size: 18px; }
   .tools-tabs-container .card .nav-link.collapsed {
     background-color: #D4E2F0; }
+  .tools-tabs-container .card .js-tabcollapse-card-heading::before {
+    content: '-';
+    display: inline-block;
+    padding-right: 10px; }
+  .tools-tabs-container .card .js-tabcollapse-card-heading.collapsed::before {
+    content: '+'; }
 
 @media (min-width: 768px) {
   .tools-tabs-container .main-content {
