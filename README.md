@@ -1,7 +1,7 @@
 ## Development Requirements
 * Yarn Package Manager
 
-## Setup
+## Development Setup
 1. Download the required dependencies with yarn: `yarn install`
 2. Edit theme files as you normally would using your editor of choice.
 3. Edits/additions to javascript and CSS should be defined in:
@@ -9,6 +9,13 @@
   * Javascript: `inc/js/`
 4. If adding any new JS/CSS files, make sure to define them in `gulpfile.js` and `inc/sass/site.scss` as needed.
 5. Run `gulp build` to compile and minify all static assets.
+
+## Installation Instructions
+1. Ensure WP Bakery Page builder is installed. (a copy is included with this theme).
+2. Ensure Contact Form 7 is installed and configured to send mail.
+3. Install the CD2H theme as normally would.
+4. Import content from `cd2h.wordpress.2018-12-17.xml` with the WordPress Import tool.
+5. Configure any additional settings in `Theme Settings` within the WordPress dashboard.
 
 ## Theme Structure
 * This theme uses several custom post types. Each post type is defined in it's own file located in `inc/post_type/`
