@@ -4,7 +4,7 @@
 ## Setup
 1. Download the required dependencies with yarn: `yarn install`
 2. Edit theme files as you normally would using your editor of choice.
-3. Edits/additions to javascript should be defined in:
+3. Edits/additions to javascript and CSS should be defined in:
   * CSS: `inc/sass/theme/`
   * Javascript: `inc/js/`
 4. If adding any new JS/CSS files, make sure to define them in `gulpfile.js` and `inc/sass/site.scss` as needed.
@@ -28,4 +28,4 @@
 
 * Running `Yarn install` will generate a `node_modules` folder. For security reasons it's highly advised this is not made publicly accessible.
 
-* This theme is hosted on a private Github repository. Read access can be granted for cloning by request. 
+* This theme is hosted on a private Github repository. Read access can be granted for cloning by request.
