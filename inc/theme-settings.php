@@ -11,12 +11,16 @@ function theme_options_menu() {
   add_action( 'admin_init', 'register_theme_options' );
 }
 
+function sanitize_code($input){
+  return base64_encode($input);
+}
 
 function register_theme_options() {
   //register our settings
   register_setting( 'main-options', 'extra_header_scripts');
   register_setting( 'main-options', 'newsletter_url');
   register_setting( 'main-options', 'default_404_image' );
+  register_setting( 'main-options', 'empty_category_message', array('sanitize_callback' => 'sanitize_code'));
 }
 
 function load_wp_media_files() {
@@ -65,11 +69,11 @@ function theme_options_page() {
       <tr>
         <th scope="row">Extra Header Scripts</th>
         <td>
-          <textarea id="extra_header_scripts" name="extra_header_scripts" class="widefat" rows="10"><?php echo get_option('extra_header_scripts'); ?></textarea>
-          <p class="description">Any extra header scripts for things like tracking and analytics.</p>
+            <textarea id="extra_header_scripts" name="extra_header_scripts" class="widefat code" rows="10"><?php echo esc_textarea( base64_decode(get_option('extra_header_scripts'))); ?></textarea>
+            <p class="description">Any extra header scripts for things like tracking and analytics.</p>
         </td>
       </tr>
-      
+
       <tr valign="top">
         <th scope="row">Error Page Background Image</th>
         <td>
@@ -79,6 +83,14 @@ function theme_options_page() {
             <input class="upload-btn" type="button" value="Upload Image" />
             <br /><p class="description">Background image that appears on error pages</p>
           </label>
+        </td>
+      </tr>
+
+      <tr>
+        <th scope="row">Empty Project Category Message</th>
+        <td>
+          <textarea id="empty_category_message" name="empty_category_message" class="widefat code" rows="10"><?php echo esc_textarea( base64_decode(get_option('empty_category_message'))); ?></textarea>
+          <p class="description">Message displayed when there are no active projects in a given category.</p>
         </td>
       </tr>
     </table>

@@ -44,6 +44,12 @@
   }
   .nav-link {
     color: $articBlue; border-width: 0;
+    &.empty-link {
+      color: $azureBlue;
+      &.active {
+        color: $azureBlue;
+      }
+    }
     &.active {
       background-color: transparent !important;
       color: $articBlue;

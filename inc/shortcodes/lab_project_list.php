@@ -42,8 +42,13 @@ $projects_full = get_posts(array(
               'terms' => $term->name
             )
           )
-        )); ?>
+        ));
+        $is_empty = empty($projects);
+        if($is_empty): ?>
+        <h4 class="h3 mb-2 d-none d-md-block nav nav-tabs"><a class="nav-link py-0 px-0 empty-link" href="#empty-tab" data-toggle="tab" role="tab" aria-controls="empty-tab"><?php echo $term->name; ?></a></h4>
+        <?php else: ?>
         <h4 class="h3 mb-2 d-none d-md-block"><?php echo $term->name; ?></h4>
+        <?php endif; ?>
         <span class="d-block d-md-none text-center project-cat-xs pb-1 mb-2">
           <a class="d-block" href="#project-type-<?php echo $section_slug; ?>" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="project-type-<?php echo $section_slug; ?>">
             <?php echo $term->name; ?>
@@ -63,7 +68,13 @@ $projects_full = get_posts(array(
           echo '<div class="d-block d-md-none">';
           include(locate_template('template-parts/content-lab-project.php'));
           echo '</div>';
-        } ?>
+        }
+        if($is_empty) {
+          echo '<div class="d-block d-md-none">';
+          include(locate_template('template-parts/empty-lab-project.php'));
+          echo '</div>';
+        }
+        ?>
         </ul>
       <?php } ?>
     </div>
@@ -88,7 +99,11 @@ $projects_full = get_posts(array(
         echo '<div class="tab-pane px-3 px-md-5 fade ' . $active_state . ' " id="'. $slug .'" role="tabpanel" aria-labelledby="'. $slug .'-tab">';
         include(locate_template('template-parts/content-lab-project.php'));
         echo '</div>';
-      } ?>
+      }
+      echo '<div class="empty-tab tab-pane px-3 px-md-5 fade" id="empty-tab" role="tabpanel">';
+      include(locate_template('template-parts/empty-lab-project.php'));
+      echo '</div>';
+      ?>
       </div>
     </div>
   </div>

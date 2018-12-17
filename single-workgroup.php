@@ -31,6 +31,20 @@ $secondary_image = wp_get_attachment_image_src($secondary_image_id, 'large');
  $people = get_posts($people_args);
 }
 
+$project_args = array(
+ 'numberposts' => -1,
+ 'orderby' => 'post_date',
+ 'order' => 'DESC',
+ 'post_type' => 'project',
+ 'post_status' => 'publish',
+ 'suppress_filters' => true,
+ 'meta_key' => 'workgroups',
+ 'meta_value' => $post_id,
+ 'meta_compare' => 'LIKE',
+
+);
+$projects = get_posts($project_args);
+
 get_header();
 ?>
 
@@ -76,22 +90,10 @@ get_header();
           <?php echo do_shortcode( '[cd2h_headline title="Our Current Projects"]' ); ?>
         </div>
         <div class="workgroup-projects-list mx-auto py-5">
+          <?php if(!empty($projects)) { ?>
           <div class="row no-gutters grid masonry-grid">
             <div class="grid-sizer col-md-6"></div>
           <?php
-            $project_args = array(
-             'numberposts' => -1,
-             'orderby' => 'post_date',
-             'order' => 'DESC',
-             'post_type' => 'project',
-             'post_status' => 'publish',
-             'suppress_filters' => true,
-             'meta_key' => 'workgroups',
-             'meta_value' => $post_id,
-             'meta_compare' => 'LIKE',
-
-            );
-            $projects = get_posts($project_args);
           foreach ($projects as $project) {
             $project_ID = $project->ID;
             $title = get_the_title($project_ID);
@@ -110,6 +112,11 @@ get_header();
             echo '</div>';
           } ?>
           </div>
+        <?php } else {
+          echo '<div class="empty-projects">';
+          include(locate_template('template-parts/empty-lab-project.php'));
+          echo '</div>';
+        } ?>
         </div>
 
       </div>

@@ -13259,6 +13259,10 @@ nav a:hover,
 .lab-project-list .nav-link {
   color: #94B6D8;
   border-width: 0; }
+  .lab-project-list .nav-link.empty-link {
+    color: #296DB2; }
+    .lab-project-list .nav-link.empty-link.active {
+      color: #296DB2; }
   .lab-project-list .nav-link.active {
     background-color: transparent !important;
     color: #94B6D8; }
