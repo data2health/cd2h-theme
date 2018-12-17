@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/5.0.1" created="2018-12-17 20:52" -->
+<!-- generator="WordPress/5.0.1" created="2018-12-17 21:25" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>CD2H</title>
 	<link>https://site.hellowildern.com/cd2h</link>
 	<description>Just another Wildern Sites Network site</description>
-	<pubDate>Mon, 17 Dec 2018 20:52:54 +0000</pubDate>
+	<pubDate>Mon, 17 Dec 2018 21:25:33 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://site.hellowildern.com/</wp:base_site_url>
@@ -16689,10 +16689,10 @@ This e-mail was sent from a contact form on CD2H (https://site.hellowildern.com/
 <label class="sr-only">Email Address*</label>[email* formEmail class:form-control placeholder "Email Address*"] 
 </div>
 <div class="form-group">
-<label class="sr-only">institution*</label>[text* formInstitution class:form-control placeholder "Institution*"] 
+<label class="sr-only">Institution*</label>[text* formInstitution class:form-control placeholder "Institution*"] 
 </div>
 <div class="form-group">
-<label class="sr-only">Project you’re providing feedback on*</label>[select* projectForm  "---" "Option 1" "Option 2"]
+<label class="sr-only">Project you’re providing feedback on*</label>[select* projectForm  "---" "N-Lighten CD2H Education Collaborations" "Biodata Club Kit" "Open Science for Decision Makers Course" "LOINC2HPO" "Data Discovery Engine" "Leaf Cloud Pilot" "CIELO"]
 </div>
 <div class="form-group">
 <label>Feedback*</label>[textarea* formFeedback x3 class:form-control] 
@@ -16701,18 +16701,24 @@ This e-mail was sent from a contact form on CD2H (https://site.hellowildern.com/
 <button class="btn btn-secondary" type="submit">Submit</button>
 </div>
 1
-CD2H "[your-subject]"
-[your-name] <wordpress@site.hellowildern.com>
+CD2H Feedback Submission
+[formName] <wordpress@site.hellowildern.com>
 dev@hellowildern.com
-From: [your-name] <[your-email]>
-Subject: [your-subject]
+From: [formName] <[formEmail]>
 
-Message Body:
-[your-message]
+Project:
+[projectForm]
+
+Institution:
+[formInstitution]
+
+
+Feedback:
+[formFeedback]
 
 -- 
-This e-mail was sent from a contact form on CD2H (https://site.hellowildern.com/cd2h)
-Reply-To: [your-email]
+This e-mail was sent from Feedback submission form on CD2H
+Reply-To: [formEmail]
 
 
 
@@ -16774,10 +16780,10 @@ The telephone number is invalid.]]></content:encoded>
 <label class="sr-only">Email Address*</label>[email* formEmail class:form-control placeholder "Email Address*"] 
 </div>
 <div class="form-group">
-<label class="sr-only">institution*</label>[text* formInstitution class:form-control placeholder "Institution*"] 
+<label class="sr-only">Institution*</label>[text* formInstitution class:form-control placeholder "Institution*"] 
 </div>
 <div class="form-group">
-<label class="sr-only">Project you’re providing feedback on*</label>[select* projectForm  "---" "Option 1" "Option 2"]
+<label class="sr-only">Project you’re providing feedback on*</label>[select* projectForm  "---" "N-Lighten CD2H Education Collaborations" "Biodata Club Kit" "Open Science for Decision Makers Course" "LOINC2HPO" "Data Discovery Engine" "Leaf Cloud Pilot" "CIELO"]
 </div>
 <div class="form-group">
 <label>Feedback*</label>[textarea* formFeedback x3 class:form-control] 
@@ -16788,14 +16794,20 @@ The telephone number is invalid.]]></content:encoded>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:21:"CD2H "[your-subject]"";s:6:"sender";s:45:"[your-name] <wordpress@site.hellowildern.com>";s:9:"recipient";s:20:"dev@hellowildern.com";s:4:"body";s:177:"From: [your-name] <[your-email]>
-Subject: [your-subject]
+			<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:24:"CD2H Feedback Submission";s:6:"sender";s:44:"[formName] <wordpress@site.hellowildern.com>";s:9:"recipient";s:20:"dev@hellowildern.com";s:4:"body";s:177:"From: [formName] <[formEmail]>
 
-Message Body:
-[your-message]
+Project:
+[projectForm]
+
+Institution:
+[formInstitution]
+
+
+Feedback:
+[formFeedback]
 
 -- 
-This e-mail was sent from a contact form on CD2H (https://site.hellowildern.com/cd2h)";s:18:"additional_headers";s:22:"Reply-To: [your-email]";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
+This e-mail was sent from Feedback submission form on CD2H";s:18:"additional_headers";s:21:"Reply-To: [formEmail]";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
@@ -16816,10 +16828,6 @@ This e-mail was sent from a contact form on CD2H (https://site.hellowildern.com/
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_locale]]></wp:meta_key>
 			<wp:meta_value><![CDATA[en_US]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_config_errors]]></wp:meta_key>
-			<wp:meta_value><![CDATA[a:1:{s:23:"mail.additional_headers";a:1:{i:0;a:2:{s:4:"code";i:102;s:4:"args";a:3:{s:7:"message";s:51:"Invalid mailbox syntax is used in the %name% field.";s:6:"params";a:1:{s:4:"name";s:8:"Reply-To";}s:4:"link";s:68:"https://contactform7.com/configuration-errors/invalid-mailbox-syntax";}}}}]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 </channel>
