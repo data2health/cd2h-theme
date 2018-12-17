@@ -91,6 +91,15 @@
   }
 }
 
+@media(max-width: 767px){
+  .lab-projects {
+    .project-footer {
+      margin-bottom: 3rem;
+      .btn { width: 100%;}
+    }
+  }
+}
+
 @media(min-width: 768px){
   .lab-projects { padding: 80px;}
   .lab-project-list {
