@@ -1,5 +1,5 @@
 <?php
-// Hero Collection Slide
+// Callout section. Usually has a background image with a colorn overlay.
 vc_map(array(
   "name" => "Call Out",
   "description" => "Call out that appears usually near the bottom of the page.",

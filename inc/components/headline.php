@@ -1,5 +1,5 @@
 <?php
-// Callout Heading
+// Various headline styles
 vc_map(array(
   "name" => "Headline",
   "description" => "Heading for a Content Section",

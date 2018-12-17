@@ -13311,6 +13311,15 @@ nav a:hover,
   letter-spacing: 0.17px;
   line-height: 25px; }
 
+@media (max-width: 767px) {
+  .lab-projects .project-footer {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #94B6D8;
+    padding-bottom: 2rem; }
+    .lab-projects .project-footer .btn, .lab-projects .project-footer .nav-links .nav-previous a, .nav-links .nav-previous .lab-projects .project-footer a,
+    .lab-projects .project-footer .nav-links .nav-next a, .nav-links .nav-next .lab-projects .project-footer a {
+      width: 100%; } }
+
 @media (min-width: 768px) {
   .lab-projects {
     padding: 80px; }
@@ -13414,7 +13423,8 @@ nav a:hover,
     margin: 0;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: 18px; }
+    font-size: 18px;
+    letter-spacing: 1.5px; }
   .tools-tabs-container .card .nav-link.collapsed {
     background-color: #D4E2F0; }
   .tools-tabs-container .card .js-tabcollapse-card-heading::before {

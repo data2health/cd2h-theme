@@ -1,9 +1,9 @@
 <?php
 
-// Hero Collection Slide
+//Media object with a title, image and body.
 vc_map(array(
   "name" => "Media Object",
-  "description" => "Layout for a individual",
+  "description" => "Layout for a media object",
   "base" => "cd2h_media",
   "category" => "Content",
   "params" => array(
@@ -83,7 +83,7 @@ class WPBakeryShortCode_cd2h_media extends WPBakeryShortCode {
   }
 }
 
-// Person Media component
+// Similar to the normal media component but for people
 vc_map(array(
   "name" => "Person",
   "description" => "Layout for a individual",

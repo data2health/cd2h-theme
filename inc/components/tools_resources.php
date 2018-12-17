@@ -1,5 +1,5 @@
 <?php
-// Tools & Resources is_container
+// Tools & Resources container
 vc_map(array(
     "name" => "Tools & Resources",
     "description" => "Tools & Resources Tabs Container",

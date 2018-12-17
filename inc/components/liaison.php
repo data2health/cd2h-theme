@@ -1,6 +1,6 @@
 <?php
 
-//Display the currently active DREAM challenges
+//Displays a table for the Liaison post type.
 vc_map(array(
   "name" => "Liaison Table",
   "description" => "Table that displays CD2H Liaisons",

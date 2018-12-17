@@ -1,6 +1,6 @@
 <?php
 
-//Slider for displaying posts
+//Slider for displaying workgroups
 vc_map(array(
   "name" => "Workgrouop Slider",
   "description" => "Displays a slider with the most recent posts",
@@ -32,7 +32,7 @@ class WPBakeryShortCode_cd2h_workgroup_slider extends WPBakeryShortCode {
   }
 }
 
-//Slider for displaying posts
+//Displays a list of Workgroups
 vc_map(array(
   "name" => "Workgrouop List",
   "description" => "Displays a slider with the most recent posts",

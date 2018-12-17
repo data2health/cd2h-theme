@@ -1,5 +1,5 @@
 <?php
-// Callout Heading
+// Callout Heading for the footer to display a link to the newsletter
 vc_map(array(
   "name" => "Newsletter Callout",
   "description" => "Text with button to the newsletter",

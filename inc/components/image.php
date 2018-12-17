@@ -1,5 +1,5 @@
 <?php
-// Image Grid 1
+// Image Grid
 vc_map(
   array(
     "name" => "Image Grid",
@@ -49,10 +49,10 @@ class WPBakeryShortCode_cd2h_image_grid extends WPBakeryShortCode {
   protected function content($atts, $content = null) {
     extract(shortcode_atts(
       array(
-        'image1' => '', // Post IDs or URL to a full-sized image
-        'image2' => '', // Post IDs or URL to a full-sized image
-        'image3' => '', // Post IDs or URL to a full-sized image
-        'image4' => '', // Post IDs or URL to a full-sized image
+        'image1' => '',
+        'image2' => '',
+        'image3' => '',
+        'image4' => '',
         'caption' => '',
       ), $atts
     ));

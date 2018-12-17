@@ -1,5 +1,5 @@
 <?php
-// Default Container Element
+// Hero slider container.
 vc_map( array(
   "name" => "Hero Slider",
   "description" => "Hero Slider",
@@ -35,7 +35,7 @@ class WPBakeryShortCode_cd2h_hero_slider extends WPBakeryShortCodesContainer {
   }
 }
 
-// Hero Collection Slide
+// Hero Slide
 vc_map(array(
   "name" => "Hero",
   "description" => "Slide for hero carousel or standalone hero unit",

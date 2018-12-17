@@ -1,6 +1,6 @@
 <?php
 
-//Slider for displaying posts
+//Tabbed list of projects. Turns into an accordian on mobile.
 vc_map(array(
   "name" => "Lab Projects List",
   "description" => "Displays a list of lab project organized by category",
@@ -40,7 +40,7 @@ class WPBakeryShortCode_cd2h_lab_project_block extends WPBakeryShortCode {
   }
 }
 
-//Slider for displaying DREAM challenge ideas
+//Shortcode for Displaying a single DREAM project anywhere.
 vc_map(array(
   "name" => "Project",
   "description" => "Displays a singloe project card.",

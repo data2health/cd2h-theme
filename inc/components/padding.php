@@ -1,4 +1,5 @@
 <?php
+// Basic shortcode for adding additional padding for desktop devices.
 vc_map(array(
   "name" => "Spacing",
   "description" => "Block to adjust spacing",
