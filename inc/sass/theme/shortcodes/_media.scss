@@ -52,7 +52,10 @@
 }
 
 .media.portrait { display: block !important; }
-.media.landscape { align-items: center !important; }
+.media.landscape {
+  align-items: start !important;
+  .media-body { text-align: left !important; }
+}
 
 
 .mediaPerson.landscape {

@@ -13195,9 +13195,11 @@ nav a:hover,
   display: block !important; }
 
 .media.landscape {
-  -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  align-items: center !important; }
+  -webkit-box-align: start !important;
+  -ms-flex-align: start !important;
+  align-items: start !important; }
+  .media.landscape .media-body {
+    text-align: left !important; }
 
 .mediaPerson.landscape {
   margin-bottom: 50px; }
