@@ -62,8 +62,9 @@ $projects_full = get_posts(array(
           $secondary = get_post_meta($post_ID, 'secondary', true);
           $acknowledgements = get_post_meta($post_ID, 'acknowledgements', true);
           $submit_feedback = get_post_meta($post_ID, 'submit-feedback', true);
-          $test_prototype = get_post_meta($post_ID, '$test-prototype', true);
+          $test_prototype = get_post_meta($post_ID, 'test-prototype', true);
           $content = get_post_field('post_content', $project->ID);
+          $cd2h_project = get_post_meta($post_ID, 'cd2h_project', true);
           echo '<li class="h6 my-2 d-none d-md-block w-100"><a class="nav-link py-0" href="#'. $slug .'" data-toggle="tab" role="tab" aria-controls="'. $slug .'">' . $title . '</a></li>';
           echo '<div class="d-block d-md-none">';
           include(locate_template('template-parts/content-lab-project.php'));
@@ -96,6 +97,7 @@ $projects_full = get_posts(array(
         $test_prototype = get_post_meta($post_ID, 'test-prototype', true);
         $content_raw = get_post_field('post_content', $project->ID);
         $content = apply_filters('the_content', $content_raw);
+        $cd2h_project = get_post_meta($post_ID, 'cd2h_project', true);
         echo '<div class="tab-pane px-3 px-md-5 fade ' . $active_state . ' " id="'. $slug .'" role="tabpanel" aria-labelledby="'. $slug .'-tab">';
         include(locate_template('template-parts/content-lab-project.php'));
         echo '</div>';

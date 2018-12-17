@@ -51,7 +51,7 @@ get_header();
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
     <?php echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_excerpt .'[/cd2h_hero_slide]' ); ?>
-    <div class="workgroup-overview green-bg py-5 my-4">
+    <div class="workgroup-overview green-bg px-3 py-5 my-4">
       <div class="workgroup-overview-inner mx-auto">
         <div class="text-center my-5">
           <?php echo do_shortcode( '[cd2h_headline title="'. $title .' Overview"]' ); ?>
@@ -79,12 +79,12 @@ get_header();
           </div>
         </div>
         <div class="secondary-image mb-5">
-          <img src="<?php echo $secondary_image[0]; ?>" />
+          <img class="image-full" src="<?php echo $secondary_image[0]; ?>" />
         </div>
       </div>
     </div>
 
-    <div class="workgroup-projects blue-bg py-5 mb-4">
+    <div class="workgroup-projects blue-bg px-3 py-5 mb-4">
       <div class="workgroup-projects-inner">
         <div class="text-center my-5">
           <?php echo do_shortcode( '[cd2h_headline title="Our Current Projects"]' ); ?>

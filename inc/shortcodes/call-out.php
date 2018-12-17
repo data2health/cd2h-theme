@@ -18,7 +18,7 @@
   <?php if(!empty($background)) { ?>
     <img src="<?php echo $background[0]; ?>" alt="<?php echo $title; ?>" class="image-full sr-only" />
   <?php } ?>
-  <div class="callout-inner d-flex align-items-center <?php echo $extra_classes; ?>">
+  <div class="callout-inner d-flex align-items-center py-5 <?php echo $extra_classes; ?>">
     <div class="media mx-auto d-block d-md-flex px-3 px-md-0">
       <?php if(!empty($image)) { ?>
         <div class="media-img fsr-holder mx-auto ml-md-0 mr-md-5 my-3">
@@ -31,7 +31,7 @@
           <?php echo $content; ?>
         </div>
         <?php if(!empty($btn_text)) { ?>
-          <a class="btn btn-<?php echo $color; ?> btn-white d-block d-md-inline-block" href="<?php echo $btn_url; ?>"><?php echo $btn_text; ?></a>
+          <a class="btn btn-<?php echo $color; ?> btn-white d-block d-md-inline-block mb-4" href="<?php echo $btn_url; ?>"><?php echo $btn_text; ?></a>
         <?php } ?>
       </div>
     </div>

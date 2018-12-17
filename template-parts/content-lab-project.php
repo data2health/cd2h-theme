@@ -7,9 +7,19 @@
 <div class="lab-project-detailed">
   <header class="project-header mb-2">
     <h6 class="h4 d-inline-md-block pr-3 mb-1"><?php echo $title; ?></h6>
-    <?php if (!empty($lead)) { ?><span class="project-lead pr-3">Project Lead: <strong><?php echo $person_title; ?></strong></span><?php } ?>
-    <span class="cd2h-project"><i class="fas fa-check"></i> CD2H project</span>
-    <?php if (!empty($lead)) { ?><span class="d-block project-email"><a href="mailto:?php echo $person_email; ?>"><?php echo $person_email; ?></a></span><?php } ?>
+    <div class="row no-gutters">
+      <?php if (!empty($lead)) { ?>
+      <div class="col-md-6">
+        <span class="project-lead">Project Lead: <strong><?php echo $person_title; ?></strong></span>
+        <span class="d-block project-email"><a href="mailto:?php echo $person_email; ?>"><?php echo $person_email; ?></a></span>
+      </div>
+      <?php } ?>
+      <?php if (!empty($cd2h_project)) { ?>
+      <div class="col-md-4">
+        <span class="cd2h-project"><i class="fas fa-check"></i> CD2H project</span>
+      </div>
+      <?php } ?>
+    </div>
   </header>
   <div class="lab-project-content mb-2">
     <strong class="d-block mb-2"><?php echo $secondary; ?></strong>

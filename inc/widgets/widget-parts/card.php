@@ -14,8 +14,9 @@
     <h6 class="h6 mt-0"><?php echo $date ?></h6>
     <h5 class="h5 card-title"><?php echo $title ?></h5>
   </div>
-
+  <?php if ($image) {?>
   <div class="fsr-holder card-img-top mb-4">
     <img class="sr-only image-full" src="<?php echo $image[0] ?>" alt="<?php echo $title ?>">
   </div>
+  <?php } ?>
 </a>

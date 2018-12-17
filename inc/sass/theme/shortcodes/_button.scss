@@ -78,4 +78,10 @@
     padding-left: 0;
     padding-right: 0;
   }
+  .btn {
+    white-space: inherit;
+  }
+
+  .text-left > .btn {text-align: left;}
+  .text-right > .btn {text-align: right;}
 }
