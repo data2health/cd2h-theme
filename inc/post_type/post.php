@@ -63,7 +63,7 @@ function render_post_meta_box($object, $box){ ?>
     /* Check if the current user has permission to edit the post. */
     if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
-    $meta_keys = array('source-name', 'source-url', 'featured-category', 'end-date', 'date-time');
+    $meta_keys = array('source-name', 'source-url', 'featured-category', 'end-date', 'start-date');
     foreach($meta_keys as $key){
       $meta_val = get_post_val($key);
       update_post_meta($post_id, $key, $meta_val);
