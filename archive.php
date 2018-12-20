@@ -28,7 +28,7 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
-			<?php echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_content .'[/cd2h_hero_slide]' ); ?>
+			<?php //echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_content .'[/cd2h_hero_slide]' ); ?>
 
 			<div class="blog-container mb-4">
 				<div class="blog-container-inner">
