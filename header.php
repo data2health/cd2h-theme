@@ -7,7 +7,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
-	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/favicon.ico" type="image/vnd.microsoft.icon" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -20,15 +20,15 @@
 <div id="network-branding" class="container-fluid text-white">
   <div class="container">
     <div class="row">
-			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-hhs-logo.png" alt="HHS Logo Icon">
+			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-hhs-logo.png" alt="HHS Logo Icon">
 			<a class="masthead-link hhs-link" href="https://www.hhs.gov/"><span class="d-none d-xl-inline-block">U.S. Department of Health and Human Services</span> <span class="d-xl-none d-inline-block">HHS</span></a>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-divider.png" alt="NIH Logo Icon">
-			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-nih-logo.png">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-divider.png" alt="NIH Logo Icon">
+			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-nih-logo.png">
 			<a class="masthead-link nih-link" href="https://www.nih.gov/"><span class="d-none d-lg-inline-block">National Institutes of Health</span> <span class="d-lg-none d-inline-block">NIH</span></a>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-divider.png">
-			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-nih-logo.png" alt="NCATS Logo Icon">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-divider.png">
+			<img class="masthead-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-nih-logo.png" alt="NCATS Logo Icon">
 			<a class="masthead-link ncats-link" href="https://www.ncats.nih.gov/"><span class="d-none d-md-inline-block">National Center for Advancing Translational Sciences</span> <span class="d-md-none d-inline-block">NCATS</span></a>
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/masthead-divider.png">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/masthead-divider.png">
     </div>
   </div>
 </div>
