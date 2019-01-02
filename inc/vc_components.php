@@ -17,5 +17,6 @@ add_action('vc_before_init', function() {
   require 'components/liaison.php';
   require 'components/table.php';
   require 'components/tools_resources.php';
+  require 'components/twitter.php';
 });
 ?>
