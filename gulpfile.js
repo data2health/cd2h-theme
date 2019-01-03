@@ -17,7 +17,6 @@ var gulp   = require('gulp'),
     uglify = require('gulp-uglify-es').default;
     del = require('del');
     stylish = require('jshint-stylish');
-    runSequence = require('run-sequence');
     coffee = require('gulp-coffee');
     gutil = require('gulp-util');
     imagemin = require('gulp-imagemin');
@@ -25,7 +24,7 @@ var gulp   = require('gulp'),
 
 // Cleans the web dist folder
 gulp.task('clean', function () {
-    del(['dist/']);
+  del(['dist/']);
 });
 
 // Copy fonts task
@@ -48,11 +47,7 @@ gulp.task('copy-components', function() {
     .pipe(gulp.dest('inc/sass/bootstrap'));
 });
 
-gulp.task('install', function(callback) {
-    runSequence(
-        'copy-components', callback
-    );
-});
+gulp.task('install', gulp.parallel('copy-components', 'copy-fonts'));
 
 // Minify Images
 gulp.task('imagemin', function() {
@@ -114,9 +109,7 @@ gulp.task('shrink-js', function() {
 });
 
 // Default Javascript build task
-gulp.task('build-js', function(callback) {
-    runSequence('concat-js', 'shrink-js', callback);
-});
+gulp.task('build-js', gulp.series('concat-js', 'shrink-js'));
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
@@ -125,20 +118,7 @@ gulp.task('watch', function() {
 });
 
 // Default build task
-gulp.task('build', function(callback) {
-    runSequence(
-        'copy-fonts',
-        //'imagemin',
-        ['build-css', 'build-js'], callback
-    );
-});
+gulp.task('build', gulp.parallel('build-css', 'build-js'));
 
-// Default build task
-gulp.task('image', function(callback) {
-    runSequence(
-        'imagemin', callback
-    );
-});
-
-// Default task will build the jekyll site, launch BrowserSync & watch files.
-gulp.task('default', ['build', 'watch']);
+// Default task
+gulp.task('default', gulp.series('build', 'watch'));
