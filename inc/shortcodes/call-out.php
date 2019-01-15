@@ -19,7 +19,7 @@
     <img src="<?php echo $background[0]; ?>" alt="<?php echo $title; ?>" class="image-full sr-only" />
   <?php } ?>
   <div class="callout-inner d-flex align-items-center py-5 <?php echo $extra_classes; ?>">
-    <div class="media mx-auto d-block d-md-flex px-3 px-md-0">
+    <div class="media mx-auto d-block d-lg-flex px-3 px-md-0">
       <?php if(!empty($image)) { ?>
         <div class="media-img fsr-holder mx-auto ml-md-0 mr-md-5 my-3">
           <img class="image-full sr-only" src="<?php echo $image[0]; ?>" alt="<?php echo $title; ?>">

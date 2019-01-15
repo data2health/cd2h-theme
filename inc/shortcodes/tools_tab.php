@@ -18,7 +18,7 @@ $child_categories = get_terms( 'tool_category',
 <div class="tools-tab tab-pane fade <?php if($is_active){ echo 'show active'; } ?>" id="<?php echo $tab_id; ?>" role="tabpanel" aria-labelledby="tab-<?php echo $tab_id; ?>">
   <div class="row justify-content-center">
     <?php if(!empty($child_categories)): ?>
-    <div class="col-md-5">
+    <div class="col-lg-5">
       <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
         <?php $idx = 0;
         foreach($child_categories as $child){
@@ -31,7 +31,7 @@ $child_categories = get_terms( 'tool_category',
       </div>
     </div>
     <?php endif; ?>
-    <div class="col-md-7">
+    <div class="col-lg-7">
       <?php if(!empty($child_categories)){ ?>
       <div class="tab-content child-content">
         <?php $idx = 0;

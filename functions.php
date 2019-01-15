@@ -323,7 +323,7 @@ if ( is_plugin_active( 'js_composer/js_composer.php' ) ) {
 		if ( $tag == 'vc_column' || $tag == 'vc_column_inner' ) {
 			$class_string = preg_replace( '/vc_col-sm-(\d{1,2})/', 'vc_span$1', $class_string ); // This will replace "vc_col-sm-%" with "vc_span%"
 		}
-		$class_string = preg_replace('|col-sm|', 'col-md', $class_string);
+		$class_string = preg_replace('|col-sm|', 'col-lg', $class_string);
 		return $class_string;
 	}, 10, 2);
 

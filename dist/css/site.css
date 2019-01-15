@@ -13225,7 +13225,7 @@ nav a:hover,
   .mediaPerson.landscape {
     display: block; } }
 
-@media (min-width: 768px) {
+@media (min-width: 961px) {
   .arrow-md::after {
     content: '';
     top: 50px;
@@ -13437,6 +13437,11 @@ nav a:hover,
   .tools-tabs-container .card .js-tabcollapse-card-heading.collapsed::before {
     content: '+'; }
 
+@media (max-width: 960px) {
+  .tools-tabs-container .nav-tabs .nav-item {
+    display: block;
+    width: 100%; } }
+
 @media (min-width: 768px) {
   .tools-tabs-container .main-content {
     padding: 100px; } }
@@ -13617,4 +13622,6 @@ nav a:hover,
 @media (min-width: 768px) {
   .site-footer .nav .btn, .site-footer .nav .nav-links .nav-previous a, .nav-links .nav-previous .site-footer .nav a,
   .site-footer .nav .nav-links .nav-next a, .nav-links .nav-next .site-footer .nav a {
-    margin-top: -8px; } }
+    margin-top: -8px; }
+  .site-footer .menu-item {
+    margin-bottom: 2rem; } }

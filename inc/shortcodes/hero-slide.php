@@ -24,7 +24,7 @@
       <?php endif; ?>
       <?php include(locate_template('template-parts/_partial_button.php')); ?>
       <?php if(!empty($btn_text_2)) { ?>
-        <a class="btn btn-primary d-block d-md-inline-block mb-2 mb-md-0" href="<?php echo $btn_url_2; ?>"><?php echo $btn_text_2; ?></a>
+        <a class="btn btn-primary d-block d-lg-inline-block mb-2 mb-lg-0" href="<?php echo $btn_url_2; ?>"><?php echo $btn_text_2; ?></a>
       <?php } ?>
     </div>
   </div>

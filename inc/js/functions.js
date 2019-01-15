@@ -98,7 +98,8 @@
         items: 3,
         responsive: {
           0: { items: 1, margin: 15 },
-          768: { items: 3,margin: 30 }
+          767: { items: 2,margin: 30 },
+          961: { items: 3,margin: 30 }
         }
       });
     }

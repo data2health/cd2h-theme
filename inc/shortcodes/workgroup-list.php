@@ -32,13 +32,13 @@ $post_wp_query = new WP_Query($args); ?>
             $icon = '';
           }
           $content = get_the_content();
-          echo '<div class="col-md-6 px-md-5 mb-5">';
+          echo '<div class="col-lg-6 px-md-5 mb-5">';
           include(locate_template('template-parts/cardWorkgroup.php'));
           echo '</div>';
         endwhile; wp_reset_postdata();
       endif; ?>
 
-      <div class="col-md-5 cd2h-workgroup-join align-self-center">
+      <div class="col-lg-5 cd2h-workgroup-join align-self-center text-center text-lg-left">
         <p class="headline h3 mb-3">Not ready to join a workgroup?  Stay up to date with the CD2H via our newsletter.</p>
         <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSctJpFYOCyURD_m2vRIu2DfGAUJIk7x2_XUqV9xi5OpvB5rrQ/viewform">Subscribe to our Newsletter</a>
       </div>

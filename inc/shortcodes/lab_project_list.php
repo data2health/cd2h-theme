@@ -27,7 +27,7 @@ $projects_full = get_posts(array(
 
 <div class="lab-projects mb-5 mb-md-0">
   <div class="row no-gutters justify-content-center">
-    <div class="col-md-3 lab-project-list" >
+    <div class="col-lg-3 lab-project-list" >
       <?php foreach ( $terms as $term ) {
         $section_slug = sanitize_title_with_dashes($term->term_id);
         $projects = get_posts(array(
@@ -53,7 +53,7 @@ $projects_full = get_posts(array(
           <a class="d-block" href="#project-type-<?php echo $section_slug; ?>" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="project-type-<?php echo $section_slug; ?>">
             <?php echo $term->name; ?>
         </a></span>
-        <ul class="list-unstyled mb-3 ml-0 ml-md-4 mb-0 d-md-flex collapse nav nav-tabs" id="project-type-<?php echo $section_slug; ?>" role="tablist">
+        <ul class="list-unstyled mb-3 ml-0 ml-lg-4 d-md-flex collapse nav nav-tabs" id="project-type-<?php echo $section_slug; ?>" role="tablist">
         <?php foreach($projects as $project){
           $post_ID = $project->ID;
           $title = get_the_title($post_ID);
@@ -79,7 +79,7 @@ $projects_full = get_posts(array(
         </ul>
       <?php } ?>
     </div>
-    <div class="col-md-8 d-none d-md-block">
+    <div class="col-lg-8 d-none d-md-block">
       <div class="tab-content" id="myTabContent">
       <?php foreach($projects_full as $project){
         $count++;

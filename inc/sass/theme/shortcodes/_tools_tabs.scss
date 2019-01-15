@@ -120,6 +120,17 @@
   }
 }
 
+@media(max-width: 960px){
+  .tools-tabs-container {
+    .nav-tabs {
+      .nav-item {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media(min-width: 768px){
   .tools-tabs-container {
     .main-content {

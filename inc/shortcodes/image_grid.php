@@ -12,7 +12,7 @@
  */
 ?>
 
-<div class="cd2h-image-grid image-grid-1 px-md-5 py-md-5 mb-5 mb-md-0">
+<div class="cd2h-image-grid image-grid-1 px-lg-5 py-md-5 mb-5 mb-md-0">
   <div class="row no-gutters align-items-end mb-3">
     <div class="col-4">
       <div class="fsr-holder image-1">

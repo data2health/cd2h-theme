@@ -12,7 +12,7 @@ if (isset($color)) { $color = $color; } else {$color = 'primary';}
 <?php if ($btn_text) {?>
   <?php if ($form_id) {?>
     <?php if ($extra_classes) {?><span class="<?php echo $extra_classes; ?>"><?php } ?>
-    <button class="btn btn-<?php echo $color; ?> d-block d-md-inline-block mb-2 mb-md-0" data-toggle="modal" data-target="#formModal-<?php echo $form_id; ?>"><?php echo $btn_text; ?></button>
+    <button class="btn btn-<?php echo $color; ?> d-block d-lg-inline-block mb-2 mb-lg-0" data-toggle="modal" data-target="#formModal-<?php echo $form_id; ?>"><?php echo $btn_text; ?></button>
     <?php if ($extra_classes) {?></span><?php } ?>
     <div class="modal fade formModal" id="formModal-<?php echo $form_id; ?>" tabindex="-1" role="dialog" aria-labelledby="<?php echo $form_id; ?>-FormTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -31,7 +31,7 @@ if (isset($color)) { $color = $color; } else {$color = 'primary';}
     </div>
   <?php } else { ?>
     <?php if ($extra_classes) {?><span class="<?php echo $extra_classes; ?>"><?php } ?>
-    <a class="btn btn-<?php echo $color; ?> d-block d-md-inline-block mb-2 mb-md-0" href="<?php echo $btn_url; ?>"><?php echo $btn_text; ?></a>
+    <a class="btn btn-<?php echo $color; ?> d-block d-lg-inline-block mb-2 mb-lg-0" href="<?php echo $btn_url; ?>"><?php echo $btn_text; ?></a>
     <?php if ($extra_classes) {?></span><?php } ?>
   <?php } ?>
 <?php } ?>

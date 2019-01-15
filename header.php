@@ -35,7 +35,7 @@
 
 	<div class="container">
 		<div id="header-logos" class="row no-gutters align-items-center justify-content-md-center pt-3 pt-md-0 mt-2 mt-md-3 mb-4">
-			<div class="pl-1 pl-md-0 col-8 col-md-8">
+			<div class="pl-1 pl-md-0 col-8 col-md-12 col-lg-8 pb-0 pb-md-3 pb-lg-0">
 				<div class="row align-items-center">
 					<?php dynamic_sidebar('site-logo'); ?>
 					<?php dynamic_sidebar('network-logo'); ?>
@@ -47,7 +47,7 @@
 					<i class="fas fa-search"></i>
 				</a>
 			</div>
-			<div id="searchform" class="d-none d-md-block col-md-4 mt-4 mt-md-0 pl-3">
+			<div id="searchform" class="d-none d-md-block col-lg-4 mt-4 mt-md-0 pl-3 pl-md-0 pl-lg-3">
 				<?php get_search_form( true );?>
 			</div>
 			<div id="searchform-mobile" class="collapse col-11 col-md-4 mt-4 p-1">

@@ -16,10 +16,10 @@
 			<div class="newsletter-footer">
         <div class="container">
           <div class="row py-4 justify-content-md-center align-items-center">
-  					<div class="col-md-7 text-center align-self-center">
-  						<p class="mb-3 mb-md-0">Stay up to date with new research and programs through CD2H</p>
+  					<div class="col-lg-7 text-center align-self-center">
+  						<p class="mb-3 mb-lg-0">Stay up to date with new research and programs through CD2H</p>
   					</div>
-  					<div class="col-md-4 text-center">
+  					<div class="col-lg-4 text-center">
   						<a class="btn btn-block btn-primary btn-white" href="<?php echo $newsletter_url; ?>">Subscribe to Our Newsletter</a>
   					</div>
   				</div>
