@@ -3,16 +3,25 @@
   padding: 15px;
 
   .cat-list {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
-    text-transform: uppercase;
+
     a {
       color: $pineGreen;
-      &:hover {text-decoration: none;}
+      border-bottom: 1px solid transparent;
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid $pineGreen;
+      }
     }
-    li {border-bottom: 1px solid transparent;}
-    li.active,
-    li:hover { border-bottom: 1px solid $pineGreen; }
+    li.active > a {
+      border-bottom: 1px solid $pineGreen;
+    }
+    .font-weight-bold {
+      font-size: 16px;
+      border-bottom: 1px solid $pineGreen;
+      text-transform: uppercase;
+    }
   }
 
   .media {

@@ -27,7 +27,7 @@ get_header();
 			<div class="blog-container mb-4">
 				<div class="blog-container-inner">
 
-          <ul class="cat-list list-inline text-center mb-3 mb-md-5">
+          <ul class="cat-list list-unstyled text-left mb-3 mb-md-5 text-center row">
 						<?php $parent_categories = get_categories( array(
 							    'orderby' => 'name',
 							    'order'   => 'ASC',
@@ -36,12 +36,12 @@ get_header();
 							) );
 							foreach( $parent_categories as $parent_category ) {
 							    $category_link = sprintf(
-							        '<a href="%1$s" alt="%2$s">%3$s</a>',
+							        '<a class="font-weight-bold px-md-5 pb-2" href="%1$s" alt="%2$s">%3$s</a>',
 							        esc_url( get_category_link( $parent_category->term_id ) ),
 							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $parent_category->name ) ),
 							        esc_html( $parent_category->name )
 							    );
-							    echo '<li class="list-inline-item mx-3 my-2 my-md-0">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
+							    echo '<li class="my-2 my-md-4 col-md-6">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
 
                   $child_categories = get_categories( array(
       							    'orderby' => 'name',
@@ -50,7 +50,7 @@ get_header();
                         'parent' => $parent_category->term_id,
       							) );
                   if(!empty($child_categories)){
-                    echo '<ul class="cat-list child-cat-list>"';
+                    echo '<ul class="cat-list child-cat-list list-unstyled mt-3">';
                     foreach( $child_categories as $category ) {
                       $category_link = sprintf(
     							        '<a href="%1$s" alt="%2$s">%3$s</a>',
@@ -58,7 +58,7 @@ get_header();
     							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
     							        esc_html( $category->name )
     							    );
-    							    echo '<li class="list-inline-item mx-3 my-2 my-md-0">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li>';
+    							    echo '<li class="my-2 my-md-2">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li>';
                     }
                     echo '</ul>';
                   }

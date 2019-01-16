@@ -12457,18 +12457,20 @@ nav a:hover,
   background-color: #F1F5F6;
   padding: 15px; }
   .blog-container .cat-list {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase; }
+    font-size: 14px;
+    letter-spacing: 2px; }
     .blog-container .cat-list a {
-      color: #4A7D8F; }
-      .blog-container .cat-list a:hover {
-        text-decoration: none; }
-    .blog-container .cat-list li {
+      color: #4A7D8F;
       border-bottom: 1px solid transparent; }
-    .blog-container .cat-list li.active,
-    .blog-container .cat-list li:hover {
+      .blog-container .cat-list a:hover {
+        text-decoration: none;
+        border-bottom: 1px solid #4A7D8F; }
+    .blog-container .cat-list li.active > a {
       border-bottom: 1px solid #4A7D8F; }
+    .blog-container .cat-list .font-weight-bold {
+      font-size: 16px;
+      border-bottom: 1px solid #4A7D8F;
+      text-transform: uppercase; }
   .blog-container .media {
     padding: 30px 0;
     border-bottom: 1px solid #DBE5E9; }
