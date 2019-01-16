@@ -34,20 +34,46 @@ get_header();
 				<div class="blog-container-inner">
 
 					<ul class="cat-list list-inline text-center mb-3 mb-md-5">
-						<?php $categories = get_categories( array(
+						<?php $parent_categories = get_categories( array(
 							    'orderby' => 'name',
 							    'order'   => 'ASC',
 									'hide_empty' => false,
+                  'parent' => 0,
 							) );
-							foreach( $categories as $category ) {
+							foreach( $parent_categories as $parent_category ) {
 							    $category_link = sprintf(
 							        '<a href="%1$s" alt="%2$s">%3$s</a>',
-							        esc_url( get_category_link( $category->term_id ) ),
-							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
-							        esc_html( $category->name )
+							        esc_url( get_category_link( $parent_category->term_id ) ),
+							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $parent_category->name ) ),
+							        esc_html( $parent_category->name )
 							    );
-									if ($category->term_id == $archive_category->term_id) { $activeClass= 'active'; } else { $activeClass = ''; }
-							    echo '<li class="list-inline-item mx-3 my-2 my-md-0'.$activeClass.'">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li> ';
+									if ($parent_category->term_id == $archive_category->term_id) { $activeClass= 'active'; } else { $activeClass = ''; }
+							    echo '<li class="list-inline-item mx-3 my-2 my-md-0'.$activeClass.'">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
+
+                  $child_categories = get_categories( array(
+      							    'orderby' => 'name',
+      							    'order'   => 'ASC',
+      									'hide_empty' => false,
+                        'parent' => $parent_category->term_id,
+      							) );
+                  if(!empty($child_categories)){
+                    echo '<ul class="cat-list child-cat-list>"';
+                    foreach( $child_categories as $category ) {
+                      $category_link = sprintf(
+    							        '<a href="%1$s" alt="%2$s">%3$s</a>',
+    							        esc_url( get_category_link( $category->term_id ) ),
+    							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+    							        esc_html( $category->name )
+    							    );
+    									if ($category->term_id == $archive_category->term_id) { $activeClass= 'active'; } else { $activeClass = ''; }
+    							    echo '<li class="list-inline-item mx-3 my-2 my-md-0'.$activeClass.'">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li>';
+                    }
+                    echo '</ul>';
+                  }
+
+                  echo '</li> ';
+
+
 							} ?>
 					</ul>
 
