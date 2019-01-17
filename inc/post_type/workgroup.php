@@ -32,15 +32,6 @@ function workgroup_post_type() {
 		'items_list_navigation' => __( 'Items list navigation', 'cd2h' ),
 		'filter_items_list'     => __( 'Filter items list', 'cd2h' ),
 	);
-	$capabilities = array(
-		'edit_post'             => 'edit_post',
-		'read_post'             => 'read_post',
-		'delete_post'           => 'delete_post',
-		'edit_posts'            => 'edit_posts',
-		'edit_others_posts'     => 'edit_others_posts',
-		'publish_posts'         => 'publish_posts',
-		'read_private_posts'    => 'read_private_posts',
-	);
 	$args = array(
 		'label'                 => __( 'Workgroup', 'cd2h' ),
 		'description'           => __( 'Workgroup post type', 'cd2h' ),
@@ -58,7 +49,7 @@ function workgroup_post_type() {
 		'has_archive'           => false,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
-		'capabilities'          => $capabilities,
+		'capability_type'       => 'page',
 	);
 	register_post_type( 'workgroup', $args );
 
