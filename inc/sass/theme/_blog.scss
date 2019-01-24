@@ -67,7 +67,7 @@
 
 @media(min-width: 768px){
   .blog-container{
-    padding: 95px;
+    padding: 40px 95px 95px;
     .media {
       margin: 30px 60px;
       .media-image {
@@ -76,5 +76,5 @@
       }
     }
   }
-  .blog-container-inner { padding: 75px 50px; }
+  .blog-container-inner { padding: 30px 50px; }
 }

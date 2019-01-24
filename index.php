@@ -23,10 +23,9 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<?php //echo do_shortcode( '[cd2h_hero_slide image="'.$image .'" title="'. $title . '" btn_text="" btn_url=""]'. $the_content .'[/cd2h_hero_slide]' ); ?>
 			<div class="blog-container mb-4">
+				<?php echo do_shortcode( '[cd2h_headline title="'. $title . '" format="headline h1"  extra_classes="mb-5 text-center"]' ); ?>
 				<div class="blog-container-inner">
-
           <ul class="cat-list list-unstyled text-left mb-3 mb-md-5 text-center row">
 						<?php $parent_categories = get_categories( array(
 							    'orderby' => 'name',

@@ -12503,14 +12503,14 @@ nav a:hover,
 
 @media (min-width: 768px) {
   .blog-container {
-    padding: 95px; }
+    padding: 40px 95px 95px; }
     .blog-container .media {
       margin: 30px 60px; }
       .blog-container .media .media-image {
         width: 195px;
         height: 195px; }
   .blog-container-inner {
-    padding: 75px 50px; } }
+    padding: 30px 50px; } }
 
 .breadcrumb {
   background-color: #fff;
