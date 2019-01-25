@@ -28,22 +28,22 @@ get_header();
 				<div class="blog-container-inner">
           <ul class="cat-list list-unstyled text-left mb-3 mb-md-5 text-center row">
 						<?php $parent_categories = get_categories( array(
-							    'orderby' => 'name',
+							    'orderby' => 'term_order',
 							    'order'   => 'ASC',
 									'hide_empty' => false,
                   'parent' => 0,
 							) );
 							foreach( $parent_categories as $parent_category ) {
 							    $category_link = sprintf(
-							        '<a class="font-weight-bold px-md-5 pb-2" href="%1$s" alt="%2$s">%3$s</a>',
+							        '<a class="font-weight-bold px-md-3 pb-2" href="%1$s" alt="%2$s">%3$s</a>',
 							        esc_url( get_category_link( $parent_category->term_id ) ),
-							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $parent_category->name ) ),
+							        esc_attr( sprintf( __( 'View all posts in %s', 'cd2h' ), $parent_category->name ) ),
 							        esc_html( $parent_category->name )
 							    );
-							    echo '<li class="my-2 my-md-4 col-md-6">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
+							    echo '<li class="my-2 my-md-4 col-md-4">' . sprintf( esc_html__( '%s', 'cd2h' ), $category_link );
 
                   $child_categories = get_categories( array(
-      							    'orderby' => 'name',
+      							    'orderby' => 'term_order',
       							    'order'   => 'ASC',
       									'hide_empty' => false,
                         'parent' => $parent_category->term_id,
@@ -54,10 +54,10 @@ get_header();
                       $category_link = sprintf(
     							        '<a href="%1$s" alt="%2$s">%3$s</a>',
     							        esc_url( get_category_link( $category->term_id ) ),
-    							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+    							        esc_attr( sprintf( __( 'View all posts in %s', 'cd2h' ), $category->name ) ),
     							        esc_html( $category->name )
     							    );
-    							    echo '<li class="my-2 my-md-2">' . sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) . '</li>';
+    							    echo '<li class="my-2 my-md-2">' . sprintf( esc_html__( '%s', 'cd2h' ), $category_link ) . '</li>';
                     }
                     echo '</ul>';
                   }

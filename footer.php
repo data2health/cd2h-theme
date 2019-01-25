@@ -41,16 +41,15 @@
 					'walker'            => new WP_Bootstrap_Navwalker(),
 				) ); ?>
 
+        <div class="social text-center pb-3">
+          <a href="https://twitter.com/data2health?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @data2health</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
 				<div class="row">
 					<div class="col-12 text-center pt-3 pb-3">
 					<p>If you have problems viewing PDF files, download the latest version of Adobe Reader <a href="http://get.adobe.com/reader/" title="Visit to download Adobe Reader" target="_blank">Adobe Reader <i class="fa fa-external-link-alt" aria-hidden="true"></i></a></p>
 					<p>For <a href="http://edi.nih.gov/consulting/language-access-program/about" target="_blank" title="Read the plan">language access <i class="fa fa-external-link-alt" aria-hidden="true"></i></a> assistance, contact the <a href="mailto:info@ncats.nih.gov" title="Email Public Information Officer">NCATS Public Information Officer <i class="far fa-envelope" aria-hidden="true"></i></a></p>
 
-					<div class="social text-center">
-						<?php if(!empty($twitter)){ ?>
-			      	<a href="<?php echo $twitter; ?>" title="Twitter" class="px-2"><span class="twitter-icon"></span></a>
-	          <?php } ?>
-					</div>
 					<p class="copyright mt-5">National Center for Advancing Translational Sciences (NCATS), 6701 Democracy Boulevard, Bethesda MD 20892-4874 • 301-594-8966</p>
 					</div>
 				</div>
