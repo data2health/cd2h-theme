@@ -18,15 +18,11 @@
 			}
 		}
 	}
-  if ($cat_slug == 'event' || $cat_slug == 'events') {
+  if(post_is_in_category(['events', 'event'], $post_ID)){
     $color = 'secondary';
-  } else {
-    $color = 'primary';
-  }
-
-  if ($cat_slug == 'event' || $cat_slug == 'events') {
     $btn_text= 'Register Now';
   } else {
+    $color = 'primary';
     $btn_text= 'Continue Reading';
   }
 

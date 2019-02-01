@@ -214,6 +214,19 @@ function parse_atts( $content ) {
     return $c;
 }
 
+function post_is_in_category( $cats, $_post = null ) {
+  foreach ( (array) $cats as $cat_slug ) {
+    $cat = get_category_by_slug($cat_slug);
+    if(in_category($cat_slug, $_post)){
+      return true;
+    }
+    $descendants = get_term_children( (int) $cat->term_id, 'category' );
+    if ( $descendants && in_category( $descendants, $_post ) )
+      return true;
+  }
+  return false;
+}
+
 function the_shortcodes( &$output, $text, $child = false ) {
 
     $patts = get_pattern( $text );
